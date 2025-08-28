@@ -2,20 +2,20 @@
 
 // Define type for a Township
 export interface Township {
-    eng: string;
+  en: string;
     mm: string;
   }
   
   // Define type for a District
   export interface District {
-    eng: string;
+  en: string;
     mm: string;
     townships: Township[];
   }
   
   // Define type for a State
   export interface State {
-    eng: string,
+  en: string,
     mm: string,
     lat: number,
     lng: number,

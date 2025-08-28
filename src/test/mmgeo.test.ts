@@ -1,5 +1,5 @@
-import { initialize } from '../hook.ts';
-import { getStates } from '../index.ts';
+import { initialize } from '../hook';
+import { getStates } from '../index';
 
 test('Get all states in English by default', () => {
   const states = getStates();

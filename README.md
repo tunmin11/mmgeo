@@ -30,21 +30,18 @@ yarn add @tm11/mmgeo
 ## Quick Start
 
 ```typescript
-import { initialize, getStates, getDistricts, getTownships } from '@tm11/mmgeo';
+import { initialize, getStates } from '@tm11/mmgeo';
 
 // Initialize with English language (default)
 initialize({ language: 'en' });
 
 // Get all states
 const states = getStates();
-console.log(states);
+console.log(states[0].en); // "Kachin State"
 
 // Switch to Myanmar language
 initialize({ language: 'mm' });
-
-// Get districts for a specific state
-const districts = getDistricts('Yangon');
-console.log(districts);
+console.log(states[0].mm); // Myanmar name
 ```
 
 ## Data Structure
@@ -52,29 +49,23 @@ console.log(districts);
 ### State Object
 ```typescript
 interface State {
-  eng: string;      // English name
-  mm: string;       // Myanmar name
-  lat: number;      // Latitude
-  lng: number;      // Longitude
-  capital: string;  // Capital city
-  districts: District[]; // Array of districts
+  en: string;      // English name
+  mm: string;      // Myanmar name
+  lat: number;     // Latitude
+  lng: number;     // Longitude
+  capital: string; // Capital city
+  districts: District[];
 }
-```
 
-### District Object
-```typescript
 interface District {
-  eng: string;      // English name
-  mm: string;       // Myanmar name
-  townships: Township[]; // Array of townships
+  en: string;      // English name
+  mm: string;      // Myanmar name
+  townships: Township[];
 }
-```
 
-### Township Object
-```typescript
 interface Township {
-  eng: string;      // English name
-  mm: string;       // Myanmar name
+  en: string;      // English name
+  mm: string;      // Myanmar name
 }
 ```
 
@@ -114,18 +105,14 @@ Returns townships for a specific district.
 
 ### Basic Usage
 ```typescript
-import { initialize, getStates, getDistricts } from '@tm11/mmgeo';
+import { initialize, getStates } from '@tm11/mmgeo';
 
 // Initialize in English
 initialize({ language: 'en' });
 
 // Get all states
 const states = getStates();
-console.log(states[0].eng); // "Kachin State"
-
-// Get districts of Yangon
-const yangonDistricts = getDistricts('Yangon');
-console.log(yangonDistricts[0].eng); // "East Yangon"
+console.log(states[0].en); // "Kachin State"
 ```
 
 ### Language Switching
@@ -135,12 +122,12 @@ import { initialize, getStates } from '@tm11/mmgeo';
 // Start with English
 initialize({ language: 'en' });
 const statesEn = getStates();
-console.log(statesEn[0].eng); // "Kachin State"
+console.log(statesEn[0].en); // "Kachin State"
 
 // Switch to Myanmar
 initialize({ language: 'mm' });
 const statesMm = getStates();
-console.log(statesMm[0].mm); // "ကချင်ပြည်နယ်"
+console.log(statesMm[0].mm); // Myanmar name
 ```
 
 ## Contributing

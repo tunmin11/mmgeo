@@ -1,51 +1,42 @@
 import geoData from '../data/db.json';
 import { getName } from './utils';
 
-// Class structure for State, District, and Township
 class Township {
-  constructor(public eng: string, public mm: string) {}
-
+  constructor(public en: string, public mm: string) {}
   getName(): string {
-    return getName(this);  // Return name based on current language setting
+    return getName(this);
   }
 }
 
 class District {
-  constructor(public eng: string, public mm: string, public townships: Township[]) {}
-
+  constructor(public en: string, public mm: string, public townships: Township[]) {}
   getName(): string {
     return getName(this);
   }
-
   getTownships(): Township[] {
-    // Map over townships to instantiate Township class
-    return this.townships.map(township => new Township(township.eng, township.mm));
+    return this.townships.map(township => new Township(township.en, township.mm));
   }
 }
 
 class State {
   constructor(
-    public eng: string,
+    public en: string,
     public mm: string,
     public lat: number,
     public lng: number,
     public capital: string,
     public districts: District[]
   ) {}
-
   getName(): string {
     return getName(this);
   }
-
   getDistricts(): District[] {
-    // Map over districts to instantiate District class
-    return this.districts.map(district => new District(district.eng, district.mm, district.townships.map(
-      township => new Township(township.eng, township.mm)
+    return this.districts.map(district => new District(district.en, district.mm, district.townships.map(
+      township => new Township(township.en, township.mm)
     )));
   }
 }
 
-// Main function to retrieve states
 export const getStates = (): State[] => {
   return geoData.states.map(state => new State(
     state.eng,
@@ -56,9 +47,10 @@ export const getStates = (): State[] => {
     state.districts.map(district => new District(
       district.eng,
       district.mm,
-      district.townships.map(township => new Township(township.eng, township.mm))  // Map townships
-    ))  // Map districts
+      district.townships.map(township => new Township(township.eng, township.mm))
+    ))
   ));
 };
 
-export { initialize } from './hook'
+export { initialize } from './hook';
+export { District, Township };

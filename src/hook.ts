@@ -1,6 +1,5 @@
-import { configure } from './config';
+import { configure, Language } from './config';
 
-export const initialize = (config: { language?: 'eng' | 'mm' }) => {
+export const initialize = (config: { language?: Language }) => {
   configure(config);
-  console.log('Myanmar Geo Data initialized with language:', config.language);
 };

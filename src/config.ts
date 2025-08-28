@@ -1,9 +1,11 @@
-let globalLanguage: 'eng' | 'mm' = 'eng'; // Default language is English
+let globalLanguage: 'en' | 'mm' = 'en';
 
-export const configure = (options: { language?: 'eng' | 'mm' }) => {
+export type Language = 'en' | 'mm';
+
+export const configure = (options: { language?: Language }) => {
   if (options.language) {
     globalLanguage = options.language;
   }
 };
 
-export const getCurrentLanguage = (): 'eng' | 'mm' => globalLanguage;
+export const getCurrentLanguage = (): Language => globalLanguage;
