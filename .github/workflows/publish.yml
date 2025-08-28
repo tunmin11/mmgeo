@@ -1,31 +1,28 @@
-name: Publish to npm
+name: Publish Package
 
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - 'v*'
+
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
-  build-and-publish:
-    permissions:
-      id-token: write
-      contents: read
-
+  publish:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
-      - name: Use Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Publish
-        run: npm publish --provenance --access public
+      - name: Update npm
+        run: npm install -g npm@latest
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
+      - run: npm publish
