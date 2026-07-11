@@ -53,4 +53,10 @@ export const getStates = (): State[] => {
 };
 
 export { initialize } from './hook';
+export {
+  listStates,
+  listDistricts,
+  listTownships,
+} from './api';
+export type { Lang, Place, StatePlace, PlaceWithPath } from './api';
 export { District, Township };
