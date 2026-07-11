@@ -5,4 +5,4 @@ export const slugify = (name: string): string =>
     .replace(/^-+|-+$/g, '');
 
 export const normalize = (value: string): string =>
-  value.toLowerCase().replace(/[\s\-_''()]+/g, '');
+  value.toLowerCase().replace(/[\s\-_'’()]+/g, '');

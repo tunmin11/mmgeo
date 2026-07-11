@@ -10,4 +10,6 @@ test('normalize strips case, spaces, dashes, apostrophes for matching', () => {
   expect(normalize('Hlaing-Tharyar')).toBe('hlaingtharyar');
   expect(normalize('hlaing  tharyar')).toBe('hlaingtharyar');
   expect(normalize('မကွေး တိုင်း')).toBe('မကွေးတိုင်း');
+  expect(normalize("Kayin's")).toBe('kayins');
+  expect(normalize('Kayin’s')).toBe('kayins');
 });
