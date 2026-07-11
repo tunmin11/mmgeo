@@ -1,6 +1,6 @@
 {
   "name": "@tm11/mmgeo",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "A comprehensive package providing states, districts, and townships data for Myanmar in both English and Myanmar languages.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,13 +9,22 @@
     "build": "tsc"
   },
   "keywords": [
-    "Myanmar",
-    "geo-data",
-    "states",
-    "districts",
+    "myanmar",
+    "burma",
+    "myanmar-address",
+    "myanmar-townships",
+    "myanmar-states",
+    "myanmar-regions",
+    "myanmar-districts",
     "townships",
+    "address-form",
+    "address-validation",
+    "geo-data",
+    "geography",
     "localization",
-    "geography"
+    "i18n",
+    "burmese",
+    "mmgeo"
   ],
   "author": "tunmin tunmin2000@gmail.com",
   "license": "ISC",
@@ -27,9 +36,6 @@
     "url": "https://github.com/tunmin11/mmgeo/issues"
   },
   "homepage": "https://github.com/tunmin11/mmgeo",
-  "dependencies": {
-    "global": "^4.4.0"
-  },
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "jest": "^29.7.0",
