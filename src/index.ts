@@ -57,6 +57,8 @@ export {
   listStates,
   listDistricts,
   listTownships,
+  searchTownships,
+  isValidTownship,
 } from './api';
 export type { Lang, Place, StatePlace, PlaceWithPath } from './api';
 export { District, Township };

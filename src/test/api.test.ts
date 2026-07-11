@@ -1,4 +1,4 @@
-import { listStates, listDistricts, listTownships } from '../api';
+import { listStates, listDistricts, listTownships, searchTownships, isValidTownship } from '../api';
 
 test('listStates returns plain localized places with coordinates', () => {
   const states = listStates();
@@ -36,4 +36,44 @@ test('unknown slugs return empty arrays, never throw', () => {
   expect(listDistricts('nope')).toEqual([]);
   expect(listTownships('nope', 'nope')).toEqual([]);
   expect(listTownships('magway-region', 'nope')).toEqual([]);
+});
+
+const sample = (): { en: string; mm: string; slug: string } => {
+  const district = listDistricts('magway-region')[0];
+  return listTownships('magway-region', district.slug)[0];
+};
+
+test('searchTownships matches English names ignoring case/spacing and returns path', () => {
+  const t = sample();
+  const results = searchTownships(` ${t.en.toUpperCase()} `);
+  const hit = results.find(r => r.slug === t.slug);
+  expect(hit).toBeDefined();
+  expect(hit!.stateSlug).toBe('magway-region');
+  expect(hit!.districtSlug).toBeTruthy();
+});
+
+test('searchTownships matches Myanmar-language queries', () => {
+  const t = sample();
+  const results = searchTownships(t.mm);
+  expect(results.some(r => r.slug === t.slug)).toBe(true);
+});
+
+test('searchTownships localizes name via lang option', () => {
+  const t = sample();
+  const results = searchTownships(t.en, { lang: 'mm' });
+  expect(results.find(r => r.slug === t.slug)!.name).toBe(t.mm);
+});
+
+test('searchTownships returns [] for empty or whitespace query', () => {
+  expect(searchTownships('')).toEqual([]);
+  expect(searchTownships('   ')).toEqual([]);
+});
+
+test('isValidTownship accepts en name, mm name, or slug; rejects unknown', () => {
+  const t = sample();
+  expect(isValidTownship(t.en)).toBe(true);
+  expect(isValidTownship(t.mm)).toBe(true);
+  expect(isValidTownship(t.slug)).toBe(true);
+  expect(isValidTownship('definitely-not-a-township')).toBe(false);
+  expect(isValidTownship('')).toBe(false);
 });

@@ -1,4 +1,5 @@
 import geoData from '../data/db.json';
+import { normalize } from './normalize';
 
 export type Lang = 'en' | 'mm';
 
@@ -60,4 +61,43 @@ export const listTownships = (
   const district = state?.districts.find(d => d.slug === districtSlug);
   if (!district) return [];
   return district.townships.map(township => toPlace(township, opts.lang ?? 'en'));
+};
+
+export const searchTownships = (query: string, opts: Opts = {}): PlaceWithPath[] => {
+  const q = normalize(query);
+  if (!q) return [];
+  const results: PlaceWithPath[] = [];
+  for (const state of geoData.states) {
+    for (const district of state.districts) {
+      for (const township of district.townships) {
+        if (
+          normalize(township.eng).includes(q) ||
+          normalize(township.mm).includes(q) ||
+          township.slug.replace(/-/g, '').includes(q)
+        ) {
+          results.push({
+            ...toPlace(township, opts.lang ?? 'en'),
+            stateSlug: state.slug,
+            districtSlug: district.slug,
+          });
+        }
+      }
+    }
+  }
+  return results;
+};
+
+export const isValidTownship = (nameOrSlug: string): boolean => {
+  const q = normalize(nameOrSlug);
+  if (!q) return false;
+  return geoData.states.some(state =>
+    state.districts.some(district =>
+      district.townships.some(
+        township =>
+          normalize(township.eng) === q ||
+          normalize(township.mm) === q ||
+          township.slug.replace(/-/g, '') === q
+      )
+    )
+  );
 };
