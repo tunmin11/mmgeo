@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mmgeo — Myanmar states, districts &amp; townships data for JavaScript</title>
+<meta name="description" content="Bilingual (English/Myanmar) geographic data for Myanmar as an npm package — 15 states &amp; regions, 76 districts, 417 townships with stable slugs. Zero dependencies, TypeScript types included.">
+<meta property="og:title" content="mmgeo — Myanmar geographic data for JavaScript">
+<meta property="og:description" content="15 states &amp; regions · 76 districts · 417 townships. Bilingual EN/MM names with stable slugs, as an npm package.">
+<meta property="og:url" content="https://tunmin11.github.io/mmgeo">
+<meta property="og:type" content="website">
+<style>
+:root {
+  --paper: #fbfaf7;
+  --ink: #21261f;
+  --muted: #6d7268;
+  --gold: #9a6c07;
+  --line: #e4e1d6;
+  --code-bg: #1c211b;
+  --code-ink: #e8e6da;
+  --code-muted: #8f957f;
+  --code-gold: #e3b341;
+  --code-mm: #a5c99b;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #15170f;
+    --ink: #e8e6da;
+    --muted: #9b9f8f;
+    --gold: #d9a520;
+    --line: #2c2f24;
+    --code-bg: #0e100a;
+  }
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Myanmar", sans-serif;
+}
+main { max-width: 720px; margin: 0 auto; padding: 0 24px 96px; }
+a { color: var(--gold); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+code, pre, .mono {
+  font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+}
+code { font-size: 0.86em; }
+h2 { font-size: 1.05rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 20px; }
+section { margin-top: 88px; }
+
+/* hero */
+header { padding-top: 88px; }
+.pkg { color: var(--muted); font-size: 0.95rem; }
+h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.15; letter-spacing: -0.02em; font-weight: 750; margin: 12px 0 4px; }
+.mm-title { font-size: clamp(1.1rem, 3.5vw, 1.5rem); color: var(--gold); font-weight: 400; margin-bottom: 28px; }
+.lede { max-width: 56ch; color: var(--muted); }
+.install {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  margin: 32px 0 16px;
+}
+.install pre {
+  background: var(--code-bg); color: var(--code-ink);
+  padding: 12px 18px; border-radius: 8px; font-size: 0.95rem;
+}
+.install button {
+  font: inherit; font-size: 0.85rem; cursor: pointer;
+  background: none; border: 1px solid var(--line); border-radius: 8px;
+  color: var(--ink); padding: 10px 16px;
+}
+.install button:hover { border-color: var(--gold); color: var(--gold); }
+.links { font-size: 0.95rem; display: flex; gap: 20px; }
+
+/* the cascade — one real record, drilled down */
+.cascade { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: 56px; }
+.cascade div { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-top: 1px solid var(--line); }
+.cascade div:first-child { border-top: none; }
+.cascade .lvl { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); width: 72px; flex-shrink: 0; }
+.cascade .slug { color: var(--gold); font-size: 0.88rem; }
+.cascade .mm { margin-left: auto; text-align: right; }
+.cascade .d2 { padding-left: 24px; }
+.cascade .d3 { padding-left: 48px; }
+
+/* stats */
+.stats { display: flex; gap: 48px; flex-wrap: wrap; }
+.stats strong { display: block; font-size: 2.2rem; font-weight: 750; letter-spacing: -0.02em; }
+.stats span { color: var(--muted); font-size: 0.95rem; }
+
+/* code blocks */
+pre.block {
+  background: var(--code-bg); color: var(--code-ink);
+  border-radius: 10px; padding: 20px 22px;
+  font-size: 0.84rem; line-height: 1.7;
+  overflow-x: auto;
+}
+pre.block .c { color: var(--code-muted); }
+pre.block .k { color: var(--code-gold); }
+pre.block .s { color: var(--code-mm); }
+
+/* api reference */
+.api { border-top: 1px solid var(--line); padding: 24px 0; }
+.api:last-of-type { border-bottom: 1px solid var(--line); }
+.api h3 { font-size: 1rem; font-weight: 650; }
+.api h3 code { font-size: 0.95rem; }
+.api p { color: var(--muted); font-size: 0.95rem; margin: 6px 0 12px; }
+.api pre { font-size: 0.82rem; color: var(--muted); overflow-x: auto; }
+.api pre b { color: var(--gold); font-weight: 500; }
+
+footer { margin-top: 96px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; display: flex; gap: 20px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <p class="pkg mono">@tm11/mmgeo</p>
+  <h1>Myanmar states, districts &amp; townships</h1>
+  <p class="mm-title">ပြည်နယ် · ခရိုင် · မြို့နယ် — bilingual, with stable slugs</p>
+  <p class="lede">Complete geographic data for Myanmar as a zero-dependency npm package. Every place carries its English and Myanmar name plus a stable slug — ready for address forms, validation, and localization. TypeScript types included.</p>
+  <div class="install">
+    <pre id="install-cmd">npm install @tm11/mmgeo</pre>
+    <button id="copy-btn" aria-label="Copy install command">Copy</button>
+  </div>
+  <nav class="links">
+    <a href="https://www.npmjs.com/package/@tm11/mmgeo">npm</a>
+    <a href="https://github.com/tunmin11/mmgeo">GitHub</a>
+  </nav>
+
+  <div class="cascade" aria-label="Example record: state, district, township">
+    <div>
+      <span class="lvl">State</span>
+      <span>Yangon Region</span> <span class="slug mono">yangon-region</span>
+      <span class="mm" lang="my">ရန်ကုန်တိုင်းဒေသကြီး</span>
+    </div>
+    <div class="d2">
+      <span class="lvl">District</span>
+      <span>East Yangon</span> <span class="slug mono">east-yangon</span>
+      <span class="mm" lang="my">ရန်ကုန်အရှေ့ပိုင်း</span>
+    </div>
+    <div class="d3">
+      <span class="lvl">Township</span>
+      <span>Thingangyun</span> <span class="slug mono">thingangyun</span>
+      <span class="mm" lang="my">သင်္ဃန်းကျွန်း</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <h2>Coverage</h2>
+  <div class="stats">
+    <div><strong>15</strong><span>states &amp; regions</span></div>
+    <div><strong>76</strong><span>districts</span></div>
+    <div><strong>417</strong><span>townships</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Quick start</h2>
+<pre class="block"><code><span class="k">import</span> { listStates, listTownships, searchTownships } <span class="k">from</span> <span class="s">'@tm11/mmgeo'</span>;
+
+listStates();
+<span class="c">// [{ slug: 'yangon-region', name: 'Yangon Region', en: 'Yangon Region',</span>
+<span class="c">//    mm: 'ရန်ကုန်တိုင်းဒေသကြီး', lat: 16.8, lng: 96.15, capital: 'Yangon' }, …]</span>
+
+listTownships(<span class="s">'yangon-region'</span>, <span class="s">'east-yangon'</span>);
+<span class="c">// [{ slug: 'thingangyun', name: 'Thingangyun', en: 'Thingangyun', mm: 'သင်္ဃန်းကျွန်း' }, …]</span>
+
+searchTownships(<span class="s">'တောင်ကြီး'</span>);  <span class="c">// search matches English, Myanmar, or slug</span>
+<span class="c">// [{ slug: 'taunggyi', en: 'Taunggyi', mm: 'တောင်ကြီး',</span>
+<span class="c">//    stateSlug: 'shan-state', districtSlug: 'taunggyi' }]</span></code></pre>
+</section>
+
+<section>
+  <h2>API</h2>
+
+  <div class="api">
+    <h3><code>listStates(opts?)</code></h3>
+    <p>All 15 states and regions, each with coordinates and capital.</p>
+    <pre>(opts?: { lang?: <b>'en' | 'mm'</b> }) => StatePlace[]</pre>
+  </div>
+
+  <div class="api">
+    <h3><code>listDistricts(stateSlug, opts?)</code></h3>
+    <p>Districts of one state. Returns <code>[]</code> for an unknown slug.</p>
+    <pre>(stateSlug: string, opts?: { lang?: <b>'en' | 'mm'</b> }) => Place[]</pre>
+  </div>
+
+  <div class="api">
+    <h3><code>listTownships(stateSlug, districtSlug, opts?)</code></h3>
+    <p>Townships of one district. Returns <code>[]</code> for unknown slugs.</p>
+    <pre>(stateSlug: string, districtSlug: string, opts?: { lang?: <b>'en' | 'mm'</b> }) => Place[]</pre>
+  </div>
+
+  <div class="api">
+    <h3><code>searchTownships(query, opts?)</code></h3>
+    <p>Find townships by English name, Myanmar name, or slug. Results include the state and district slugs for drill-down.</p>
+    <pre>(query: string, opts?: { lang?: <b>'en' | 'mm'</b> }) => PlaceWithPath[]</pre>
+  </div>
+
+  <div class="api">
+    <h3><code>isValidTownship(nameOrSlug)</code></h3>
+    <p>Validate user input against the full township list — English, Myanmar, or slug.</p>
+    <pre>(nameOrSlug: string) => boolean</pre>
+  </div>
+
+  <div class="api">
+    <h3><code>initialize({ language })</code></h3>
+    <p>Set the package-wide default language for the class-based API.</p>
+    <pre>(config: { language: <b>'en' | 'mm'</b> }) => void</pre>
+  </div>
+
+  <div class="api">
+    <h3><code>getStates()</code></h3>
+    <p>Class-based API: <code>State</code> → <code>District</code> → <code>Township</code> instances with <code>getName()</code> honoring the language set via <code>initialize</code>.</p>
+    <pre>() => State[]</pre>
+  </div>
+
+  <div class="api">
+    <h3>Types</h3>
+    <p>Every returned place shares one shape; <code>name</code> follows the requested language.</p>
+    <pre>Place         { slug, name, en, mm }
+StatePlace    Place &amp; { lat, lng, capital }
+PlaceWithPath Place &amp; { stateSlug, districtSlug }</pre>
+  </div>
+</section>
+
+<footer>
+  <span>ISC License</span>
+  <span>Built by <a href="https://github.com/tunmin11">tunmin</a></span>
+  <a href="https://github.com/tunmin11/mmgeo">Source on GitHub</a>
+</footer>
+
+</main>
+<script>
+document.getElementById('copy-btn').addEventListener('click', async function () {
+  await navigator.clipboard.writeText('npm install @tm11/mmgeo');
+  this.textContent = 'Copied';
+  setTimeout(() => { this.textContent = 'Copy'; }, 1500);
+});
+</script>
+</body>
+</html>
