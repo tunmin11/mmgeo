@@ -3,7 +3,8 @@ name: Publish Package
 on:
   push:
     tags:
-      - 'v*'
+      - 'v*'       # v2.2.0     → @tm11/mmgeo
+      - 'map-v*'   # map-v0.1.0 → @tm11/mmgeo-map
 
 permissions:
   id-token: write
@@ -25,4 +26,10 @@ jobs:
         run: npm install -g npm@latest
       - run: npm ci
       # prepublishOnly runs typecheck, tests and build before publishing.
-      - run: npm publish
+      - if: startsWith(github.ref_name, 'v')
+        run: npm publish
+      # A sub-folder publish doesn't run the root's prepublishOnly, so check and build first.
+      - if: startsWith(github.ref_name, 'map-v')
+        run: |
+          npm run typecheck && npm test && npm run build
+          npm publish ./packages/mmgeo-map

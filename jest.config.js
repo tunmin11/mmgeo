@@ -1,8 +1,14 @@
 module.exports = {
-  testEnvironment: 'node',
-  moduleFileExtensions: ['ts', 'js', 'json'],
-  transform: {
-    '^.+\\.ts$': ['ts-jest', { tsconfig: 'tsconfig.json' }],
-  },
-  testMatch: ['**/test/**/*.test.ts'],
+  projects: [
+    {
+      displayName: 'mmgeo',
+      testEnvironment: 'node',
+      moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
+      transform: {
+        '^.+\\.tsx?$': ['ts-jest', { tsconfig: 'tsconfig.json' }],
+      },
+      testMatch: ['<rootDir>/src/test/**/*.test.ts?(x)'],
+    },
+    '<rootDir>/packages/mmgeo-map',
+  ],
 };

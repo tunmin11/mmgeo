@@ -13,7 +13,8 @@ coordinates, a React hook and zod schemas. Built for address forms, delivery app
 - Search ranks exact → prefix → substring and ignores "Township"/"မြို့နယ်" suffixes
 - Burmese input works in Unicode **and Zawgyi**
 - Down to ward / village tract level, loaded only when you import it
-- Township coordinates and a nearest-township lookup
+- Township coordinates, and **boundaries for every level** with exact point lookup (`placeAt`: GPS → ward or village tract)
+- A clickable map picker down to wards: [`@tm11/mmgeo-map`](packages/mmgeo-map#readme)
 - Headless React hook (`@tm11/mmgeo/react`) and zod schemas (`@tm11/mmgeo/zod`)
 - Slugs from 1.x still resolve
 - ESM + CommonJS, TypeScript types, zero runtime dependencies
@@ -112,6 +113,49 @@ The hook is headless — use it with any UI kit. Choosing a parent clears its ch
 choosing a township fills in its parents. Pass `skipDistrict: true` for a two-level
 form (state → township). `initial` takes a stored township code. Needs `react` 16.8+.
 
+## Boundaries and point lookup
+
+Outlines for every level, from states down to village tracts and wards (MIMU boundaries, CC BY-IGO).
+States and districts load with the import, townships load per state, and village tracts, towns and wards
+load per township, only when you need them.
+
+```ts
+import { placeAt } from '@tm11/mmgeo/boundaries';
+
+await placeAt(16.836, 96.1624);                      // No (11) Ward, Yankin — the deepest place there
+await placeAt(16.85, 96.17, { level: 'state' });     // Yangon Region
+```
+
+`placeAt` loads the outlines it needs, so it returns a promise. `@tm11/mmgeo/boundaries` also exports
+`townshipAt(lat, lng)`, `getPlace(code)`, `parentOf(code)`, `loadOutlines(code)`, `getOutline(code)` and
+`listOutlines(level, parent?)` (SVG path data) to draw your own maps.
+
+> **Coverage:** MIMU administrative boundaries v9.4. All 330 official townships, 13,501 village
+> tracts, 498 towns and 1,955 urban wards have outlines. The names and codes are newer (P-codes 9.7):
+> places without an outline (the Wa and Kokang townships MIMU doesn't map, and about half of the wards)
+> are still in the data, just not on the map.
+
+## Map picker
+
+<img align="right" width="260" src="https://raw.githubusercontent.com/tunmin11/mmgeo/master/packages/mmgeo-map/docs/drilldown.gif" alt="Clicking from Myanmar down to a village tract on the map">
+
+A clickable SVG map of Myanmar for React, from the country down to **village tracts and wards**, in its own
+package: [`@tm11/mmgeo-map`](packages/mmgeo-map#readme) ([live demo](https://tunmin11.github.io/mmgeo/#map)).
+No map library, tiles or API key; English and Burmese; keyboard accessible; works with the hook and zod
+schemas above.
+
+```bash
+npm install @tm11/mmgeo @tm11/mmgeo-map
+```
+
+```tsx
+import { MyanmarMap } from '@tm11/mmgeo-map';
+
+<MyanmarMap depth="township" value={code} onChange={place => setCode(place.code)} />
+```
+
+<br clear="right">
+
 ## zod
 
 ```ts
@@ -149,6 +193,7 @@ Unknown references return `[]` / `undefined`; nothing throws.
 **`@tm11/mmgeo/towns`** — `listTowns(township)`, `getTown(code)`, `searchTowns(query, opts?)` → `TownPlace`
 **`@tm11/mmgeo/react`** — `useAddressCascade({ lang?, skipDistrict?, initial?, onChange? })`
 **`@tm11/mmgeo/zod`** — `stateCode`, `districtCode`, `townshipCode`, `townshipName`, `mmAddressCodes`, `mmAddress`
+**`@tm11/mmgeo/boundaries`** — `placeAt`, `townshipAt`, `getPlace`, `parentOf`, `loadOutlines`, `isLoaded`, `getOutline`, `listOutlines`, `project`, `availableLevels`
 
 ### Types
 

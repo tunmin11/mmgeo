@@ -1,7 +1,7 @@
 {
   "name": "@tm11/mmgeo",
-  "version": "2.1.0",
-  "description": "Myanmar states, districts, townships, towns, wards and village tracts with MIMU P-codes, bilingual names, Zawgyi-safe search, React hook and zod schemas.",
+  "version": "2.2.0",
+  "description": "Myanmar states, districts, townships, towns, wards and village tracts with MIMU P-codes, bilingual names, Zawgyi-safe search, boundaries with point lookup, React hook and zod schemas.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -66,6 +66,16 @@
         "default": "./dist/zod.js"
       }
     },
+    "./boundaries": {
+      "import": {
+        "types": "./dist/boundaries.d.mts",
+        "default": "./dist/boundaries.mjs"
+      },
+      "require": {
+        "types": "./dist/boundaries.d.ts",
+        "default": "./dist/boundaries.js"
+      }
+    },
     "./data/db.json": "./data/db.json",
     "./package.json": "./package.json"
   },
@@ -76,11 +86,13 @@
     "DATA_LICENSE"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && cd packages/mmgeo-map && tsup",
     "build:data": "ts-node --transpile-only scripts/build-data.ts",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p packages/mmgeo-map",
     "test": "jest",
-    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+    "prepublishOnly": "npm run typecheck && npm test && npm run build",
+    "build:map": "ts-node --transpile-only scripts/build-map.ts",
+    "demo": "node packages/mmgeo-map/demo/serve.mjs"
   },
   "keywords": [
     "myanmar",
@@ -106,7 +118,11 @@
     "village-tracts",
     "towns",
     "react",
-    "zod"
+    "zod",
+    "boundaries",
+    "reverse-geocoding",
+    "point-in-polygon",
+    "map"
   ],
   "author": "tunmin tunmin2000@gmail.com",
   "license": "ISC",
@@ -123,9 +139,11 @@
     "@testing-library/react": "^16.3.3",
     "@types/jest": "^29.5.12",
     "@types/react": "^19.3.3",
+    "@types/react-dom": "^19.3.0",
     "exceljs": "^4.4.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "mapshaper": "^0.8.10",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "ts-jest": "^29.2.5",
@@ -153,6 +171,9 @@
       ],
       "zod": [
         "./dist/zod.d.ts"
+      ],
+      "boundaries": [
+        "./dist/boundaries.d.ts"
       ]
     }
   },

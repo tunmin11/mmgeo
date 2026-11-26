@@ -1,0 +1,13 @@
+{
+  // In this repo, @tm11/mmgeo resolves to the core package's source next door.
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "../..",
+    "baseUrl": ".",
+    "paths": {
+      "@tm11/mmgeo": ["../../src/index.ts"],
+      "@tm11/mmgeo/*": ["../../src/*"]
+    }
+  },
+  "include": ["src", "test", "demo"]
+}
