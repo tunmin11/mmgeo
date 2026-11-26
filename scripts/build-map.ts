@@ -3,6 +3,7 @@
  *
  *   npm run build:map -- --states <file> [--states-field <prop>]
  *                        [--townships <file> [--townships-field <prop>]]
+ *                        [--source <text>] [--out <file>]  (default data/map.json)
  *
  * Inputs are GeoJSON or zipped/unzipped shapefiles (anything mapshaper reads).
  * Each feature is matched to an mmgeo place through `--*-field`: a MIMU P-code
@@ -145,10 +146,10 @@ async function main() {
   } else {
     throw new Error('Pass --townships <file> (preferred) or --states <file>');
   }
-  const out = path.join(__dirname, '..', 'data', 'map.json');
+  const out = args.out ? path.resolve(args.out) : path.join(__dirname, '..', 'data', 'map.json');
   fs.writeFileSync(out, JSON.stringify(map) + '\n');
   const count = (o?: Record<string, unknown>) => (o ? Object.keys(o).length : 0);
-  console.log(`map: ${count(map.states)} states, ${count(map.districts)} districts, ${count(map.townships)} townships → data/map.json (${(fs.statSync(out).size / 1024).toFixed(0)} KB)`);
+  console.log(`map: ${count(map.states)} states, ${count(map.districts)} districts, ${count(map.townships)} townships → ${path.relative(process.cwd(), out)} (${(fs.statSync(out).size / 1024).toFixed(0)} KB)`);
   const missing = listStates().filter(s => !map.states[s.code]).map(s => s.en);
   if (missing.length) console.log(`  states with no outline: ${missing.join(', ')}`);
 }

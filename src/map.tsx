@@ -29,6 +29,17 @@ export interface MyanmarMapProps {
   depth?: MapLevel;
   /** Skip the district level and go state → township. Default `false`. */
   skipDistrict?: boolean;
+  /**
+   * Start inside one state or district (code) and never zoom out past it — for an app
+   * that only serves that area. The breadcrumb starts there too.
+   */
+  root?: string;
+  /**
+   * What to draw around the area you've zoomed into: `'faint'` shows the neighbours
+   * greyed out for orientation, `'hidden'` shows only the area itself.
+   * Default `'faint'`, or `'hidden'` when `root` is set.
+   */
+  context?: 'faint' | 'hidden';
   lang?: Lang;
   /** Map height. Default 480. */
   height?: number | string;
@@ -74,6 +85,9 @@ export function MyanmarMap(props: MyanmarMapProps) {
     lang = 'en', height = 480, showLabels = true, skipDistrict = false, onChange,
     className, style, 'aria-label': ariaLabel,
   } = props;
+  const rootPlace = props.root ? getByCode(props.root) : undefined;
+  const root = rootPlace && rootPlace.level !== 'township' ? rootPlace.code : null;
+  const contextMode = props.context ?? (root ? 'hidden' : 'faint');
   const colors = { ...DEFAULT_COLORS, ...props.colors };
   const deepest = availableLevels[availableLevels.length - 1] ?? 'state';
   const depth = props.depth && availableLevels.includes(props.depth) ? props.depth : deepest;
@@ -82,14 +96,20 @@ export function MyanmarMap(props: MyanmarMapProps) {
   const controlled = props.value !== undefined;
   const [inner, setInner] = useState<string | null>(props.defaultValue ?? null);
   const value = controlled ? props.value ?? null : inner;
-  const [focus, setFocus] = useState<string | null>(() => focusFor(value, levels));
+  /** Never focus above or outside `root`. */
+  const clamp = (f: string | null): string | null => {
+    if (!root || f === root) return f;
+    const fp = f ? getByCode(f) : undefined;
+    return fp?.level === 'district' && fp.stateCode === root ? f : root;
+  };
+  const [focus, setFocus] = useState<string | null>(() => clamp(focusFor(value, levels)));
   const [hover, setHover] = useState<string | null>(null);
   const [uid] = useState(() => String(++nextId));
 
   // Keep the view on the selection when it changes from outside (e.g. a dropdown).
   const lastValue = useRef(value);
   useEffect(() => {
-    if (value !== lastValue.current) { lastValue.current = value; setFocus(focusFor(value, levels)); }
+    if (value !== lastValue.current) { lastValue.current = value; setFocus(clamp(focusFor(value, levels))); }
   }, [value]);
 
   const focusPlace = focus ? getByCode(focus, { lang }) : undefined;
@@ -97,16 +117,20 @@ export function MyanmarMap(props: MyanmarMapProps) {
     ? levels.find(l => ORDER.indexOf(l) > ORDER.indexOf(focusPlace.level as MapLevel))
     : levels[0];
 
-  const children = useMemo<Outline[]>(
-    () => (childLevel ? listOutlines(childLevel, focus ?? undefined) : []),
-    [childLevel, focus]
-  );
+  // With no finer outlines (e.g. `root` set but only state outlines built),
+  // the focused area itself is the one shape to pick.
+  const children = useMemo<Outline[]>(() => {
+    const list = childLevel ? listOutlines(childLevel, focus ?? undefined) : [];
+    if (list.length || !focus) return list;
+    const own = getOutline(focus);
+    return own ? [own] : [];
+  }, [childLevel, focus]);
   // Neighbours drawn faintly for orientation.
   const context = useMemo<Outline[]>(() => {
-    if (!focusPlace) return [];
+    if (!focusPlace || contextMode === 'hidden') return [];
     if (focusPlace.level === 'state') return listOutlines('state').filter(o => o.code !== focusPlace.code);
     return listOutlines('district', focusPlace.stateCode).filter(o => o.code !== focusPlace.code);
-  }, [focusPlace?.code]);
+  }, [focusPlace?.code, contextMode]);
 
   // ---- Animated viewBox ----
   const target = useMemo<Box>(() => {
@@ -160,22 +184,41 @@ export function MyanmarMap(props: MyanmarMapProps) {
     [controlled, lang, onChange]
   );
 
+  // Keyboard focus survives zooming: the clicked shape unmounts when we zoom in,
+  // so focus moves to the first new shape, and back to where we were on the way out.
+  const shapesRef = useRef<SVGGElement>(null);
+  const [focusTarget, setFocusTarget] = useState<string | null>(null);
+  useEffect(() => {
+    if (!focusTarget) return;
+    const g = shapesRef.current;
+    const el = (focusTarget === '*' ? g?.querySelector('path') : g?.querySelector(`path[data-code="${focusTarget}"]`)) as SVGPathElement | null;
+    el?.focus();
+    setFocusTarget(null);
+  }, [children, focusTarget]);
+
+  const hasFocusInside = () =>
+    typeof document !== 'undefined' && !!shapesRef.current?.contains(document.activeElement);
+
   const pick = (o: Outline) => {
     select(o.code);
-    const deeper = levels.some(l => ORDER.indexOf(l) > ORDER.indexOf(o.level));
-    if (deeper) setFocus(o.code);
+    const deeper = o.code !== focus && levels.some(l => ORDER.indexOf(l) > ORDER.indexOf(o.level));
+    if (deeper) {
+      if (hasFocusInside()) setFocusTarget('*');
+      setFocus(o.code);
+    }
     setHover(null);
   };
 
   const zoomOut = () => {
-    if (!focusPlace) return;
+    if (!focusPlace || focusPlace.code === root) return;
     const up = focusPlace.level === 'district' ? focusPlace.stateCode : null;
-    setFocus(up && levels.includes('district') ? up : null);
+    if (hasFocusInside()) setFocusTarget(focusPlace.code);
+    setFocus(clamp(up && levels.includes('district') ? up : null));
   };
 
   const onKey = (e: KeyboardEvent, o: Outline) => {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(o); }
-    else if (e.key === 'Escape') { e.preventDefault(); zoomOut(); }
+    else if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); zoomOut(); }
   };
 
   const name = (code: string) => getByCode(code, { lang })?.name ?? code;
@@ -184,6 +227,7 @@ export function MyanmarMap(props: MyanmarMapProps) {
     if (focusPlace.level === 'district') crumbs.push({ code: focusPlace.stateCode, label: name(focusPlace.stateCode) });
     crumbs.push({ code: focusPlace.code, label: focusPlace.name });
   }
+  if (root) crumbs.splice(0, crumbs.findIndex(c => c.code === root));
   const hovered = hover ? getByCode(hover) : undefined;
   // Map units per screen pixel (viewBox is fitted with "meet").
   const upp = px[0] && px[1] ? Math.max(box[2] / px[0], box[3] / px[1]) : box[2] / 400;
@@ -219,18 +263,19 @@ export function MyanmarMap(props: MyanmarMapProps) {
         role="group"
         aria-label={ariaLabel ?? (lang === 'mm' ? 'မြန်မာနိုင်ငံ မြေပုံ' : 'Map of Myanmar')}
         style={{ display: 'block', width: '100%', height, touchAction: 'manipulation' }}
-        onKeyDown={e => { if (e.key === 'Escape') zoomOut(); }}
+        onKeyDown={e => { if (e.key === 'Escape') { e.preventDefault(); zoomOut(); } }}
       >
         <g aria-hidden="true" fill={colors.context} stroke={colors.stroke} strokeWidth={strokeW} strokeLinejoin="round">
           {context.map(o => <path key={o.code} d={o.d} fillRule="evenodd" />)}
         </g>
-        <g stroke={colors.stroke} strokeWidth={strokeW} strokeLinejoin="round">
+        <g ref={shapesRef} stroke={colors.stroke} strokeWidth={strokeW} strokeLinejoin="round">
           {children.map(o => {
             const sel = isSelected(o.code);
             const hot = hover === o.code;
             return (
               <path
                 key={o.code}
+                data-code={o.code}
                 d={o.d}
                 fillRule="evenodd"
                 role="button"

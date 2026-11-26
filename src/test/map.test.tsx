@@ -82,3 +82,27 @@ test('a value deeper than the outlines still highlights its ancestor on screen',
     expect(shape('Kachin State').getAttribute('aria-pressed')).toBe('false');
   }
 });
+
+test('root starts inside one area and the breadcrumb cannot leave it', () => {
+  const onChange = jest.fn();
+  render(<MyanmarMap root="MMR222" onChange={onChange} />);
+  expect(screen.queryByRole('button', { name: 'Myanmar' })).toBeNull();
+  expect(screen.queryByRole('button', { name: 'Kachin State' })).toBeNull();
+  const shapes = screen.getAllByRole('button');
+  expect(shapes.length).toBeGreaterThan(0);
+  fireEvent.keyDown(shapes[0], { key: 'Escape' });
+  expect(screen.queryByRole('button', { name: 'Kachin State' })).toBeNull();
+  if (!availableLevels.includes('district')) {
+    // Only state outlines: Shan itself is the one shape to pick.
+    fireEvent.click(shape('Shan State'));
+    expect(onChange).toHaveBeenCalledWith(expect.objectContaining({ code: 'MMR222' }));
+  }
+});
+
+test('context="hidden" draws no neighbours, "faint" does once zoomed in', () => {
+  const { container, unmount } = render(<MyanmarMap root="MMR222" context="faint" />);
+  expect(container.querySelectorAll('g[aria-hidden="true"] path').length).toBeGreaterThan(0);
+  unmount();
+  const hidden = render(<MyanmarMap root="MMR222" />); // root defaults to hidden
+  expect(hidden.container.querySelectorAll('g[aria-hidden="true"] path').length).toBe(0);
+});

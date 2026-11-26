@@ -128,7 +128,9 @@ import { MyanmarMap } from '@tm11/mmgeo/map';
 A clickable SVG map of Myanmar with no map library or tiles behind it. Hover or focus shows
 the English and Burmese name; click, Enter or Space picks. Every shape is a real button
 for keyboards and screen readers, and a breadcrumb leads back out.
-Combine it with `useAddressCascade` or a dropdown: a controlled `value` keeps the map
+`depth` sets how far users can zoom in (`'state'`, `'district'`, `'township'`), `skipDistrict` goes state → township,
+`root="MMR222"` keeps the map inside one state or district, and `context="hidden"` hides the neighbouring
+areas once zoomed in. Combine it with `useAddressCascade` or a dropdown: a controlled `value` keeps the map
 in step with the rest of the form. Needs `react` 16.8+.
 
 > **Coverage today:** state and region outlines only (Natural Earth, public domain;
@@ -183,7 +185,7 @@ Unknown references return `[]` / `undefined`; nothing throws.
 **`@tm11/mmgeo/towns`** — `listTowns(township)`, `getTown(code)`, `searchTowns(query, opts?)` → `TownPlace`
 **`@tm11/mmgeo/react`** — `useAddressCascade({ lang?, skipDistrict?, initial?, onChange? })`
 **`@tm11/mmgeo/zod`** — `stateCode`, `districtCode`, `townshipCode`, `townshipName`, `mmAddressCodes`, `mmAddress`
-**`@tm11/mmgeo/map`** — `<MyanmarMap value onChange lang depth skipDistrict height showLabels colors />`
+**`@tm11/mmgeo/map`** — `<MyanmarMap value onChange lang depth skipDistrict root context height showLabels colors />`
 **`@tm11/mmgeo/boundaries`** — `placeAt`, `townshipAt`, `getOutline`, `listOutlines`, `project`, `availableLevels`
 
 ### Types

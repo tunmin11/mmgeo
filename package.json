@@ -102,7 +102,8 @@
     "test": "jest",
     "prepublishOnly": "npm run typecheck && npm test && npm run build",
     "build:map": "ts-node --transpile-only scripts/build-map.ts",
-    "demo": "esbuild demo/main.tsx --bundle --jsx=automatic --outdir=demo/out --servedir=demo --watch=forever --define:process.env.NODE_ENV='\"development\"'"
+    "demo": "node demo/serve.mjs",
+    "demo:real": "node demo/serve.mjs --real"
   },
   "keywords": [
     "myanmar",
