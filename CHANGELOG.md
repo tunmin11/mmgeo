@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.0
+## 2.0.0 — 2026-11-26
 
 ### Data
 - Replaced the hand-maintained data with **MIMU P-codes Release 9.7** (Jan 2026):
@@ -30,3 +30,24 @@
   1.x slugs still resolve as input.
 - States are ordered by code.
 - `initialize` / `getStates` are deprecated (still work).
+
+## 1.1.0 — 2026-07-11
+
+- New functional API: `listStates`, `listDistricts`, `listTownships`, `searchTownships`,
+  `isValidTownship`, with a per-call `{ lang }` option.
+- Stable slugs for every state, district and township.
+- Removed an unused runtime dependency; the package now has none.
+- The class API (`initialize`, `getStates`) keeps working.
+
+## 1.0.3 / 1.0.4 — 2025-08-28
+
+### Breaking
+- Renamed the English name property from `eng` to `en` on states, districts and townships.
+
+### Changed
+- Added a `Language` type for stricter typing.
+- Publishing to npm now runs from GitHub Actions on version tags.
+
+## 1.0.0 — 2024-09-05
+
+- First release: Myanmar states, districts and townships with English and Burmese names.

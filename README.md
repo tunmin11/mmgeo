@@ -120,16 +120,6 @@ interface TownshipPlace extends Place {
 
 To find what changed for a value you stored, look it up: `findTownships(oldSlug)`.
 
-## Updating the data
-
-When MIMU publishes a new release, download the P-code workbook from
-[themimu.info/place-codes](https://themimu.info/place-codes) and run:
-
-```bash
-npm run build:data -- path/to/Myanmar_PCodes_Release_X.Y_*.xlsm
-npm test   # data-quality checks: unique codes, hierarchy, slugs, Unicode
-```
-
 ## Data source & license
 
 - **Code:** ISC — see [LICENSE](LICENSE).
@@ -139,7 +129,9 @@ npm test   # data-quality checks: unique codes, hierarchy, slugs, Unicode
   for commercial use. See [DATA_LICENSE](DATA_LICENSE) before using it in your product.
 - **Zawgyi conversion:** rules from [Rabbit](https://github.com/Rabbit-Converter/Rabbit-Node) (MIT).
 
-## Contributing
+## Issues
 
-Pull requests are welcome. Data fixes should go through `scripts/build-data.ts`
-(MIMU source or the `V1_OVERRIDES` map) rather than hand-editing `data/db.json`.
+Found a wrong name, code or missing place? Open an issue at
+[github.com/tunmin11/mmgeo/issues](https://github.com/tunmin11/mmgeo/issues).
+
+Release notes: [CHANGELOG](https://github.com/tunmin11/mmgeo/blob/master/CHANGELOG.md).
