@@ -13,7 +13,8 @@ coordinates, a React hook and zod schemas. Built for address forms, delivery app
 - Search ranks exact → prefix → substring and ignores "Township"/"မြို့နယ်" suffixes
 - Burmese input works in Unicode **and Zawgyi**
 - Down to ward / village tract level, loaded only when you import it
-- Township coordinates and a nearest-township lookup
+- Township coordinates, and **boundaries for every level** with exact point lookup (`placeAt`: GPS → ward or village tract)
+- A clickable map picker down to wards: [`@tm11/mmgeo-map`](packages/mmgeo-map#readme)
 - Headless React hook (`@tm11/mmgeo/react`) and zod schemas (`@tm11/mmgeo/zod`)
 - Slugs from 1.x still resolve
 - ESM + CommonJS, TypeScript types, zero runtime dependencies
@@ -136,12 +137,24 @@ await placeAt(16.85, 96.17, { level: 'state' });     // Yangon Region
 
 ## Map picker
 
-A clickable SVG map of Myanmar for React, down to village tracts and wards, lives in its own package:
-[`@tm11/mmgeo-map`](packages/mmgeo-map#readme).
+<img align="right" width="260" src="https://raw.githubusercontent.com/tunmin11/mmgeo/master/packages/mmgeo-map/docs/drilldown.gif" alt="Clicking from Myanmar down to a village tract on the map">
+
+A clickable SVG map of Myanmar for React, from the country down to **village tracts and wards**, in its own
+package: [`@tm11/mmgeo-map`](packages/mmgeo-map#readme) ([live demo](https://tunmin11.github.io/mmgeo/#map)).
+No map library, tiles or API key; English and Burmese; keyboard accessible; works with the hook and zod
+schemas above.
 
 ```bash
 npm install @tm11/mmgeo @tm11/mmgeo-map
 ```
+
+```tsx
+import { MyanmarMap } from '@tm11/mmgeo-map';
+
+<MyanmarMap depth="township" value={code} onChange={place => setCode(place.code)} />
+```
+
+<br clear="right">
 
 ## zod
 

@@ -9,6 +9,18 @@
 <meta property="og:description" content="15 states &amp; regions · 84 districts &amp; zones · 356 townships. MIMU P-codes, bilingual EN/MM names, Zawgyi-safe search.">
 <meta property="og:url" content="https://tunmin11.github.io/mmgeo">
 <meta property="og:type" content="website">
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client?external=react",
+    "@tm11/mmgeo/boundaries": "https://cdn.jsdelivr.net/npm/@tm11/mmgeo@2.2/dist/boundaries.mjs",
+    "@tm11/mmgeo": "https://cdn.jsdelivr.net/npm/@tm11/mmgeo@2.2/dist/index.mjs",
+    "@tm11/mmgeo-map": "https://cdn.jsdelivr.net/npm/@tm11/mmgeo-map@0.1/dist/index.mjs"
+  }
+}
+</script>
 <style>
 :root {
   --paper: #fbfaf7;
@@ -127,6 +139,16 @@ pre.block .s { color: var(--code-mm); }
 .demo output { display: block; background: var(--code-bg); color: var(--code-ink); border-radius: 8px; padding: 12px 14px; font-size: 0.8rem; white-space: pre-wrap; margin-top: 6px; min-height: 3.4em; }
 .demo .note { color: var(--muted); font-size: 0.85rem; margin-top: 10px; }
 
+/* map picker */
+.map-demo { border: 1px solid var(--line); border-radius: 12px; padding: 16px; background: #fff; color: #1f2937; }
+.map-demo .row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.map-demo button { font: inherit; font-size: 0.85rem; cursor: pointer; background: #fff; border: 1px solid #d1d5db; border-radius: 8px; color: #1f2937; padding: 8px 14px; }
+.map-demo button[aria-pressed="true"] { background: #1f2937; color: #fff; border-color: #1f2937; }
+.map-demo output { display: block; background: var(--code-bg); color: var(--code-ink); border-radius: 8px; padding: 12px 14px; font-size: 0.8rem; white-space: pre-wrap; margin-top: 12px; }
+.map-demo .note { color: #6b7280; font-size: 0.85rem; margin-top: 10px; }
+.features { color: var(--muted); padding-left: 1.2em; margin: 0 0 24px; }
+.features li { margin: 4px 0; }
+
 footer { margin-top: 96px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; display: flex; gap: 20px; flex-wrap: wrap; }
 </style>
 </head>
@@ -145,6 +167,7 @@ footer { margin-top: 96px; padding-top: 24px; border-top: 1px solid var(--line);
   <nav class="links">
     <a href="https://www.npmjs.com/package/@tm11/mmgeo">npm</a>
     <a href="https://github.com/tunmin11/mmgeo">GitHub</a>
+    <a href="#map">Map picker</a>
   </nav>
 
   <div class="cascade" aria-label="Example record: state, district, township">
@@ -175,6 +198,7 @@ footer { margin-top: 96px; padding-top: 24px; border-top: 1px solid var(--line);
     <div><strong>3,481</strong><span>wards</span></div>
     <div><strong>13,771</strong><span>village tracts</span></div>
   </div>
+  <p style="color:var(--muted);margin-top:20px">Boundaries for every level, with exact point lookup: <code>placeAt(lat, lng)</code> returns the ward or village tract under a GPS fix.</p>
 </section>
 
 <section aria-labelledby="try">
@@ -201,6 +225,38 @@ footer { margin-top: 96px; padding-top: 24px; border-top: 1px solid var(--line);
     <output id="out" for="s d t w">Pick a place…</output>
     <p class="note" id="note">Loading the package from esm.sh…</p>
   </div>
+</section>
+
+<section aria-labelledby="map">
+  <h2 id="map">Map picker</h2>
+  <p class="lede" style="margin-bottom:16px"><a href="https://www.npmjs.com/package/@tm11/mmgeo-map"><code>@tm11/mmgeo-map</code></a> is a clickable map for React. Click a state, district or township, then down to a village tract or ward. Every click is a valid answer.</p>
+  <ul class="features">
+    <li>Real MIMU boundaries for every level, down to 13,501 village tracts and 1,955 wards</li>
+    <li>Plain SVG: no map library, tiles or API key. The component is about 8 KB, and outlines load only as you zoom</li>
+    <li>English and Burmese, with keyboard and screen-reader support. Works in Next.js App Router</li>
+  </ul>
+  <div class="map-demo">
+    <div class="row" role="group" aria-label="Map options">
+      <button type="button" data-depth="ward" aria-pressed="true">Down to wards</button>
+      <button type="button" data-depth="township" aria-pressed="false">Stop at townships</button>
+      <button type="button" id="map-lang" aria-pressed="false">မြန်မာ</button>
+    </div>
+    <div id="map-root"></div>
+    <output id="map-out">onChange → click a place</output>
+    <p class="note" id="map-note">Loading the map…</p>
+  </div>
+  <div class="install" style="margin-top:20px">
+    <pre>npm install @tm11/mmgeo @tm11/mmgeo-map</pre>
+  </div>
+<pre class="block"><code><span class="k">import</span> { MyanmarMap } <span class="k">from</span> <span class="s">'@tm11/mmgeo-map'</span>;
+
+&lt;MyanmarMap
+  depth=<span class="s">"township"</span>          <span class="c">// or 'state' | 'district' | 'village-tract' | 'ward'</span>
+  value={code}
+  onChange={place =&gt; setCode(place.code)}   <span class="c">// { level, code, name, en, mm, stateCode, … }</span>
+  lang=<span class="s">"mm"</span>
+/&gt;</code></pre>
+  <p class="note" style="color:var(--muted);font-size:0.9rem;margin-top:12px">Recipes (sync with dropdowns, "use my location", one city only, dark mode) and every prop: <a href="https://github.com/tunmin11/mmgeo/tree/master/packages/mmgeo-map#readme">README</a>. Boundaries: MIMU (themimu.info), CC BY-IGO.</p>
 </section>
 
 <section>
@@ -290,6 +346,44 @@ TownshipPlace  Place &amp; { level: 'township', type, official,
 </footer>
 
 </main>
+<script type="module">
+// Map picker: React + @tm11/mmgeo-map straight from the CDN (see the import map above).
+const mapNote = document.getElementById('map-note');
+try {
+  const [{ createElement: h }, { createRoot }, { MyanmarMap }] = await Promise.all([
+    import('react'), import('react-dom/client'), import('@tm11/mmgeo-map'),
+  ]);
+  const out = document.getElementById('map-out');
+  const root = createRoot(document.getElementById('map-root'));
+  const state = { depth: 'ward', lang: 'en', value: null };
+  const show = p => {
+    state.value = p.code;
+    out.textContent = `onChange → { level: '${p.level}', code: '${p.code}', name: '${p.name}' }`;
+    render();
+  };
+  const render = () => root.render(h(MyanmarMap, {
+    key: state.depth, depth: state.depth, lang: state.lang, value: state.value, onChange: show, height: 520,
+  }));
+  document.querySelectorAll('[data-depth]').forEach(b => b.addEventListener('click', () => {
+    state.depth = b.dataset.depth; state.value = null;
+    document.querySelectorAll('[data-depth]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    out.textContent = 'onChange → click a place';
+    render();
+  }));
+  const langBtn = document.getElementById('map-lang');
+  langBtn.addEventListener('click', () => {
+    state.lang = state.lang === 'en' ? 'mm' : 'en';
+    langBtn.setAttribute('aria-pressed', String(state.lang === 'mm'));
+    langBtn.textContent = state.lang === 'mm' ? 'English' : 'မြန်မာ';
+    render();
+  });
+  render();
+  mapNote.textContent = 'Hover for names. Click to zoom in; the breadcrumb or Escape goes back.';
+} catch (e) {
+  mapNote.textContent = 'Could not load the map from the CDN. Install it and try it locally.';
+  throw e;
+}
+</script>
 <script type="module">
 const $ = id => document.getElementById(id);
 const note = $('note');

@@ -1,7 +1,7 @@
 {
   "name": "@tm11/mmgeo",
   "version": "2.2.0",
-  "description": "Myanmar states, districts, townships, towns, wards and village tracts with MIMU P-codes, bilingual names, Zawgyi-safe search, React hook and zod schemas.",
+  "description": "Myanmar states, districts, townships, towns, wards and village tracts with MIMU P-codes, bilingual names, Zawgyi-safe search, boundaries with point lookup, React hook and zod schemas.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -118,7 +118,11 @@
     "village-tracts",
     "towns",
     "react",
-    "zod"
+    "zod",
+    "boundaries",
+    "reverse-geocoding",
+    "point-in-polygon",
+    "map"
   ],
   "author": "tunmin tunmin2000@gmail.com",
   "license": "ISC",

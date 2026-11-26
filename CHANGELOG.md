@@ -11,7 +11,8 @@
 - `npm run build:map` builds the outlines from GeoJSON or shapefiles with mapshaper.
 - New companion package `@tm11/mmgeo-map` 0.1.0 (`packages/mmgeo-map`): `<MyanmarMap>`, a clickable,
   keyboard-accessible SVG map picker that drills down country → state → district → township →
-  village tract / town → ward. Released separately (tags `map-v*`).
+  village tract / town → ward. Ships `"use client"` for Next.js App Router. Released separately (tags `map-v*`).
+- Docs site: live map picker demo at https://tunmin11.github.io/mmgeo/#map.
 
 ## 2.1.0 — 2026-11-26
 

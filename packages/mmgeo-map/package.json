@@ -45,7 +45,11 @@
     "wards",
     "mimu",
     "pcode",
-    "mmgeo"
+    "mmgeo",
+    "burmese",
+    "location-picker",
+    "region-picker",
+    "nextjs"
   ],
   "author": "tunmin tunmin2000@gmail.com",
   "license": "ISC",
@@ -57,5 +61,5 @@
   "bugs": {
     "url": "https://github.com/tunmin11/mmgeo/issues"
   },
-  "homepage": "https://github.com/tunmin11/mmgeo/tree/master/packages/mmgeo-map#readme"
+  "homepage": "https://tunmin11.github.io/mmgeo/#map"
 }

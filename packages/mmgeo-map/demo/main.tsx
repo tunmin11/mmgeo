@@ -1,6 +1,6 @@
 // Playground: `npm run demo` → http://localhost:8000
 import { useState } from 'react';
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { MyanmarMap, type MyanmarMapProps } from '../src';
 import { useAddressCascade } from '@tm11/mmgeo/react';
@@ -147,4 +147,17 @@ function App() {
   );
 }
 
-createRoot(document.getElementById('root')!).render(<App />);
+/** `?hero`: one large map and nothing else, for README screenshots. */
+function Hero(): ReactElement {
+  const [place, setPlace] = useState<MapPlace | null>(null);
+  return (
+    <main className="card" style={{ maxWidth: 640, margin: '24px auto' }}>
+      <MyanmarMap height={620} onChange={setPlace} />
+      <pre style={{ margin: '8px 0 0', font: '13px ui-monospace, monospace', color: '#374151' }}>
+        {place ? `onChange → { level: '${place.level}', code: '${place.code}', name: '${place.name}' }` : 'onChange → …'}
+      </pre>
+    </main>
+  );
+}
+
+createRoot(document.getElementById('root')!).render(new URLSearchParams(location.search).has('hero') ? <Hero /> : <App />);
