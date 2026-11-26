@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.1.0
+## 2.1.0 — 2026-11-26
 
 ### Added
 - **Wards, village tracts and towns** from the same MIMU 9.7 release, as separate imports so
