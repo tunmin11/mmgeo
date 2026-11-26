@@ -31,5 +31,8 @@ jobs:
       # A sub-folder publish doesn't run the root's prepublishOnly, so check and build first.
       - if: startsWith(github.ref_name, 'map-v')
         run: |
+          v=$(node -p "require('./packages/mmgeo-map/package.json').version")
+          # 0.1.0 was published by hand before trusted publishing existed for the package.
+          if npm view "@tm11/mmgeo-map@$v" version > /dev/null 2>&1; then echo "@tm11/mmgeo-map@$v is already on npm"; exit 0; fi
           npm run typecheck && npm test && npm run build
           npm publish ./packages/mmgeo-map
