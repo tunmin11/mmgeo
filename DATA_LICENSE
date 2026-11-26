@@ -31,13 +31,24 @@ are included; names are Unicode-normalized (NFC) with zero-width characters
 removed; slugs and 1.x slug aliases are added; state coordinates and
 capitals come from mmgeo 1.x, not MIMU.
 
-MAP OUTLINES — data/map.json
+MAP OUTLINES — data/map.json and data/map/*.json
 
-The outlines used by `@tm11/mmgeo/map` and `@tm11/mmgeo/boundaries` are
-currently built from Natural Earth 1:10m Admin-1 (states and provinces),
-https://www.naturalearthdata.com, which is in the public domain. Natural
-Earth folds Nay Pyi Taw into Mandalay Region, so it has no outline of its own.
-They are simplified and projected by scripts/build-map.ts.
+The outlines used by `@tm11/mmgeo/boundaries` and `@tm11/mmgeo-map` are derived from:
+
+  Myanmar Information Management Unit (MIMU)
+  Myanmar Administrative Boundaries (admin levels 0-5), based on MIMU P-codes v9.4,
+  published as the Myanmar Common Operational Dataset (COD-AB) by OCHA on HDX:
+  https://data.humdata.org/dataset/cod-ab-mmr
+  License: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO 3.0)
+
+Credit MIMU when you show these outlines, for example:
+"Boundaries: MIMU (themimu.info), CC BY-IGO". The boundaries and names shown do not imply
+official endorsement or acceptance by the United Nations.
+
+Changes made by this package: matched to the P-codes 9.7 places in data/db.json (outlines with
+no matching place are dropped); states and districts are dissolved from township outlines;
+everything is simplified (states 1.2 km, districts 800 m, townships 300 m, village tracts and
+towns 40 m, wards 10 m), projected and quantized by scripts/build-map.ts.
 
 The code in this package (everything outside data/) is licensed under ISC,
 see LICENSE.

@@ -1,8 +1,10 @@
 /**
- * Build data/map.json (outlines for @tm11/mmgeo/map and /boundaries).
+ * Build data/map.json (outlines for @tm11/mmgeo/boundaries and @tm11/mmgeo-map).
  *
  *   npm run build:map -- --states <file> [--states-field <prop>]
  *                        [--townships <file> [--townships-field <prop>]]
+ *                        [--villages <file> [--villages-field <prop>]]   village tracts + towns (MIMU admin4)
+ *                        [--wards <file> [--wards-field <prop>]]         urban wards (MIMU admin5)
  *                        [--source <text>] [--out <file>]  (default data/map.json)
  *
  * Inputs are GeoJSON or zipped/unzipped shapefiles (anything mapshaper reads).
@@ -12,18 +14,25 @@
  * When townships are given, districts and states are DISSOLVED from them, so
  * borders line up exactly at every zoom level; `--states` is then ignored.
  *
+ * data/map.json holds states and districts. Everything finer is split into files that
+ * /boundaries loads only when someone zooms in: data/map/<state>.json (its townships)
+ * and data/map/<township>.json (its village tracts, towns and wards).
+ *
  * All levels share one projection (equirectangular, scaled at 21°N), stored in
- * integer units: the country is 10,000 units wide.
+ * integer units: the country is 100,000 units wide (about 10 m per unit).
  */
 import * as fs from 'fs';
 import * as path from 'path';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const mapshaper = require('mapshaper');
 import { getByCode, listStates, findTownships } from '../src/api';
+import { getVillageTract } from '../src/village-tracts';
+import { getTown } from '../src/towns';
+import { getWard } from '../src/wards';
 import { nameKey } from '../src/normalize';
-import type { MapData, MapShape, MapLevel } from '../src/map-types';
+import type { PartFile, MapData, MapShape, MapLevel } from '../src/map-types';
 
-export const PROJECTION = { lon0: 92, lat0: 28.6, k: Math.cos((21 * Math.PI) / 180), scale: 10000 / (9.4 * Math.cos((21 * Math.PI) / 180)) };
+export const PROJECTION = { lon0: 92, lat0: 28.6, k: Math.cos((21 * Math.PI) / 180), scale: 100000 / (9.4 * Math.cos((21 * Math.PI) / 180)) };
 const px = (lon: number) => Math.round((lon - PROJECTION.lon0) * PROJECTION.k * PROJECTION.scale);
 const py = (lat: number) => Math.round((PROJECTION.lat0 - lat) * PROJECTION.scale);
 
@@ -132,12 +141,12 @@ async function main() {
     projection: PROJECTION,
     states: {},
   };
+  const files: Record<string, PartFile> = {};
   if (args.townships) {
     const t = annotate(await readAny(args.townships), 'township', args['townships-field'] ?? 'TS_PCODE');
-    // Simplify once at township detail, then dissolve up, so shared borders stay identical.
-    map.townships = await level(t, null, 150);
-    map.districts = await level(t, 'districtCode', 400);
+    map.districts = await level(t, 'districtCode', 800);
     map.states = await level(t, 'stateCode', 1200);
+    for (const [code, shape] of Object.entries(await level(t, null, 300))) (files[getByCode(code)!.stateCode] ??= {})[code] = shape;
     map.meta.sources.push({ levels: ['state', 'district', 'township'] as MapLevel[], source: args.source ?? path.basename(args.townships) });
   } else if (args.states) {
     const s = annotate(await readAny(args.states), 'state', args['states-field'] ?? 'ST_PCODE');
@@ -146,12 +155,60 @@ async function main() {
   } else {
     throw new Error('Pass --townships <file> (preferred) or --states <file>');
   }
+  if (args.villages) {
+    await addSub(files, args.villages, args['villages-field'] ?? 'adm4_pcode', 40, code => {
+      const v = getVillageTract(code);
+      if (v) return { en: v.en, mm: v.mm, k: 'v' };
+      const t = getTown(code);
+      return t ? { en: t.en, mm: t.mm, k: 't' } : undefined;
+    });
+  }
+  if (args.wards) {
+    await addSub(files, args.wards, args['wards-field'] ?? 'adm5_pcode', 10, code => {
+      const w = getWard(code);
+      return w ? { en: w.en, mm: w.mm, k: 'w' } : undefined;
+    });
+  }
+  if (args.villages || args.wards) map.meta.sources.push({ levels: ['village-tract', 'town', 'ward'], source: args.source ?? path.basename(args.villages ?? args.wards) });
+
   const out = args.out ? path.resolve(args.out) : path.join(__dirname, '..', 'data', 'map.json');
+  const dir = path.join(path.dirname(out), 'map');
+  fs.rmSync(dir, { recursive: true, force: true });
+  if (Object.keys(files).length) fs.mkdirSync(dir, { recursive: true });
+  let bytes = 0;
+  for (const [code, part] of Object.entries(files)) {
+    const f = path.join(dir, `${code}.json`);
+    fs.writeFileSync(f, JSON.stringify(part) + '\n');
+    bytes += fs.statSync(f).size;
+  }
+  map.meta.files = Object.keys(files).sort();
   fs.writeFileSync(out, JSON.stringify(map) + '\n');
-  const count = (o?: Record<string, unknown>) => (o ? Object.keys(o).length : 0);
-  console.log(`map: ${count(map.states)} states, ${count(map.districts)} districts, ${count(map.townships)} townships → ${path.relative(process.cwd(), out)} (${(fs.statSync(out).size / 1024).toFixed(0)} KB)`);
+  const count = (o: Record<string, unknown>): number => Object.keys(o).length;
+  const parts = Object.values(files).reduce((a, p) => a + count(p), 0);
+  console.log(`map: ${count(map.states)} states, ${count(map.districts ?? {})} districts → ${path.relative(process.cwd(), out)} (${(fs.statSync(out).size / 1024).toFixed(0)} KB)`);
+  console.log(`     ${parts} townships/village tracts/towns/wards in ${count(files)} files → ${path.relative(process.cwd(), dir)}/ (${(bytes / 1024 / 1024).toFixed(1)} MB, loaded on demand)`);
   const missing = listStates().filter(s => !map.states[s.code]).map(s => s.en);
   if (missing.length) console.log(`  states with no outline: ${missing.join(', ')}`);
+}
+
+/** Village tracts and towns, or wards → the file of their township. */
+async function addSub(
+  files: Record<string, PartFile>, file: string, field: string, intervalM: number,
+  lookup: (code: string) => { en: string; mm: string; k: 'v' | 't' | 'w' } | undefined
+): Promise<void> {
+  const fc = await readAny(file);
+  let missed = 0;
+  fc.features = fc.features.filter(f => {
+    const code = String(f.properties[field] ?? '').trim();
+    if (!f.geometry || !lookup(code)) { missed++; return false; }
+    f.properties = { code };
+    return true;
+  });
+  if (missed) console.log(`  ${path.basename(file)}: ${missed} features not matched to mmgeo (blank, retired or reserved codes)`);
+  for (const [code, shape] of Object.entries(await level(fc, null, intervalM))) {
+    const p = lookup(code)!;
+    (files[code.slice(0, 9)] ??= {})[code] = { ...shape, k: p.k, n: [p.en, p.mm] };
+  }
 }
 
 main().catch(e => { console.error(e instanceof Error ? e.message : e); process.exit(1); });

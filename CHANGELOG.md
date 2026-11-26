@@ -1,13 +1,17 @@
 # Changelog
 
-## Unreleased
+## 2.2.0 — 2026-11-26
 
 ### Added
-- `@tm11/mmgeo/map` — `<MyanmarMap>`, a clickable, keyboard-accessible SVG map picker
-  (React 16.8+, optional peer dependency). State level for now.
 - `@tm11/mmgeo/boundaries` — outlines as SVG paths and exact point-in-shape lookup
-  (`placeAt`, `townshipAt`, `getOutline`, `listOutlines`).
+  (`placeAt`, `townshipAt`, `getPlace`, `parentOf`, `loadOutlines`, `getOutline`, `listOutlines`)
+  for every level down to village tracts, towns and wards. Townships and finer outlines load on
+  demand, one chunk per state or township.
+- Outlines from MIMU administrative boundaries v9.4 (CC BY-IGO).
 - `npm run build:map` builds the outlines from GeoJSON or shapefiles with mapshaper.
+- New companion package `@tm11/mmgeo-map` 0.1.0 (`packages/mmgeo-map`): `<MyanmarMap>`, a clickable,
+  keyboard-accessible SVG map picker that drills down country → state → district → township →
+  village tract / town → ward. Released separately (tags `map-v*`).
 
 ## 2.1.0 — 2026-11-26
 

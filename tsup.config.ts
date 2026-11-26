@@ -1,4 +1,19 @@
+import { readFile } from 'node:fs/promises';
 import { defineConfig } from 'tsup';
+import type { Plugin } from 'esbuild';
+
+// Outline parts (data/map/*.json) are loaded on demand, one chunk each. Emit each as
+// JSON.parse('<text>'): esbuild leaves the string as-is, where its JSON module would be
+// pretty-printed with one export per key (about 35% bigger), and JSON.parse is faster to load.
+const compactOutlines: Plugin = {
+  name: 'compact-outlines',
+  setup(build) {
+    build.onLoad({ filter: /data[\\/]map[\\/][^\\/]+\.json$/ }, async args => ({
+      contents: `export default JSON.parse(${JSON.stringify((await readFile(args.path, 'utf8')).trim())});`,
+      loader: 'js',
+    }));
+  },
+};
 
 export default defineConfig({
   entry: {
@@ -9,7 +24,6 @@ export default defineConfig({
     react: 'src/react.ts',
     zod: 'src/zod.ts',
     boundaries: 'src/boundaries.ts',
-    map: 'src/map.tsx',
   },
   format: ['cjs', 'esm'],
   dts: true,
@@ -17,5 +31,6 @@ export default defineConfig({
   target: 'es2019',
   // Shared chunks keep one copy of the core data and one instance of its index.
   splitting: true,
-  external: ['react', 'react/jsx-runtime', 'zod'],
+  external: ['react', 'zod'],
+  esbuildPlugins: [compactOutlines],
 });

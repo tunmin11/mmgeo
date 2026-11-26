@@ -1,6 +1,6 @@
 {
   "name": "@tm11/mmgeo",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Myanmar states, districts, townships, towns, wards and village tracts with MIMU P-codes, bilingual names, Zawgyi-safe search, React hook and zod schemas.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -76,16 +76,6 @@
         "default": "./dist/boundaries.js"
       }
     },
-    "./map": {
-      "import": {
-        "types": "./dist/map.d.mts",
-        "default": "./dist/map.mjs"
-      },
-      "require": {
-        "types": "./dist/map.d.ts",
-        "default": "./dist/map.js"
-      }
-    },
     "./data/db.json": "./data/db.json",
     "./package.json": "./package.json"
   },
@@ -96,14 +86,13 @@
     "DATA_LICENSE"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && cd packages/mmgeo-map && tsup",
     "build:data": "ts-node --transpile-only scripts/build-data.ts",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p packages/mmgeo-map",
     "test": "jest",
     "prepublishOnly": "npm run typecheck && npm test && npm run build",
     "build:map": "ts-node --transpile-only scripts/build-map.ts",
-    "demo": "node demo/serve.mjs",
-    "demo:real": "node demo/serve.mjs --real"
+    "demo": "node packages/mmgeo-map/demo/serve.mjs"
   },
   "keywords": [
     "myanmar",
@@ -181,9 +170,6 @@
       ],
       "boundaries": [
         "./dist/boundaries.d.ts"
-      ],
-      "map": [
-        "./dist/map.d.ts"
       ]
     }
   },

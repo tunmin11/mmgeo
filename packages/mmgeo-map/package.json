@@ -1,0 +1,61 @@
+{
+  "name": "@tm11/mmgeo-map",
+  "version": "0.1.0",
+  "description": "Clickable, keyboard-accessible SVG map of Myanmar for React: country → state → district → township → village tract / town → ward. Built on @tm11/mmgeo.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "peerDependencies": {
+    "@tm11/mmgeo": "^2.2.0",
+    "react": ">=16.8"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "myanmar",
+    "burma",
+    "map",
+    "react",
+    "svg",
+    "map-picker",
+    "address-form",
+    "townships",
+    "village-tracts",
+    "wards",
+    "mimu",
+    "pcode",
+    "mmgeo"
+  ],
+  "author": "tunmin tunmin2000@gmail.com",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tunmin11/mmgeo",
+    "directory": "packages/mmgeo-map"
+  },
+  "bugs": {
+    "url": "https://github.com/tunmin11/mmgeo/issues"
+  },
+  "homepage": "https://github.com/tunmin11/mmgeo/tree/master/packages/mmgeo-map#readme"
+}
