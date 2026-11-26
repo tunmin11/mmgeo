@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+### Added
+- `@tm11/mmgeo/map` — `<MyanmarMap>`, a clickable, keyboard-accessible SVG map picker
+  (React 16.8+, optional peer dependency). State level for now.
+- `@tm11/mmgeo/boundaries` — outlines as SVG paths and exact point-in-shape lookup
+  (`placeAt`, `townshipAt`, `getOutline`, `listOutlines`).
+- `npm run build:map` builds the outlines from GeoJSON or shapefiles with mapshaper.
+
 ## 2.1.0 — 2026-11-26
 
 ### Added

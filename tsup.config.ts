@@ -8,6 +8,8 @@ export default defineConfig({
     'village-tracts': 'src/village-tracts.ts',
     react: 'src/react.ts',
     zod: 'src/zod.ts',
+    boundaries: 'src/boundaries.ts',
+    map: 'src/map.tsx',
   },
   format: ['cjs', 'esm'],
   dts: true,
@@ -15,5 +17,5 @@ export default defineConfig({
   target: 'es2019',
   // Shared chunks keep one copy of the core data and one instance of its index.
   splitting: true,
-  external: ['react', 'zod'],
+  external: ['react', 'react/jsx-runtime', 'zod'],
 });

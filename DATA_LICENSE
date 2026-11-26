@@ -31,5 +31,13 @@ are included; names are Unicode-normalized (NFC) with zero-width characters
 removed; slugs and 1.x slug aliases are added; state coordinates and
 capitals come from mmgeo 1.x, not MIMU.
 
+MAP OUTLINES — data/map.json
+
+The outlines used by `@tm11/mmgeo/map` and `@tm11/mmgeo/boundaries` are
+currently built from Natural Earth 1:10m Admin-1 (states and provinces),
+https://www.naturalearthdata.com, which is in the public domain. Natural
+Earth folds Nay Pyi Taw into Mandalay Region, so it has no outline of its own.
+They are simplified and projected by scripts/build-map.ts.
+
 The code in this package (everything outside data/) is licensed under ISC,
 see LICENSE.
