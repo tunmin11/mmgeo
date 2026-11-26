@@ -1,0 +1,2771 @@
+{
+  "states": [
+    {
+      "eng": "Magway Region",
+      "mm": "မကွေးတိုင်းဒေသကြီး",
+      "lat": 20.15,
+      "lng": 94.95,
+      "capital": "Magway",
+      "districts": [
+        {
+          "eng": "Gangaw",
+          "mm": "ဂန့်ဂေါ",
+          "townships": [
+            {
+              "eng": "Gangaw",
+              "mm": "ဂန့်ဂေါမြို့နယ်",
+              "slug": "gangaw"
+            },
+            {
+              "eng": "Saw",
+              "mm": "ဆောမြို့နယ်",
+              "slug": "saw"
+            },
+            {
+              "eng": "Tilin",
+              "mm": "ထီးလင်းမြို့နယ်",
+              "slug": "tilin"
+            }
+          ],
+          "slug": "gangaw"
+        },
+        {
+          "eng": "Magway",
+          "mm": "မကွေး",
+          "townships": [
+            {
+              "eng": "Chauck",
+              "mm": "ချောက်",
+              "slug": "chauck"
+            },
+            {
+              "eng": "Magway",
+              "mm": "မကွေး",
+              "slug": "magway"
+            },
+            {
+              "eng": "Myothit",
+              "mm": "မြို့သစ်",
+              "slug": "myothit"
+            },
+            {
+              "eng": "Natmauk",
+              "mm": "နတ်မောက်",
+              "slug": "natmauk"
+            },
+            {
+              "eng": "Taungdwingyi",
+              "mm": "တောင်တွင်းကြီး",
+              "slug": "taungdwingyi"
+            },
+            {
+              "eng": "Yenangyaung",
+              "mm": "ရေနံချောင်း",
+              "slug": "yenangyaung"
+            }
+          ],
+          "slug": "magway"
+        },
+        {
+          "eng": "Minbu",
+          "mm": "မင်းဘူး",
+          "townships": [
+            {
+              "eng": "Minbu",
+              "mm": "မင်းဘူး(စကု)",
+              "slug": "minbu"
+            },
+            {
+              "eng": "Ngape",
+              "mm": "ငဖဲ",
+              "slug": "ngape"
+            },
+            {
+              "eng": "Pwintbyu",
+              "mm": "ပွင့်ဖြူ",
+              "slug": "pwintbyu"
+            },
+            {
+              "eng": "Salin",
+              "mm": "စလင်း",
+              "slug": "salin"
+            },
+            {
+              "eng": "Sidoktaya",
+              "mm": "စေတုတ္တရာ",
+              "slug": "sidoktaya"
+            }
+          ],
+          "slug": "minbu"
+        },
+        {
+          "eng": "Pakokku",
+          "mm": "ပခုက္ကူ",
+          "townships": [
+            {
+              "eng": "Pakokku",
+              "mm": "ပခုက္ကူ",
+              "slug": "pakokku"
+            },
+            {
+              "eng": "Seikphyu",
+              "mm": "ဆိပ်ဖြူ",
+              "slug": "seikphyu"
+            },
+            {
+              "eng": "Yesagyo",
+              "mm": "ရေစကြို",
+              "slug": "yesagyo"
+            },
+            {
+              "eng": "Myaing",
+              "mm": "မြိုင်",
+              "slug": "myaing"
+            },
+            {
+              "eng": "Pauk",
+              "mm": "ပေါက်",
+              "slug": "pauk"
+            }
+          ],
+          "slug": "pakokku"
+        },
+        {
+          "eng": "Thayet",
+          "mm": "သရက်",
+          "townships": [
+            {
+              "eng": "Thayet",
+              "mm": "သရက်",
+              "slug": "thayet"
+            },
+            {
+              "eng": "Aunglan",
+              "mm": "အောင်လံ",
+              "slug": "aunglan"
+            },
+            {
+              "eng": "Sinbaungwe",
+              "mm": "ဆင်ပေါင်ဝဲ",
+              "slug": "sinbaungwe"
+            },
+            {
+              "eng": "Mindon",
+              "mm": "မင်းတုန်း",
+              "slug": "mindon"
+            },
+            {
+              "eng": "Minhla",
+              "mm": "မင်းလှ (အထက်မင်းလှ)",
+              "slug": "minhla"
+            },
+            {
+              "eng": "Kamma",
+              "mm": "ကံမ",
+              "slug": "kamma"
+            }
+          ],
+          "slug": "thayet"
+        }
+      ],
+      "slug": "magway-region"
+    },
+    {
+      "eng": "Mandalay Region",
+      "mm": "မန္တလေးတိုင်းဒေသကြီး",
+      "lat": 21.9769,
+      "lng": 96.0869,
+      "capital": "Mandalay",
+      "districts": [
+        {
+          "eng": "Kyaukse",
+          "mm": "ကျောက်ဆည်",
+          "townships": [
+            {
+              "eng": "Kyaukse",
+              "mm": "ကျောက်ဆည်",
+              "slug": "kyaukse"
+            },
+            {
+              "eng": "Myittha",
+              "mm": "မြစ်သား",
+              "slug": "myittha"
+            },
+            {
+              "eng": "Sintgaing",
+              "mm": "စဉ့်ကိုင်",
+              "slug": "sintgaing"
+            },
+            {
+              "eng": "Tada-U",
+              "mm": "တံတားဦး",
+              "slug": "tada-u"
+            }
+          ],
+          "slug": "kyaukse"
+        },
+        {
+          "eng": "Mandalay",
+          "mm": "မန္တလေး",
+          "townships": [
+            {
+              "eng": "Amarapura",
+              "mm": "အမရပူရ",
+              "slug": "amarapura"
+            },
+            {
+              "eng": "Aungmyethazan",
+              "mm": "အောင်မြေသာဇံ",
+              "slug": "aungmyethazan"
+            },
+            {
+              "eng": "Chanayethazan",
+              "mm": "ချမ်းအေးသာဇံ",
+              "slug": "chanayethazan"
+            },
+            {
+              "eng": "Chanmyathazi",
+              "mm": "ချမ်းမြသာစည်",
+              "slug": "chanmyathazi"
+            },
+            {
+              "eng": "Mahaaungmye",
+              "mm": "မဟာအောင်မြေ",
+              "slug": "mahaaungmye"
+            },
+            {
+              "eng": "Patheingyi",
+              "mm": "ပုသိမ်ကြီး",
+              "slug": "patheingyi"
+            },
+            {
+              "eng": "Pyigyidagun",
+              "mm": "ပြည်ကြီးတံခွန်",
+              "slug": "pyigyidagun"
+            }
+          ],
+          "slug": "mandalay"
+        },
+        {
+          "eng": "Meiktila",
+          "mm": "မိတ္ထီလာ",
+          "townships": [
+            {
+              "eng": "Mahlaing",
+              "mm": "မလှိုင်",
+              "slug": "mahlaing"
+            },
+            {
+              "eng": "Meiktila",
+              "mm": "မိတ္ထီလာ",
+              "slug": "meiktila"
+            },
+            {
+              "eng": "Thazi",
+              "mm": "သာစည်",
+              "slug": "thazi"
+            },
+            {
+              "eng": "Wundwin",
+              "mm": "ဝမ်းတွင်း",
+              "slug": "wundwin"
+            }
+          ],
+          "slug": "meiktila"
+        },
+        {
+          "eng": "Myingyan",
+          "mm": "မြင်းခြံ",
+          "townships": [
+            {
+              "eng": "Myingyan",
+              "mm": "မြင်းခြံ",
+              "slug": "myingyan"
+            },
+            {
+              "eng": "Natogyi",
+              "mm": "နွားထိုးကြီး",
+              "slug": "natogyi"
+            },
+            {
+              "eng": "Nganzun",
+              "mm": "ငါန်းဇွန်",
+              "slug": "nganzun"
+            },
+            {
+              "eng": "Thaungtha",
+              "mm": "တောင်သာ",
+              "slug": "thaungtha"
+            }
+          ],
+          "slug": "myingyan"
+        },
+        {
+          "eng": "Nyaung-U",
+          "mm": "ညောင်ဦး",
+          "townships": [
+            {
+              "eng": "Nyaung-U",
+              "mm": "ညောင်ဦး",
+              "slug": "nyaung-u"
+            },
+            {
+              "eng": "Kyaukpadaung",
+              "mm": "ကျောက်ပန်းတောင်း",
+              "slug": "kyaukpadaung"
+            },
+            {
+              "eng": "Ngathayauk",
+              "mm": "ငါ့သရောက်",
+              "slug": "ngathayauk"
+            }
+          ],
+          "slug": "nyaung-u"
+        },
+        {
+          "eng": "Pyinoolwin",
+          "mm": "ပြင်ဦးလွင်",
+          "townships": [
+            {
+              "eng": "Madaya",
+              "mm": "မတ္တရာ",
+              "slug": "madaya"
+            },
+            {
+              "eng": "Mogok",
+              "mm": "မိုးကုတ်",
+              "slug": "mogok"
+            },
+            {
+              "eng": "Pyinoolwin",
+              "mm": "ပြင်ဦးလွင်",
+              "slug": "pyinoolwin"
+            },
+            {
+              "eng": "Singu",
+              "mm": "စဉ့်ကူ",
+              "slug": "singu"
+            },
+            {
+              "eng": "Thabeikkyin",
+              "mm": "သပိတ်ကျင်း",
+              "slug": "thabeikkyin"
+            },
+            {
+              "eng": "Tagaung",
+              "mm": "တကောင်း",
+              "slug": "tagaung"
+            }
+          ],
+          "slug": "pyinoolwin"
+        },
+        {
+          "eng": "Yamethin",
+          "mm": "ရမည်းသင်း",
+          "townships": [
+            {
+              "eng": "Pyawbwe",
+              "mm": "ပျော်ဘွယ်",
+              "slug": "pyawbwe"
+            },
+            {
+              "eng": "Yamethin",
+              "mm": "ရမည်းသင်း",
+              "slug": "yamethin"
+            }
+          ],
+          "slug": "yamethin"
+        }
+      ],
+      "slug": "mandalay-region"
+    },
+    {
+      "eng": "Nay Pyi Taw",
+      "mm": "နေပြည်တော်",
+      "lat": 19.8028,
+      "lng": 96.1583,
+      "capital": "Nay Pyi Taw",
+      "districts": [
+        {
+          "eng": "Dekkhina[South Naypyidaw]",
+          "mm": "ဒက္ခိဏ",
+          "townships": [
+            {
+              "eng": "Lewe",
+              "mm": "လယ်ဝေး",
+              "slug": "lewe"
+            },
+            {
+              "eng": "Pyinmana",
+              "mm": " ပျဉ်းမနား",
+              "slug": "pyinmana"
+            },
+            {
+              "eng": "Dekkhinathiri",
+              "mm": "ဒက္ခိဏသီရိ",
+              "slug": "dekkhinathiri"
+            },
+            {
+              "eng": "Zabuthiri",
+              "mm": "ဇမ္ဗူသီရိ",
+              "slug": "zabuthiri"
+            }
+          ],
+          "slug": "dekkhina-south-naypyidaw"
+        },
+        {
+          "eng": "Ottara[North Naypyidaw]",
+          "mm": "ဥတ္တရ",
+          "townships": [
+            {
+              "eng": "Ottarathiri",
+              "mm": "ဥတ္တရသီရိ",
+              "slug": "ottarathiri"
+            },
+            {
+              "eng": "Pobbathiri",
+              "mm": "ပုဗ္ဗသီရိ",
+              "slug": "pobbathiri"
+            },
+            {
+              "eng": "Tatkon",
+              "mm": "တပ်ကုန်း",
+              "slug": "tatkon"
+            },
+            {
+              "eng": "Zeyarthiri",
+              "mm": "ဇေယျာသီရိ",
+              "slug": "zeyarthiri"
+            }
+          ],
+          "slug": "ottara-north-naypyidaw"
+        }
+      ],
+      "slug": "nay-pyi-taw"
+    },
+    {
+      "eng": "Kayah State",
+      "mm": "ကယားပြည်နယ်",
+      "lat": 19.6742,
+      "lng": 97.2092,
+      "capital": "Loikaw",
+      "districts": [
+        {
+          "eng": "Bawlakhe",
+          "mm": "ဘော်လခဲ",
+          "townships": [
+            {
+              "eng": "Bawlakhe",
+              "mm": "ဘော်လခဲ",
+              "slug": "bawlakhe"
+            },
+            {
+              "eng": "Hpasawng",
+              "mm": "ဖားဆောင်း",
+              "slug": "hpasawng"
+            },
+            {
+              "eng": "Mese",
+              "mm": "မယ်စဲ့",
+              "slug": "mese"
+            },
+            {
+              "eng": "Ywathit",
+              "mm": "ရွာသစ်",
+              "slug": "ywathit"
+            }
+          ],
+          "slug": "bawlakhe"
+        },
+        {
+          "eng": "Loikaw",
+          "mm": "လွိုင်ကော်",
+          "townships": [
+            {
+              "eng": "Loikaw",
+              "mm": "လွိုင်ကော်",
+              "slug": "loikaw"
+            },
+            {
+              "eng": "Demoso",
+              "mm": "ဒီးမော့ဆို",
+              "slug": "demoso"
+            },
+            {
+              "eng": "Hpruso",
+              "mm": "ဖရူးဆိုး",
+              "slug": "hpruso"
+            },
+            {
+              "eng": "Shadaw",
+              "mm": "ရှားတော",
+              "slug": "shadaw"
+            }
+          ],
+          "slug": "loikaw"
+        }
+      ],
+      "slug": "kayah-state"
+    },
+    {
+      "eng": "Shan State",
+      "mm": "ရှမ်းပြည်နယ်",
+      "lat": 20.7833,
+      "lng": 96.9667,
+      "capital": "Taunggyi",
+      "districts": [
+        {
+          "eng": "Kengtung",
+          "mm": "ကျိုင်းတုံခရိုင်",
+          "townships": [
+            {
+              "eng": "Kengtung",
+              "mm": "ကျိုင်းတုံ",
+              "slug": "kengtung"
+            },
+            {
+              "eng": "Mine Khet",
+              "mm": "မိုင်းခတ်",
+              "slug": "mine-khet"
+            },
+            {
+              "eng": "Mine Pyin",
+              "mm": "မိုင်းပြင်း",
+              "slug": "mine-pyin"
+            },
+            {
+              "eng": "Mine Yang",
+              "mm": "မိုင်းယန်း",
+              "slug": "mine-yang"
+            },
+            {
+              "eng": "Mine lar",
+              "mm": "မိုင်းလား",
+              "slug": "mine-lar"
+            }
+          ],
+          "slug": "kengtung"
+        },
+        {
+          "eng": "Mine Hpayak",
+          "mm": "မိုင်းဖြတ်ခရိုင်",
+          "townships": [
+            {
+              "eng": "Mineyu",
+              "mm": "မိုင်းရှုး",
+              "slug": "mineyu"
+            },
+            {
+              "eng": "Mine Hpayak",
+              "mm": "မိုင်းဖျန်",
+              "slug": "mine-hpayak"
+            },
+            {
+              "eng": "Mine Yawng",
+              "mm": "မိုင်းယန်း",
+              "slug": "mine-yawng"
+            }
+          ],
+          "slug": "mine-hpayak"
+        },
+        {
+          "eng": "Mine Hsat",
+          "mm": "မိုင်းဆတ်ခရိုင်",
+          "townships": [
+            {
+              "eng": "Minekoke",
+              "mm": "မိုင်းခုတ်",
+              "slug": "minekoke"
+            },
+            {
+              "eng": "Monehta",
+              "mm": "မုံးထ",
+              "slug": "monehta"
+            },
+            {
+              "eng": "Mine Hsat",
+              "mm": "မိုင်းဆတ်",
+              "slug": "mine-hsat"
+            },
+            {
+              "eng": "Mine Ping",
+              "mm": "မိုင်းပန်",
+              "slug": "mine-ping"
+            },
+            {
+              "eng": "Mine Tong",
+              "mm": "မိုင်းတုံ",
+              "slug": "mine-tong"
+            },
+            {
+              "eng": "Ponparkyin",
+              "mm": "ပုံပါကျင်",
+              "slug": "ponparkyin"
+            },
+            {
+              "eng": "Tontar",
+              "mm": "တုံတာ",
+              "slug": "tontar"
+            }
+          ],
+          "slug": "mine-hsat"
+        },
+        {
+          "eng": "Tachileik",
+          "mm": "တာချီလိတ်ခရိုင်",
+          "townships": [
+            {
+              "eng": "Tachi leik",
+              "mm": "တာချီလိတ်",
+              "slug": "tachi-leik"
+            },
+            {
+              "eng": "Mine Phyat",
+              "mm": " မိုင်းဖြတ်",
+              "slug": "mine-phyat"
+            },
+            {
+              "eng": "Mine Yong",
+              "mm": " မိုင်းယောင်",
+              "slug": "mine-yong"
+            },
+            {
+              "eng": "KyaingLap",
+              "mm": "ကျိုင်းလပ်",
+              "slug": "kyainglap"
+            },
+            {
+              "eng": "Talay",
+              "mm": "တာလေ",
+              "slug": "talay"
+            }
+          ],
+          "slug": "tachileik"
+        },
+        {
+          "eng": "Kyaukme",
+          "mm": "ကျောက်မဲခရိုင်",
+          "townships": [
+            {
+              "eng": "Kyaukme",
+              "mm": "ကျောက်မဲ",
+              "slug": "kyaukme"
+            },
+            {
+              "eng": "NaungCho",
+              "mm": "နောင်ချို",
+              "slug": "naungcho"
+            },
+            {
+              "eng": "Hsipaw",
+              "mm": "သီပေါ",
+              "slug": "hsipaw"
+            },
+            {
+              "eng": "Namtu",
+              "mm": "နမ္မတူ",
+              "slug": "namtu"
+            },
+            {
+              "eng": "Namhsan",
+              "mm": "နမ့်ဆန်",
+              "slug": "namhsan"
+            },
+            {
+              "eng": "Mantong",
+              "mm": "မန်တုံ",
+              "slug": "mantong"
+            },
+            {
+              "eng": "Minelon",
+              "mm": "မိုင်းလုံ",
+              "slug": "minelon"
+            },
+            {
+              "eng": "Minengaw",
+              "mm": "မိုင်းငေါ",
+              "slug": "minengaw"
+            },
+            {
+              "eng": "Nawnghkio",
+              "mm": "နောင်ခစ်",
+              "slug": "nawnghkio"
+            }
+          ],
+          "slug": "kyaukme"
+        },
+        {
+          "eng": "Lashio",
+          "mm": "လားရှိုးခရိုင်",
+          "townships": [
+            {
+              "eng": "Lashio",
+              "mm": "လားရှိုး",
+              "slug": "lashio"
+            },
+            {
+              "eng": "Kwanlon",
+              "mm": "ကွမ်းလုံ",
+              "slug": "kwanlon"
+            },
+            {
+              "eng": "Mineyai",
+              "mm": "မိုင်းရယ်",
+              "slug": "mineyai"
+            },
+            {
+              "eng": "Tangyan",
+              "mm": "တန့်ယန်",
+              "slug": "tangyan"
+            },
+            {
+              "eng": "Thani",
+              "mm": "သိန္",
+              "slug": "thani"
+            }
+          ],
+          "slug": "lashio"
+        },
+        {
+          "eng": "Laukkaing",
+          "mm": "လောက်ကိုင်ခရိုင်",
+          "townships": [
+            {
+              "eng": "Laukkaing",
+              "mm": "လောက်ကိုင်",
+              "slug": "laukkaing"
+            },
+            {
+              "eng": "Chinshwehaw",
+              "mm": "ချင်းရွှေဟော်",
+              "slug": "chinshwehaw"
+            },
+            {
+              "eng": "Konkyan",
+              "mm": "ကုန်းကြမ်း",
+              "slug": "konkyan"
+            },
+            {
+              "eng": "Mawhtike",
+              "mm": "မော်ထိုက်",
+              "slug": "mawhtike"
+            }
+          ],
+          "slug": "laukkaing"
+        },
+        {
+          "eng": "Mu Se",
+          "mm": "မူဆယ်ခရိုင်",
+          "townships": [
+            {
+              "eng": "Kutkai",
+              "mm": "ကွတ်ခိုင်",
+              "slug": "kutkai"
+            },
+            {
+              "eng": "Mu Se",
+              "mm": "မူဆယ်",
+              "slug": "mu-se"
+            },
+            {
+              "eng": "Namhkam",
+              "mm": "နမ့်ခမ်း",
+              "slug": "namhkam"
+            },
+            {
+              "eng": "Manhero",
+              "mm": "မန့်ဟီးရိုး (မန်ဟျှိုး)",
+              "slug": "manhero"
+            },
+            {
+              "eng": "Monekoe",
+              "mm": "မုန်းကိုး",
+              "slug": "monekoe"
+            },
+            {
+              "eng": "Pansai",
+              "mm": "ပန်ဆိုင်း (ကြူကုတ်)",
+              "slug": "pansai"
+            },
+            {
+              "eng": "Tamoenye",
+              "mm": "တာမိုးညဲ",
+              "slug": "tamoenye"
+            }
+          ],
+          "slug": "mu-se"
+        },
+        {
+          "eng": "Hopang",
+          "mm": "ဟိုပန်ခရိုင်",
+          "townships": [
+            {
+              "eng": "Hopang",
+              "mm": "ဟိုပန်",
+              "slug": "hopang"
+            },
+            {
+              "eng": "Namtit",
+              "mm": "နမ့်တစ်",
+              "slug": "namtit"
+            },
+            {
+              "eng": "Panlong",
+              "mm": "ပန်လုံ",
+              "slug": "panlong"
+            },
+            {
+              "eng": "Pansang",
+              "mm": "ပန်ဆန်း",
+              "slug": "pansang"
+            },
+            {
+              "eng": "Mankan",
+              "mm": "မန်ကန်",
+              "slug": "mankan"
+            },
+            {
+              "eng": "Nahpahn",
+              "mm": "နားဖန်း",
+              "slug": "nahpahn"
+            },
+            {
+              "eng": "Pangwaun",
+              "mm": "ပန်ဝိုင်",
+              "slug": "pangwaun"
+            },
+            {
+              "eng": "Mongmao",
+              "mm": "မိုင်းမော",
+              "slug": "mongmao"
+            }
+          ],
+          "slug": "hopang"
+        },
+        {
+          "eng": "Matman",
+          "mm": "မက်မန်းခရိုင်",
+          "townships": [
+            {
+              "eng": "ManKan",
+              "mm": "မန်ကန်",
+              "slug": "mankan"
+            },
+            {
+              "eng": "Matman",
+              "mm": "မက်မန်း",
+              "slug": "matman"
+            },
+            {
+              "eng": "Namphan",
+              "mm": "နားဖန်း",
+              "slug": "namphan"
+            },
+            {
+              "eng": "Pangsang",
+              "mm": "ပန်ဆမ်း (ပန်ခမ်း)",
+              "slug": "pangsang"
+            }
+          ],
+          "slug": "matman"
+        },
+        {
+          "eng": "Mongmit",
+          "mm": "မိုးမိတ်",
+          "townships": [
+            {
+              "eng": "Mongmit",
+              "mm": "မိုးမိတ်",
+              "slug": "mongmit"
+            },
+            {
+              "eng": "Mabein",
+              "mm": "မဘိမ်း",
+              "slug": "mabein"
+            }
+          ],
+          "slug": "mongmit"
+        },
+        {
+          "eng": "Langkho",
+          "mm": "လင်းခေး",
+          "townships": [
+            {
+              "eng": "Langkho",
+              "mm": "လင်းခေး",
+              "slug": "langkho"
+            },
+            {
+              "eng": "Mawkmai",
+              "mm": "မောက်မယ်",
+              "slug": "mawkmai"
+            },
+            {
+              "eng": "MongNai",
+              "mm": "မိုးနဲ",
+              "slug": "mongnai"
+            },
+            {
+              "eng": "MongPan",
+              "mm": "မိုင်းပန်",
+              "slug": "mongpan"
+            },
+            {
+              "eng": "Homane",
+              "mm": "ဟိုမိန်း",
+              "slug": "homane"
+            },
+            {
+              "eng": "Kengtaung",
+              "mm": "ကျိုင်းတောင်း",
+              "slug": "kengtaung"
+            }
+          ],
+          "slug": "langkho"
+        },
+        {
+          "eng": "Loilen",
+          "mm": "လွိုင်လင်ခရိုင်",
+          "townships": [
+            {
+              "eng": "Kunhing",
+              "mm": "ကွန်ဟိန်း",
+              "slug": "kunhing"
+            },
+            {
+              "eng": "Kyethi",
+              "mm": "ကျေးသီး",
+              "slug": "kyethi"
+            },
+            {
+              "eng": "LaiHka",
+              "mm": "လဲချား",
+              "slug": "laihka"
+            },
+            {
+              "eng": "Loilen",
+              "mm": "လွိုင်လင်",
+              "slug": "loilen"
+            },
+            {
+              "eng": "MongHsu",
+              "mm": "မိုင်းရှူး",
+              "slug": "monghsu"
+            },
+            {
+              "eng": "MongKung",
+              "mm": "မိုင်းကိုင်",
+              "slug": "mongkung"
+            },
+            {
+              "eng": "Nansang",
+              "mm": "နမ့်စန်",
+              "slug": "nansang"
+            },
+            {
+              "eng": "Karli",
+              "mm": "ကာလိ",
+              "slug": "karli"
+            },
+            {
+              "eng": "Kholan",
+              "mm": "ခိုလမ်",
+              "slug": "kholan"
+            },
+            {
+              "eng": "Minenaung",
+              "mm": "မိုင်းနောင်",
+              "slug": "minenaung"
+            },
+            {
+              "eng": "Minesan",
+              "mm": "မိုင်းစံ (မုန်းဆန်းမြို့)",
+              "slug": "minesan"
+            },
+            {
+              "eng": "Panglong",
+              "mm": "ပင်လုံ",
+              "slug": "panglong"
+            }
+          ],
+          "slug": "loilen"
+        },
+        {
+          "eng": "Taunggyi",
+          "mm": "တောင်ကြီးခရိုင်",
+          "townships": [
+            {
+              "eng": "Taunggyi",
+              "mm": "တောင်ကြီး",
+              "slug": "taunggyi"
+            },
+            {
+              "eng": "Aye Thar Yar",
+              "mm": "အေးသာယာ (တောင်ကြီးမြို့သစ်)",
+              "slug": "aye-thar-yar"
+            },
+            {
+              "eng": "Kyauktalongyi",
+              "mm": "ကျောက်တလုံးကြီး",
+              "slug": "kyauktalongyi"
+            },
+            {
+              "eng": "Shwe Nyaung",
+              "mm": "ရွှေညောင်",
+              "slug": "shwe-nyaung"
+            },
+            {
+              "eng": "Nyaung Shwe",
+              "mm": "ညောင်ရွှေ",
+              "slug": "nyaung-shwe"
+            },
+            {
+              "eng": "Nangpan",
+              "mm": "နန်းပန်",
+              "slug": "nangpan"
+            },
+            {
+              "eng": "Kalaw",
+              "mm": "ကလော",
+              "slug": "kalaw"
+            },
+            {
+              "eng": "Aungpan",
+              "mm": "အောင်ပန်း ",
+              "slug": "aungpan"
+            },
+            {
+              "eng": "Yetsouk",
+              "mm": "ရပ်စောက်",
+              "slug": "yetsouk"
+            },
+            {
+              "eng": "Indaw",
+              "mm": "အင်တော",
+              "slug": "indaw"
+            },
+            {
+              "eng": "Pekon",
+              "mm": "ဖယ်ခုံ",
+              "slug": "pekon"
+            },
+            {
+              "eng": "Hopong",
+              "mm": "ဟိုပုံး",
+              "slug": "hopong"
+            },
+            {
+              "eng": "Hsi Hseng",
+              "mm": "ဆီဆိုင်",
+              "slug": "hsi-hseng"
+            },
+            {
+              "eng": "Pinlaung",
+              "mm": "ပင်လောင်း",
+              "slug": "pinlaung"
+            },
+            {
+              "eng": "Naungtayar",
+              "mm": "နောင်တရား",
+              "slug": "naungtayar"
+            },
+            {
+              "eng": "Pingdaya",
+              "mm": "ပင်းတယ",
+              "slug": "pingdaya"
+            },
+            {
+              "eng": "Ywangan",
+              "mm": "ရွာငံ",
+              "slug": "ywangan"
+            }
+          ],
+          "slug": "taunggyi"
+        }
+      ],
+      "slug": "shan-state"
+    },
+    {
+      "eng": "Ayeyawady Region",
+      "mm": "ဧရာဝတီတိုင်းဒေသကြီး",
+      "lat": 16.7667,
+      "lng": 94.7333,
+      "capital": "Pathein",
+      "districts": [
+        {
+          "eng": "Hinthada",
+          "mm": "ဟင်္သာတ",
+          "townships": [
+            {
+              "eng": "Hinthada",
+              "mm": "ဟင်္သာတ",
+              "slug": "hinthada"
+            },
+            {
+              "eng": "Zalun",
+              "mm": "ဇလွန်",
+              "slug": "zalun"
+            },
+            {
+              "eng": "Lemyethna",
+              "mm": "လေးမျက်နှာ",
+              "slug": "lemyethna"
+            },
+            {
+              "eng": "Myanaung",
+              "mm": "မြန်အောင်",
+              "slug": "myanaung"
+            },
+            {
+              "eng": "Kyangin",
+              "mm": "ကြံခင်း",
+              "slug": "kyangin"
+            },
+            {
+              "eng": "Ingapu",
+              "mm": "အင်္ဂပူ",
+              "slug": "ingapu"
+            }
+          ],
+          "slug": "hinthada"
+        },
+        {
+          "eng": "Labutta",
+          "mm": "လပွတ္တာ",
+          "townships": [
+            {
+              "eng": "Labutta",
+              "mm": "လပွတ္တာ",
+              "slug": "labutta"
+            },
+            {
+              "eng": "Mawlamyinegyun",
+              "mm": "မော်လမြိုင်ကျွန်း",
+              "slug": "mawlamyinegyun"
+            }
+          ],
+          "slug": "labutta"
+        },
+        {
+          "eng": "Ma-ubin",
+          "mm": "မအူပင်",
+          "townships": [
+            {
+              "eng": "Ma-ubin",
+              "mm": "မအူပင်",
+              "slug": "ma-ubin"
+            },
+            {
+              "eng": "Pantanaw",
+              "mm": "ပန်းတနော်",
+              "slug": "pantanaw"
+            },
+            {
+              "eng": "Nyaungdon",
+              "mm": "ညောင်တုန်း",
+              "slug": "nyaungdon"
+            },
+            {
+              "eng": "Danuphyu",
+              "mm": "ဓနုဖြူ",
+              "slug": "danuphyu"
+            }
+          ],
+          "slug": "ma-ubin"
+        },
+        {
+          "eng": "Myaungmya",
+          "mm": "မြောင်းမြ",
+          "townships": [
+            {
+              "eng": "Einme",
+              "mm": "အိမ်မဲ",
+              "slug": "einme"
+            },
+            {
+              "eng": "Myaungmya",
+              "mm": "မြောင်းမြ",
+              "slug": "myaungmya"
+            },
+            {
+              "eng": "Wakema",
+              "mm": "ဝါးခယ်မ",
+              "slug": "wakema"
+            }
+          ],
+          "slug": "myaungmya"
+        },
+        {
+          "eng": "Pathein",
+          "mm": "ပုသိမ်",
+          "townships": [
+            {
+              "eng": "Pathein",
+              "mm": "ပုသိမ်",
+              "slug": "pathein"
+            },
+            {
+              "eng": "Kangyidaunk",
+              "mm": "ကန်ကြီးထောင့်",
+              "slug": "kangyidaunk"
+            },
+            {
+              "eng": "Ngapudaw",
+              "mm": "ငပုတော",
+              "slug": "ngapudaw"
+            },
+            {
+              "eng": "Thabaung",
+              "mm": "သာပေါင်း",
+              "slug": "thabaung"
+            },
+            {
+              "eng": "Kyaunggon",
+              "mm": "ကျောင်းကုန်း",
+              "slug": "kyaunggon"
+            },
+            {
+              "eng": "Kyonpyaw",
+              "mm": "ကျုံပျော်",
+              "slug": "kyonpyaw"
+            },
+            {
+              "eng": "Yekyi",
+              "mm": "ရေကြည်",
+              "slug": "yekyi"
+            }
+          ],
+          "slug": "pathein"
+        },
+        {
+          "eng": "Pyapon",
+          "mm": "ဖျာပုံ",
+          "townships": [
+            {
+              "eng": "Pyapon",
+              "mm": "ဖျာပုံ",
+              "slug": "pyapon"
+            },
+            {
+              "eng": "Bogale",
+              "mm": "ဘိုကလေး",
+              "slug": "bogale"
+            },
+            {
+              "eng": "Kyaiklat",
+              "mm": "ကျိုက်လတ်",
+              "slug": "kyaiklat"
+            },
+            {
+              "eng": "Dedaye",
+              "mm": "ဒေးဒရဲ",
+              "slug": "dedaye"
+            }
+          ],
+          "slug": "pyapon"
+        }
+      ],
+      "slug": "ayeyawady-region"
+    },
+    {
+      "eng": "Bago Region",
+      "mm": "ပဲခူးတိုင်းဒေသကြီး",
+      "lat": 17.3433,
+      "lng": 96.4981,
+      "capital": "Bago",
+      "districts": [
+        {
+          "eng": "Bago",
+          "mm": "ပဲခူး",
+          "townships": [
+            {
+              "eng": "Bago",
+              "mm": "ပဲခူး",
+              "slug": "bago"
+            },
+            {
+              "eng": "Kawa",
+              "mm": "ကဝ",
+              "slug": "kawa"
+            },
+            {
+              "eng": "Thanatpin",
+              "mm": "သနပ်ပင်",
+              "slug": "thanatpin"
+            },
+            {
+              "eng": "Waw",
+              "mm": "ဝေါ",
+              "slug": "waw"
+            },
+            {
+              "eng": "Daik-U",
+              "mm": "ဒိုက်ဦး",
+              "slug": "daik-u"
+            },
+            {
+              "eng": "Nyaunglebin",
+              "mm": "ညောင်လေးပင်",
+              "slug": "nyaunglebin"
+            },
+            {
+              "eng": "Shwegyin",
+              "mm": "ရွှေကျင်",
+              "slug": "shwegyin"
+            },
+            {
+              "eng": "Madauk",
+              "mm": "မဒေါက်",
+              "slug": "madauk"
+            },
+            {
+              "eng": "Pyuntaza",
+              "mm": "ပြွန်တန်ဆာ",
+              "slug": "pyuntaza"
+            },
+            {
+              "eng": "Kyauktaga",
+              "mm": "ကျောက်တံခါး",
+              "slug": "kyauktaga"
+            },
+            {
+              "eng": "Penwegon",
+              "mm": "ပဲနွယ်ကုန်း",
+              "slug": "penwegon"
+            }
+          ],
+          "slug": "bago"
+        },
+        {
+          "eng": "Taungoo",
+          "mm": "တောင်ငူ",
+          "townships": [
+            {
+              "eng": "Taungoo",
+              "mm": "တောင်ငူ",
+              "slug": "taungoo"
+            },
+            {
+              "eng": "Yedashe",
+              "mm": "ရေတာရှည်",
+              "slug": "yedashe"
+            },
+            {
+              "eng": "Kyaukkyi",
+              "mm": "ကျောက်ကြီး",
+              "slug": "kyaukkyi"
+            },
+            {
+              "eng": "Pyu",
+              "mm": "ဖြူး",
+              "slug": "pyu"
+            },
+            {
+              "eng": "Oktwin",
+              "mm": "အုတ်တွင်း",
+              "slug": "oktwin"
+            },
+            {
+              "eng": "Htantabin",
+              "mm": "ထန်းတပင်",
+              "slug": "htantabin"
+            }
+          ],
+          "slug": "taungoo"
+        },
+        {
+          "eng": "Pyay",
+          "mm": "ပြည်",
+          "townships": [
+            {
+              "eng": "Pyay",
+              "mm": "ပြည်",
+              "slug": "pyay"
+            },
+            {
+              "eng": "Paukkaung",
+              "mm": "ပေါက်ခေါင်း",
+              "slug": "paukkaung"
+            },
+            {
+              "eng": "Paungdale",
+              "mm": "ပေါင်းတည်",
+              "slug": "paungdale"
+            },
+            {
+              "eng": "Padaung",
+              "mm": "ပန်းတောင်း",
+              "slug": "padaung"
+            },
+            {
+              "eng": "Thegon",
+              "mm": "သဲကုန်း",
+              "slug": "thegon"
+            },
+            {
+              "eng": "Shwedaung",
+              "mm": "ရွှေတောင်",
+              "slug": "shwedaung"
+            }
+          ],
+          "slug": "pyay"
+        },
+        {
+          "eng": "Thayarwady",
+          "mm": "သာယာဝတီ",
+          "townships": [
+            {
+              "eng": "Tharrawaddy",
+              "mm": "သာယာဝတီ",
+              "slug": "tharrawaddy"
+            },
+            {
+              "eng": "Thonze",
+              "mm": "သုံးဆယ်",
+              "slug": "thonze"
+            },
+            {
+              "eng": "Letpadan",
+              "mm": "လက်ပံတန်း",
+              "slug": "letpadan"
+            },
+            {
+              "eng": "Minhla",
+              "mm": "မင်းလှမြိ",
+              "slug": "minhla"
+            },
+            {
+              "eng": "Okpho",
+              "mm": "အုတ်ဖို",
+              "slug": "okpho"
+            },
+            {
+              "eng": "Zigon",
+              "mm": "ဇီးကုန်း",
+              "slug": "zigon"
+            },
+            {
+              "eng": "Nattalin",
+              "mm": "နတ်တလင်း",
+              "slug": "nattalin"
+            },
+            {
+              "eng": "Monyin",
+              "mm": "မိုးညို",
+              "slug": "monyin"
+            },
+            {
+              "eng": "Gyobingauk",
+              "mm": "ကြို့ပင်ကောက်",
+              "slug": "gyobingauk"
+            }
+          ],
+          "slug": "thayarwady"
+        }
+      ],
+      "slug": "bago-region"
+    },
+    {
+      "eng": "Yangon Region",
+      "mm": "ရန်ကုန်တိုင်းဒေသကြီး",
+      "lat": 16.8,
+      "lng": 96.15,
+      "capital": "Yangon",
+      "districts": [
+        {
+          "eng": "East Yangon",
+          "mm": "ရန်ကုန်အရှေ့ပိုင်း",
+          "townships": [
+            {
+              "eng": "Tamwe",
+              "mm": "တာမွေ",
+              "slug": "tamwe"
+            },
+            {
+              "eng": "South Okkalapa",
+              "mm": "တောင်ဥက္ကလာပ",
+              "slug": "south-okkalapa"
+            },
+            {
+              "eng": "Dagon Seikkan",
+              "mm": "ဒဂုံမြို့သစ်-ဆိပ်ကမ်း",
+              "slug": "dagon-seikkan"
+            },
+            {
+              "eng": "South Dagon",
+              "mm": "ဒဂုံမြို့သစ်-တောင်ပိုင်း",
+              "slug": "south-dagon"
+            },
+            {
+              "eng": "North Dagon",
+              "mm": "ဒဂုံမြို့သစ်-မြောက်ပိုင်း",
+              "slug": "north-dagon"
+            },
+            {
+              "eng": "East Dagon",
+              "mm": "ဒဂုံမြို့သစ်-အရှေ့ပိုင်း",
+              "slug": "east-dagon"
+            },
+            {
+              "eng": "Dawbon",
+              "mm": "ဒေါပုံ",
+              "slug": "dawbon"
+            },
+            {
+              "eng": "Pazundaung",
+              "mm": "ပုဇွန်တောင်",
+              "slug": "pazundaung"
+            },
+            {
+              "eng": "Botataung",
+              "mm": "ဗိုလ်တထောင်",
+              "slug": "botataung"
+            },
+            {
+              "eng": "Mingala Taungnyunt",
+              "mm": "မင်္ဂလာတောင်ညွန့်",
+              "slug": "mingala-taungnyunt"
+            },
+            {
+              "eng": "North Okkalapa",
+              "mm": "မြောက်ဥက္ကလာပ",
+              "slug": "north-okkalapa"
+            },
+            {
+              "eng": "Yankin",
+              "mm": "ရန်ကင်း",
+              "slug": "yankin"
+            },
+            {
+              "eng": "Thingangyun",
+              "mm": "သင်္ဃန်းကျွန်း",
+              "slug": "thingangyun"
+            },
+            {
+              "eng": "Thaketa",
+              "mm": "သာကေတ",
+              "slug": "thaketa"
+            }
+          ],
+          "slug": "east-yangon"
+        },
+        {
+          "eng": "North Yangon",
+          "mm": "ရန်ကုန်မြောက်ပိုင်း",
+          "townships": [
+            {
+              "eng": "Taikkyi",
+              "mm": "တိုက်ကြီး",
+              "slug": "taikkyi"
+            },
+            {
+              "eng": "Htantabin",
+              "mm": "ထန်းတပင်",
+              "slug": "htantabin"
+            },
+            {
+              "eng": "Mingaladon",
+              "mm": "မင်္ဂလာဒုံ",
+              "slug": "mingaladon"
+            },
+            {
+              "eng": "Hmawbi",
+              "mm": "မှော်ဘီ",
+              "slug": "hmawbi"
+            },
+            {
+              "eng": "Shwepyitha",
+              "mm": "ရွှေပြည်သာ",
+              "slug": "shwepyitha"
+            },
+            {
+              "eng": "Hlegu",
+              "mm": "လှည်းကူး",
+              "slug": "hlegu"
+            },
+            {
+              "eng": "Hlaingthaya",
+              "mm": "လှိုင်သာယာ",
+              "slug": "hlaingthaya"
+            },
+            {
+              "eng": "Insein",
+              "mm": "အင်းစိန်",
+              "slug": "insein"
+            }
+          ],
+          "slug": "north-yangon"
+        },
+        {
+          "eng": "South Yangon",
+          "mm": "ရန်ကုန်တောင်ပိုင်း",
+          "townships": [
+            {
+              "eng": "Kyauktan",
+              "mm": "ကျောက်တန်း",
+              "slug": "kyauktan"
+            },
+            {
+              "eng": "Kungyangon",
+              "mm": "ကွမ်းခြံကုန်း",
+              "slug": "kungyangon"
+            },
+            {
+              "eng": "Cocokyun",
+              "mm": "ကိုကိုးကျွန်း",
+              "slug": "cocokyun"
+            },
+            {
+              "eng": "Kawhmu",
+              "mm": "ကော့မှူး",
+              "slug": "kawhmu"
+            },
+            {
+              "eng": "Kayan",
+              "mm": "ခရမ်း",
+              "slug": "kayan"
+            },
+            {
+              "eng": "SeikkyiKanaungto",
+              "mm": "ဆိပ်ကြီးခနောင်တို",
+              "slug": "seikkyikanaungto"
+            },
+            {
+              "eng": "Twante",
+              "mm": "တွံတေး",
+              "slug": "twante"
+            },
+            {
+              "eng": "Dala",
+              "mm": "ဒလ",
+              "slug": "dala"
+            },
+            {
+              "eng": "Thanlyin",
+              "mm": "သန်လျင်",
+              "slug": "thanlyin"
+            },
+            {
+              "eng": "Thongwa",
+              "mm": "သုံးခွ",
+              "slug": "thongwa"
+            }
+          ],
+          "slug": "south-yangon"
+        },
+        {
+          "eng": "West Yangon",
+          "mm": "ရန်ကုန်အနောက်ပိုင်း",
+          "townships": [
+            {
+              "eng": "Kamayut",
+              "mm": "ကမာရွတ်",
+              "slug": "kamayut"
+            },
+            {
+              "eng": "Kyauktada",
+              "mm": "ကျောက်တံတား",
+              "slug": "kyauktada"
+            },
+            {
+              "eng": "Kyimyindaing",
+              "mm": "ကြည့်မြင်တိုင်",
+              "slug": "kyimyindaing"
+            },
+            {
+              "eng": "Sanchaung",
+              "mm": "စမ်းချောင်း",
+              "slug": "sanchaung"
+            },
+            {
+              "eng": "Dagon",
+              "mm": "ဒဂုံ",
+              "slug": "dagon"
+            },
+            {
+              "eng": "Pabedan",
+              "mm": "ပန်းဘဲတန်း",
+              "slug": "pabedan"
+            },
+            {
+              "eng": "Bahan",
+              "mm": "ဗဟန်း",
+              "slug": "bahan"
+            },
+            {
+              "eng": "Mayangon",
+              "mm": "မရမ်းကုန်း",
+              "slug": "mayangon"
+            },
+            {
+              "eng": "Lanmadaw",
+              "mm": "လမ်းမတော်",
+              "slug": "lanmadaw"
+            },
+            {
+              "eng": "Latha",
+              "mm": "လသာ",
+              "slug": "latha"
+            },
+            {
+              "eng": "Hlaing",
+              "mm": "လှိုင်",
+              "slug": "hlaing"
+            },
+            {
+              "eng": "Ahlon",
+              "mm": "အလုံ",
+              "slug": "ahlon"
+            }
+          ],
+          "slug": "west-yangon"
+        }
+      ],
+      "slug": "yangon-region"
+    },
+    {
+      "eng": "Kachin State",
+      "mm": "ကချင်ပြည်နယ်",
+      "lat": 25.3867,
+      "lng": 97.3936,
+      "capital": "Myitkyina",
+      "districts": [
+        {
+          "eng": "Bhamo",
+          "mm": "ဗန်းမော်",
+          "townships": [
+            {
+              "eng": "Bhamo",
+              "mm": "ဗန်းမော်",
+              "slug": "bhamo"
+            },
+            {
+              "eng": "Mansi",
+              "mm": "မံစီ",
+              "slug": "mansi"
+            },
+            {
+              "eng": "Shwegu",
+              "mm": "ရွှေကူ",
+              "slug": "shwegu"
+            },
+            {
+              "eng": "Myohla",
+              "mm": "မြို့လှ",
+              "slug": "myohla"
+            },
+            {
+              "eng": "Momauk",
+              "mm": "မိုးမောက်",
+              "slug": "momauk"
+            },
+            {
+              "eng": "Lwegel",
+              "mm": "လွယ်ဂျယ်",
+              "slug": "lwegel"
+            },
+            {
+              "eng": "Dotphoneyan",
+              "mm": "ဒေါ့ဖုန်းယန်",
+              "slug": "dotphoneyan"
+            }
+          ],
+          "slug": "bhamo"
+        },
+        {
+          "eng": "Mohnyin",
+          "mm": "မိုးညှင်း",
+          "townships": [
+            {
+              "eng": "Mohnyin",
+              "mm": "မိုးညှင်း",
+              "slug": "mohnyin"
+            },
+            {
+              "eng": "Hopin",
+              "mm": "ဟိုပင်",
+              "slug": "hopin"
+            },
+            {
+              "eng": "Mogaung",
+              "mm": "မိုးကောင်း",
+              "slug": "mogaung"
+            },
+            {
+              "eng": "Hpakant",
+              "mm": "ဖားကန့်",
+              "slug": "hpakant"
+            },
+            {
+              "eng": "Kamine",
+              "mm": "ကာမိုင်း",
+              "slug": "kamine"
+            }
+          ],
+          "slug": "mohnyin"
+        },
+        {
+          "eng": "Myitkyina",
+          "mm": "မြစ်ကြီးနား",
+          "townships": [
+            {
+              "eng": "Myitkyina",
+              "mm": "မြစ်ကြီးနား",
+              "slug": "myitkyina"
+            },
+            {
+              "eng": "Hsinbo",
+              "mm": "ဆင်ဘို",
+              "slug": "hsinbo"
+            },
+            {
+              "eng": "Waingmaw",
+              "mm": "ဝိုင်းမော်",
+              "slug": "waingmaw"
+            },
+            {
+              "eng": "Hsadone",
+              "mm": "ဆဒေါင်",
+              "slug": "hsadone"
+            },
+            {
+              "eng": "Kanpaikti",
+              "mm": "ကန်ပိုက်တီ",
+              "slug": "kanpaikti"
+            },
+            {
+              "eng": "Injangyang",
+              "mm": "အင်ဂျန်းယန်",
+              "slug": "injangyang"
+            },
+            {
+              "eng": "Tanai",
+              "mm": "တနိုင်း",
+              "slug": "tanai"
+            },
+            {
+              "eng": "Shinbwayyan",
+              "mm": "ရှင်ဗွေယန်",
+              "slug": "shinbwayyan"
+            },
+            {
+              "eng": "Chipwi",
+              "mm": "ချီဖွေ",
+              "slug": "chipwi"
+            },
+            {
+              "eng": "Panwa",
+              "mm": "ပန်ဝါ",
+              "slug": "panwa"
+            },
+            {
+              "eng": "Hsawlaw",
+              "mm": "ဆော့လော်",
+              "slug": "hsawlaw"
+            }
+          ],
+          "slug": "myitkyina"
+        },
+        {
+          "eng": "Putao",
+          "mm": "ပူတာအို",
+          "townships": [
+            {
+              "eng": "Putao",
+              "mm": "ပူတာအို",
+              "slug": "putao"
+            },
+            {
+              "eng": "Nogmung",
+              "mm": "နောင်မွန်း",
+              "slug": "nogmung"
+            },
+            {
+              "eng": "Pannandin",
+              "mm": "ပန်နန်းဒင်",
+              "slug": "pannandin"
+            },
+            {
+              "eng": "Sumprabum",
+              "mm": "ဆွမ်ပရာဘွမ်",
+              "slug": "sumprabum"
+            },
+            {
+              "eng": "Kawnglanghpu",
+              "mm": "ခေါင်လန်ဖူး",
+              "slug": "kawnglanghpu"
+            },
+            {
+              "eng": "Machanbaw",
+              "mm": "မချမ်းဘော",
+              "slug": "machanbaw"
+            }
+          ],
+          "slug": "putao"
+        }
+      ],
+      "slug": "kachin-state"
+    },
+    {
+      "eng": "Sagaing Region",
+      "mm": "စစ်ကိုင်းတိုင်းဒေသကြီး",
+      "lat": 22.1083,
+      "lng": 95.1358,
+      "capital": "Monywa",
+      "districts": [
+        {
+          "eng": "Hkamti",
+          "mm": "ခန္တီး",
+          "townships": [
+            {
+              "eng": "Hkamti",
+              "mm": "ခန္တီး",
+              "slug": "hkamti"
+            },
+            {
+              "eng": "Homalin",
+              "mm": "ဟုမ္မလင်း",
+              "slug": "homalin"
+            }
+          ],
+          "slug": "hkamti"
+        },
+        {
+          "eng": "Kale",
+          "mm": "ကလေး",
+          "townships": [
+            {
+              "eng": "Kale",
+              "mm": "ကလေး",
+              "slug": "kale"
+            },
+            {
+              "eng": "Kalewa",
+              "mm": "ကလေးဝ",
+              "slug": "kalewa"
+            },
+            {
+              "eng": "Mingin",
+              "mm": "မင်းကင်း",
+              "slug": "mingin"
+            }
+          ],
+          "slug": "kale"
+        },
+        {
+          "eng": "Katha",
+          "mm": "ကသာ",
+          "townships": [
+            {
+              "eng": "Katha",
+              "mm": "ကသာ",
+              "slug": "katha"
+            },
+            {
+              "eng": "Banmauk",
+              "mm": "ဗန်းမောက်",
+              "slug": "banmauk"
+            },
+            {
+              "eng": "Indaw",
+              "mm": "အင်းတော်",
+              "slug": "indaw"
+            },
+            {
+              "eng": "Kawlin",
+              "mm": "ကောလင်း",
+              "slug": "kawlin"
+            },
+            {
+              "eng": "Pinlebu",
+              "mm": "ပင်လယ်ဘူး",
+              "slug": "pinlebu"
+            },
+            {
+              "eng": "Htigyaing",
+              "mm": "ထီးချိုင့်",
+              "slug": "htigyaing"
+            },
+            {
+              "eng": "Wuntho",
+              "mm": "ဝန်းသို",
+              "slug": "wuntho"
+            }
+          ],
+          "slug": "katha"
+        },
+        {
+          "eng": "Kanbalu",
+          "mm": "ကန့်ဘလူ",
+          "townships": [
+            {
+              "eng": "Kanbalu",
+              "mm": "ကန့်ဘလူ",
+              "slug": "kanbalu"
+            },
+            {
+              "eng": "Kyunhla",
+              "mm": "ကျွန်းလှ",
+              "slug": "kyunhla"
+            },
+            {
+              "eng": "Ye-U",
+              "mm": "ရေဦး",
+              "slug": "ye-u"
+            },
+            {
+              "eng": "Taze",
+              "mm": "တန့်ဆည်",
+              "slug": "taze"
+            }
+          ],
+          "slug": "kanbalu"
+        },
+        {
+          "eng": "Mawlaik",
+          "mm": "မော်လိုက်",
+          "townships": [
+            {
+              "eng": "Mawlaik",
+              "mm": "မော်လိုက်",
+              "slug": "mawlaik"
+            },
+            {
+              "eng": "Paungbyin",
+              "mm": "ဖောင်းပြင်",
+              "slug": "paungbyin"
+            }
+          ],
+          "slug": "mawlaik"
+        },
+        {
+          "eng": "Monywa",
+          "mm": "မုံရွာ",
+          "townships": [
+            {
+              "eng": "Monywa",
+              "mm": "မုံရွာ",
+              "slug": "monywa"
+            },
+            {
+              "eng": "Ayadaw",
+              "mm": "အရာတော်",
+              "slug": "ayadaw"
+            },
+            {
+              "eng": "Budalin",
+              "mm": "ဘုတလင်",
+              "slug": "budalin"
+            },
+            {
+              "eng": "Chaung-U",
+              "mm": "ချောင်းဦး",
+              "slug": "chaung-u"
+            }
+          ],
+          "slug": "monywa"
+        },
+        {
+          "eng": "Sagaing",
+          "mm": "စစ်ကိုင်း",
+          "townships": [
+            {
+              "eng": "Sagaing",
+              "mm": "စစ်ကိုင်း",
+              "slug": "sagaing"
+            },
+            {
+              "eng": "Myinmu",
+              "mm": "မြင်းမူ",
+              "slug": "myinmu"
+            },
+            {
+              "eng": "Myaung",
+              "mm": "မြောင်",
+              "slug": "myaung"
+            }
+          ],
+          "slug": "sagaing"
+        },
+        {
+          "eng": "Shwebo",
+          "mm": "ရွှေဘို",
+          "townships": [
+            {
+              "eng": "Khin-U",
+              "mm": "ခင်ဦး",
+              "slug": "khin-u"
+            },
+            {
+              "eng": "Tabayin",
+              "mm": "ဒီပဲယင်း",
+              "slug": "tabayin"
+            },
+            {
+              "eng": "Shwebo",
+              "mm": "ရွှေဘို",
+              "slug": "shwebo"
+            },
+            {
+              "eng": "Wetlet",
+              "mm": "ဝက်လက်",
+              "slug": "wetlet"
+            },
+            {
+              "eng": "Tantsel",
+              "mm": "တန့်ဆည်",
+              "slug": "tantsel"
+            },
+            {
+              "eng": "Yay-U",
+              "mm": "ရေဦး",
+              "slug": "yay-u"
+            }
+          ],
+          "slug": "shwebo"
+        },
+        {
+          "eng": "Tamu",
+          "mm": "တမူး",
+          "townships": [
+            {
+              "eng": "Tamu",
+              "mm": "တမူး",
+              "slug": "tamu"
+            },
+            {
+              "eng": "Khampat",
+              "mm": "ခမ်းပါတ်",
+              "slug": "khampat"
+            },
+            {
+              "eng": "Myothit",
+              "mm": "မြို့သစ်",
+              "slug": "myothit"
+            }
+          ],
+          "slug": "tamu"
+        },
+        {
+          "eng": "Yinmabin",
+          "mm": "ယင်းမာပင်",
+          "townships": [
+            {
+              "eng": "Yinmabin",
+              "mm": "ယင်းမာပင်",
+              "slug": "yinmabin"
+            },
+            {
+              "eng": "Salingyi",
+              "mm": "ဆားလင်းကြီး",
+              "slug": "salingyi"
+            },
+            {
+              "eng": "Pale",
+              "mm": "ပုလဲ",
+              "slug": "pale"
+            },
+            {
+              "eng": "Kani",
+              "mm": "ကနီ",
+              "slug": "kani"
+            }
+          ],
+          "slug": "yinmabin"
+        },
+        {
+          "eng": "Mawlike",
+          "mm": "မော်လိုက်",
+          "townships": [
+            {
+              "eng": "Mawlike",
+              "mm": "မော်လိုက်",
+              "slug": "mawlike"
+            },
+            {
+              "eng": "Phaung Pyin",
+              "mm": "ဖောင်းပြင်",
+              "slug": "phaung-pyin"
+            }
+          ],
+          "slug": "mawlike"
+        }
+      ],
+      "slug": "sagaing-region"
+    },
+    {
+      "eng": "Kayin State",
+      "mm": "ကရင်ပြည်နယ်",
+      "lat": 16.8906,
+      "lng": 97.6333,
+      "capital": "Hpa-An",
+      "districts": [
+        {
+          "eng": "Hpa-an",
+          "mm": "ဘားအံ",
+          "townships": [
+            {
+              "eng": "Hpa-an",
+              "mm": "ဘားအံ",
+              "slug": "hpa-an"
+            },
+            {
+              "eng": "Hlaignbwe",
+              "mm": "လှိုင်းဘွဲ့",
+              "slug": "hlaignbwe"
+            },
+            {
+              "eng": "Paingkyon",
+              "mm": "ပိုင်ကျုံ",
+              "slug": "paingkyon"
+            },
+            {
+              "eng": "Shan Ywathit",
+              "mm": "ရှမ်းရွာသစ်",
+              "slug": "shan-ywathit"
+            },
+            {
+              "eng": "Thandaunggyi",
+              "mm": "သံတောင်ကြီး",
+              "slug": "thandaunggyi"
+            },
+            {
+              "eng": "Thandaung",
+              "mm": "သံတောင်",
+              "slug": "thandaung"
+            },
+            {
+              "eng": "Leiktho",
+              "mm": "လိပ်သို",
+              "slug": "leiktho"
+            },
+            {
+              "eng": "Bawgali",
+              "mm": "ဘောဂလိ",
+              "slug": "bawgali"
+            }
+          ],
+          "slug": "hpa-an"
+        },
+        {
+          "eng": "Hpapun",
+          "mm": "ဖာပွန်",
+          "townships": [
+            {
+              "eng": "Hpapun",
+              "mm": "ဖာပွန်",
+              "slug": "hpapun"
+            },
+            {
+              "eng": "Kamamaung",
+              "mm": "ကမမောင်း",
+              "slug": "kamamaung"
+            }
+          ],
+          "slug": "hpapun"
+        },
+        {
+          "eng": "Kawkareik",
+          "mm": "ကော့ကရိတ်",
+          "townships": [
+            {
+              "eng": "Kawkareik",
+              "mm": "ကော့ကရိတ်",
+              "slug": "kawkareik"
+            },
+            {
+              "eng": "Kyaidon",
+              "mm": "ကျုံဒိုး",
+              "slug": "kyaidon"
+            },
+            {
+              "eng": "Kyain Seikgyi",
+              "mm": "ကြာအင်းဆိပ်ကြီး",
+              "slug": "kyain-seikgyi"
+            },
+            {
+              "eng": "Payarthonezu",
+              "mm": "ဘုရားသုံးဆူ",
+              "slug": "payarthonezu"
+            },
+            {
+              "eng": "Kyeik Don",
+              "mm": "ကျိုက်ဒုံ",
+              "slug": "kyeik-don"
+            }
+          ],
+          "slug": "kawkareik"
+        },
+        {
+          "eng": "Myawaddy",
+          "mm": "မြဝတီ",
+          "townships": [
+            {
+              "eng": "Myawaddy",
+              "mm": "မြဝတီ",
+              "slug": "myawaddy"
+            },
+            {
+              "eng": "Sugali",
+              "mm": "စုကလိ",
+              "slug": "sugali"
+            },
+            {
+              "eng": "Wawlaymyaing",
+              "mm": "ဝေါလေမြိုင် (ဝေါလေမြို့)",
+              "slug": "wawlaymyaing"
+            }
+          ],
+          "slug": "myawaddy"
+        }
+      ],
+      "slug": "kayin-state"
+    },
+    {
+      "eng": "Mon State",
+      "mm": "မွန်ပြည်နယ်",
+      "lat": 16.4847,
+      "lng": 97.6258,
+      "capital": "Mawlamyine",
+      "districts": [
+        {
+          "eng": "Mawlamyine",
+          "mm": "မော်လမြိုင်",
+          "townships": [
+            {
+              "eng": "Mawlamyine",
+              "mm": "မော်လမြိုင်",
+              "slug": "mawlamyine"
+            },
+            {
+              "eng": "Kyaikmaraw",
+              "mm": "ကျိုက်မရော",
+              "slug": "kyaikmaraw"
+            },
+            {
+              "eng": "Chaungzon",
+              "mm": "ချောင်းဆုံ",
+              "slug": "chaungzon"
+            },
+            {
+              "eng": "Thanbyuzayat",
+              "mm": "သံဖြူဇရပ်",
+              "slug": "thanbyuzayat"
+            },
+            {
+              "eng": "Mudon",
+              "mm": "မုဒုံ",
+              "slug": "mudon"
+            },
+            {
+              "eng": "Ye",
+              "mm": "ရေး",
+              "slug": "ye"
+            },
+            {
+              "eng": "Khawzar",
+              "mm": "ခေါဇာ",
+              "slug": "khawzar"
+            },
+            {
+              "eng": "Kyaikkhami",
+              "mm": "ကျိုက္ခမီ",
+              "slug": "kyaikkhami"
+            },
+            {
+              "eng": "Lamine",
+              "mm": "လမိုင်း",
+              "slug": "lamine"
+            }
+          ],
+          "slug": "mawlamyine"
+        },
+        {
+          "eng": "Thaton",
+          "mm": "သထုံ",
+          "townships": [
+            {
+              "eng": "Thaton",
+              "mm": "သထုံ",
+              "slug": "thaton"
+            },
+            {
+              "eng": "Paung",
+              "mm": "ပေါင်",
+              "slug": "paung"
+            },
+            {
+              "eng": "Kyaikto",
+              "mm": "ကျိုက်ထို",
+              "slug": "kyaikto"
+            },
+            {
+              "eng": "Bilin",
+              "mm": "ဘီးလင်း",
+              "slug": "bilin"
+            },
+            {
+              "eng": "Zingyeik",
+              "mm": "ဇင်းကျိုက်",
+              "slug": "zingyeik"
+            }
+          ],
+          "slug": "thaton"
+        }
+      ],
+      "slug": "mon-state"
+    },
+    {
+      "eng": "Taninthayi Region",
+      "mm": "တနင်္သာရီတိုင်းဒေသကြီး",
+      "lat": 14.0367,
+      "lng": 98.1867,
+      "capital": "Dawei",
+      "districts": [
+        {
+          "eng": "Dawei",
+          "mm": "ထားဝယ်",
+          "townships": [
+            {
+              "eng": "Dawei",
+              "mm": "ထားဝယ်",
+              "slug": "dawei"
+            },
+            {
+              "eng": "Launglon",
+              "mm": "လောင်းလုံ",
+              "slug": "launglon"
+            },
+            {
+              "eng": "Thayetchaung",
+              "mm": "သရက်ချောင်း",
+              "slug": "thayetchaung"
+            },
+            {
+              "eng": "Yebyu",
+              "mm": "ရေဖြူ",
+              "slug": "yebyu"
+            },
+            {
+              "eng": "Kaleinaung",
+              "mm": "ကလိန်အောင်",
+              "slug": "kaleinaung"
+            }
+          ],
+          "slug": "dawei"
+        },
+        {
+          "eng": "Kawthoung",
+          "mm": "ကော့သောင်း",
+          "townships": [
+            {
+              "eng": "Kawthoung",
+              "mm": "ကော့သောင်း",
+              "slug": "kawthoung"
+            },
+            {
+              "eng": "Khamaukgyi",
+              "mm": "ခမောက်ကြီး",
+              "slug": "khamaukgyi"
+            },
+            {
+              "eng": "Bokpyin",
+              "mm": "ဘုတ်ပြင်း",
+              "slug": "bokpyin"
+            },
+            {
+              "eng": "Karathuri",
+              "mm": "ကရသူရိ",
+              "slug": "karathuri"
+            },
+            {
+              "eng": "Pyigyimandaing",
+              "mm": "ပြည်ကြီးမဏ္ဍိုင်",
+              "slug": "pyigyimandaing"
+            }
+          ],
+          "slug": "kawthoung"
+        },
+        {
+          "eng": "Myeik",
+          "mm": "မြိတ်",
+          "townships": [
+            {
+              "eng": "Kyunsu",
+              "mm": "ကျွန်းစု",
+              "slug": "kyunsu"
+            },
+            {
+              "eng": "Myeik",
+              "mm": "မြိတ်",
+              "slug": "myeik"
+            },
+            {
+              "eng": "Palaw",
+              "mm": "ပုလော",
+              "slug": "palaw"
+            },
+            {
+              "eng": "Tanintharyi",
+              "mm": "တနင်္သာရီ",
+              "slug": "tanintharyi"
+            },
+            {
+              "eng": "Palauk",
+              "mm": "ပုလော",
+              "slug": "palauk"
+            }
+          ],
+          "slug": "myeik"
+        }
+      ],
+      "slug": "taninthayi-region"
+    },
+    {
+      "eng": "Chin State",
+      "mm": "ချင်းပြည်နယ်",
+      "lat": 22.65,
+      "lng": 93.6167,
+      "capital": "Hakha",
+      "districts": [
+        {
+          "eng": "Falam",
+          "mm": "ဖလမ်း",
+          "townships": [
+            {
+              "eng": "Falam",
+              "mm": "ဖလမ်း",
+              "slug": "falam"
+            },
+            {
+              "eng": "Rikhuadal",
+              "mm": "ရိဒ်ခေါဒါရ်",
+              "slug": "rikhuadal"
+            },
+            {
+              "eng": "Tiddim",
+              "mm": "တီးတိန်",
+              "slug": "tiddim"
+            },
+            {
+              "eng": "TonZang",
+              "mm": "တွန်းဇံ",
+              "slug": "tonzang"
+            },
+            {
+              "eng": "Cikha",
+              "mm": "ကျီခါး",
+              "slug": "cikha"
+            }
+          ],
+          "slug": "falam"
+        },
+        {
+          "eng": "Hakha",
+          "mm": "ဟားခါး",
+          "townships": [
+            {
+              "eng": "Hakha",
+              "mm": "ဟားခါး",
+              "slug": "hakha"
+            },
+            {
+              "eng": "Htantlang",
+              "mm": "ထန်တလန်",
+              "slug": "htantlang"
+            },
+            {
+              "eng": "Hnahayain",
+              "mm": "နှာဟရိန်",
+              "slug": "hnahayain"
+            }
+          ],
+          "slug": "hakha"
+        },
+        {
+          "eng": "Mindat",
+          "mm": "မင်းတပ်",
+          "townships": [
+            {
+              "eng": "Mindat",
+              "mm": "မင်းတပ်",
+              "slug": "mindat"
+            },
+            {
+              "eng": "Kanpetlet",
+              "mm": "ကန်ပက်လက်",
+              "slug": "kanpetlet"
+            },
+            {
+              "eng": "Matupi",
+              "mm": "မတူပီ",
+              "slug": "matupi"
+            },
+            {
+              "eng": "Paletwa",
+              "mm": "ပလက်ဝ",
+              "slug": "paletwa"
+            },
+            {
+              "eng": "Reazu",
+              "mm": "ရေဇွာ",
+              "slug": "reazu"
+            },
+            {
+              "eng": "Sami",
+              "mm": "ဆမီး",
+              "slug": "sami"
+            }
+          ],
+          "slug": "mindat"
+        }
+      ],
+      "slug": "chin-state"
+    },
+    {
+      "eng": "Rakhine State",
+      "mm": "ရခိုင်ပြည်နယ်",
+      "lat": 20.1444,
+      "lng": 92.8969,
+      "capital": "Sittwe",
+      "districts": [
+        {
+          "eng": "Kyaukpyu",
+          "mm": "ကျောက်ဖြူ",
+          "townships": [
+            {
+              "eng": "Kyaukpyu",
+              "mm": "ကျောက်ဖြူ",
+              "slug": "kyaukpyu"
+            },
+            {
+              "eng": "Manaung",
+              "mm": "မာန်အောင်",
+              "slug": "manaung"
+            },
+            {
+              "eng": "Ramree",
+              "mm": "ရမ်းဗြဲ",
+              "slug": "ramree"
+            },
+            {
+              "eng": "Ann",
+              "mm": "အမ်း",
+              "slug": "ann"
+            }
+          ],
+          "slug": "kyaukpyu"
+        },
+        {
+          "eng": "Maungdaw",
+          "mm": "မောင်တော",
+          "townships": [
+            {
+              "eng": "Maungdaw",
+              "mm": "မောင်တော",
+              "slug": "maungdaw"
+            },
+            {
+              "eng": "Buthidaung",
+              "mm": "ဘူးသီးတောင်",
+              "slug": "buthidaung"
+            },
+            {
+              "eng": "Taungpyoletwe",
+              "mm": "တောင်ပြိုလက်ဝဲ",
+              "slug": "taungpyoletwe"
+            }
+          ],
+          "slug": "maungdaw"
+        },
+        {
+          "eng": "Sittwe",
+          "mm": "စစ်တွေ",
+          "townships": [
+            {
+              "eng": "Sittwe",
+              "mm": "စစ်တွေ",
+              "slug": "sittwe"
+            },
+            {
+              "eng": "Ponnagyun",
+              "mm": "ပုဏ္ဏားကျွန်း",
+              "slug": "ponnagyun"
+            },
+            {
+              "eng": "Pauktaw",
+              "mm": "ပေါက်တော",
+              "slug": "pauktaw"
+            },
+            {
+              "eng": "Rathedaung",
+              "mm": "ရသေ့တောင်",
+              "slug": "rathedaung"
+            }
+          ],
+          "slug": "sittwe"
+        },
+        {
+          "eng": "Thandwe",
+          "mm": "သံတွဲ",
+          "townships": [
+            {
+              "eng": "Thandwe",
+              "mm": "သံတွဲ",
+              "slug": "thandwe"
+            },
+            {
+              "eng": "Toungup",
+              "mm": "တောင်ကုတ်",
+              "slug": "toungup"
+            },
+            {
+              "eng": "Gaw",
+              "mm": "ဂွ",
+              "slug": "gaw"
+            },
+            {
+              "eng": "Kyeintali",
+              "mm": "ကျိန္တလီ",
+              "slug": "kyeintali"
+            },
+            {
+              "eng": "Maei",
+              "mm": "မအီ",
+              "slug": "maei"
+            }
+          ],
+          "slug": "thandwe"
+        },
+        {
+          "eng": "Mrauk-U",
+          "mm": "မြောက်ဦး",
+          "townships": [
+            {
+              "eng": "MraukU",
+              "mm": "မြောက်ဦး",
+              "slug": "mrauku"
+            },
+            {
+              "eng": "Kyauktaw",
+              "mm": "ကျောက်တော်",
+              "slug": "kyauktaw"
+            },
+            {
+              "eng": "Minbya",
+              "mm": "မင်းပြား",
+              "slug": "minbya"
+            },
+            {
+              "eng": "Myebon",
+              "mm": "မြေပုံ",
+              "slug": "myebon"
+            }
+          ],
+          "slug": "mrauk-u"
+        }
+      ],
+      "slug": "rakhine-state"
+    }
+  ]
+}

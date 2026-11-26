@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>mmgeo — Myanmar states, districts &amp; townships data for JavaScript</title>
-<meta name="description" content="Bilingual (English/Myanmar) geographic data for Myanmar as an npm package — 15 states &amp; regions, 76 districts, 417 townships with stable slugs. Zero dependencies, TypeScript types included.">
+<meta name="description" content="Bilingual (English/Myanmar) geographic data for Myanmar as an npm package — 15 states &amp; regions, 84 districts &amp; zones, 356 townships with MIMU P-codes, stable slugs and Zawgyi-safe search. Zero dependencies, TypeScript types included.">
 <meta property="og:title" content="mmgeo — Myanmar geographic data for JavaScript">
-<meta property="og:description" content="15 states &amp; regions · 76 districts · 417 townships. Bilingual EN/MM names with stable slugs, as an npm package.">
+<meta property="og:description" content="15 states &amp; regions · 84 districts &amp; zones · 356 townships. MIMU P-codes, bilingual EN/MM names, Zawgyi-safe search.">
 <meta property="og:url" content="https://tunmin11.github.io/mmgeo">
 <meta property="og:type" content="website">
 <style>
@@ -114,8 +114,8 @@ footer { margin-top: 96px; padding-top: 24px; border-top: 1px solid var(--line);
 <header>
   <p class="pkg mono">@tm11/mmgeo</p>
   <h1>Myanmar states, districts &amp; townships</h1>
-  <p class="mm-title">ပြည်နယ် · ခရိုင် · မြို့နယ် — bilingual, with stable slugs</p>
-  <p class="lede">Complete geographic data for Myanmar as a zero-dependency npm package. Every place carries its English and Myanmar name plus a stable slug — ready for address forms, validation, and localization. TypeScript types included.</p>
+  <p class="mm-title">ပြည်နယ် · ခရိုင် · မြို့နယ် — bilingual, with MIMU P-codes</p>
+  <p class="lede">Complete geographic data for Myanmar as a zero-dependency npm package. Every place carries its MIMU P-code, English and Myanmar name, and a stable slug — ready for address forms, validation, and localization. Search accepts Unicode or Zawgyi. ESM + CommonJS, TypeScript types included.</p>
   <div class="install">
     <pre id="install-cmd">npm install @tm11/mmgeo</pre>
     <button id="copy-btn" aria-label="Copy install command">Copy</button>
@@ -128,17 +128,17 @@ footer { margin-top: 96px; padding-top: 24px; border-top: 1px solid var(--line);
   <div class="cascade" aria-label="Example record: state, district, township">
     <div>
       <span class="lvl">State</span>
-      <span>Yangon Region</span> <span class="slug mono">yangon-region</span>
+      <span>Yangon Region</span> <span class="slug mono">MMR013</span>
       <span class="mm" lang="my">ရန်ကုန်တိုင်းဒေသကြီး</span>
     </div>
     <div class="d2">
       <span class="lvl">District</span>
-      <span>East Yangon</span> <span class="slug mono">east-yangon</span>
-      <span class="mm" lang="my">ရန်ကုန်အရှေ့ပိုင်း</span>
+      <span>Yangon (East)</span> <span class="slug mono">MMR013D002</span>
+      <span class="mm" lang="my">ရန်ကုန်(အရှေ့ပိုင်း)</span>
     </div>
     <div class="d3">
       <span class="lvl">Township</span>
-      <span>Thingangyun</span> <span class="slug mono">thingangyun</span>
+      <span>Thingangyun</span> <span class="slug mono">MMR013009</span>
       <span class="mm" lang="my">သင်္ဃန်းကျွန်း</span>
     </div>
   </div>
@@ -148,8 +148,8 @@ footer { margin-top: 96px; padding-top: 24px; border-top: 1px solid var(--line);
   <h2>Coverage</h2>
   <div class="stats">
     <div><strong>15</strong><span>states &amp; regions</span></div>
-    <div><strong>76</strong><span>districts</span></div>
-    <div><strong>417</strong><span>townships</span></div>
+    <div><strong>84</strong><span>districts &amp; zones</span></div>
+    <div><strong>356</strong><span>townships</span></div>
   </div>
 </section>
 
@@ -158,15 +158,17 @@ footer { margin-top: 96px; padding-top: 24px; border-top: 1px solid var(--line);
 <pre class="block"><code><span class="k">import</span> { listStates, listTownships, searchTownships } <span class="k">from</span> <span class="s">'@tm11/mmgeo'</span>;
 
 listStates();
-<span class="c">// [{ slug: 'yangon-region', name: 'Yangon Region', en: 'Yangon Region',</span>
-<span class="c">//    mm: 'ရန်ကုန်တိုင်းဒေသကြီး', lat: 16.8, lng: 96.15, capital: 'Yangon' }, …]</span>
+<span class="c">// [{ code: 'MMR013', slug: 'yangon-region', name: 'Yangon Region',</span>
+<span class="c">//    mm: 'ရန်ကုန်တိုင်းဒေသကြီး', type: 'region', lat: 16.8, lng: 96.15, capital: 'Yangon' }, …]</span>
 
-listTownships(<span class="s">'yangon-region'</span>, <span class="s">'east-yangon'</span>);
-<span class="c">// [{ slug: 'thingangyun', name: 'Thingangyun', en: 'Thingangyun', mm: 'သင်္ဃန်းကျွန်း' }, …]</span>
+listTownships(<span class="s">'yangon-region'</span>, <span class="s">'yangon-east'</span>);  <span class="c">// slug or code: ('MMR013', 'MMR013D002')</span>
+<span class="c">// [{ code: 'MMR013009', slug: 'thingangyun', name: 'Thingangyun', mm: 'သင်္ဃန်းကျွန်း', … }, …]</span>
 
-searchTownships(<span class="s">'တောင်ကြီး'</span>);  <span class="c">// search matches English, Myanmar, or slug</span>
-<span class="c">// [{ slug: 'taunggyi', en: 'Taunggyi', mm: 'တောင်ကြီး',</span>
-<span class="c">//    stateSlug: 'shan-state', districtSlug: 'taunggyi' }]</span></code></pre>
+searchTownships(<span class="s">'တောင်ကြီး'</span>);  <span class="c">// ranked; English, Burmese (Unicode or Zawgyi), slug</span>
+<span class="c">// [{ code: 'MMR014001', en: 'Taunggyi', mm: 'တောင်ကြီး',</span>
+<span class="c">//    stateSlug: 'shan-state', districtCode: 'MMR014D001', … }]</span>
+
+getByCode(<span class="s">'MMR013009'</span>);  <span class="c">// any level, by MIMU P-code</span></code></pre>
 </section>
 
 <section>
@@ -179,52 +181,60 @@ searchTownships(<span class="s">'တောင်ကြီး'</span>);  <span cl
   </div>
 
   <div class="api">
-    <h3><code>listDistricts(stateSlug, opts?)</code></h3>
-    <p>Districts of one state. Returns <code>[]</code> for an unknown slug.</p>
-    <pre>(stateSlug: string, opts?: { lang?: <b>'en' | 'mm'</b> }) => Place[]</pre>
+    <h3><code>listDistricts(state, opts?)</code></h3>
+    <p>Districts and self-administered zones of one state, by slug or code. Returns <code>[]</code> for an unknown state.</p>
+    <pre>(state: string, opts?: { lang?: <b>'en' | 'mm'</b> }) => DistrictPlace[]</pre>
   </div>
 
   <div class="api">
-    <h3><code>listTownships(stateSlug, districtSlug, opts?)</code></h3>
-    <p>Townships of one district. Returns <code>[]</code> for unknown slugs.</p>
-    <pre>(stateSlug: string, districtSlug: string, opts?: { lang?: <b>'en' | 'mm'</b> }) => Place[]</pre>
+    <h3><code>listTownships(state, district?, opts?)</code></h3>
+    <p>Townships of one district — or of the whole state when <code>district</code> is omitted. Returns <code>[]</code> for unknown refs.</p>
+    <pre>(state: string, district?: string, opts?: { lang?: <b>'en' | 'mm'</b> }) => TownshipPlace[]</pre>
   </div>
 
   <div class="api">
     <h3><code>searchTownships(query, opts?)</code></h3>
-    <p>Find townships by English name, Myanmar name, or slug. Results include the state and district slugs for drill-down.</p>
-    <pre>(query: string, opts?: { lang?: <b>'en' | 'mm'</b> }) => PlaceWithPath[]</pre>
+    <p>Ranked search (exact, then prefix, then substring) over English and Myanmar names, slugs and codes. Myanmar input may be Unicode or Zawgyi. Results carry state and district codes for pre-filling a form.</p>
+    <pre>(query: string, opts?: { lang?, limit?, includeSubTownships? }) => TownshipPlace[]</pre>
   </div>
 
   <div class="api">
-    <h3><code>isValidTownship(nameOrSlug)</code></h3>
-    <p>Validate user input against the full township list — English, Myanmar, or slug.</p>
-    <pre>(nameOrSlug: string) => boolean</pre>
+    <h3><code>findTownships(input)</code> · <code>getByCode(code)</code></h3>
+    <p>Exact lookups. <code>findTownships</code> returns every township matching a name, slug or code — more than one means the name is shared (Minhla, Htantabin). <code>getByCode</code> resolves any state, district or township P-code.</p>
+    <pre>(input: string, opts?) => TownshipPlace[]   ·   (code: string, opts?) => AnyPlace | undefined</pre>
+  </div>
+
+  <div class="api">
+    <h3><code>isValidTownship(input)</code></h3>
+    <p>Validate user input against the full township list — English, Myanmar (Unicode or Zawgyi), slug, or P-code.</p>
+    <pre>(input: string) => boolean</pre>
   </div>
 
   <div class="api">
     <h3><code>initialize({ language })</code></h3>
-    <p>Set the package-wide default language for the class-based API.</p>
+    <p>Deprecated. Sets the package-wide default language for the class-based API.</p>
     <pre>(config: { language: <b>'en' | 'mm'</b> }) => void</pre>
   </div>
 
   <div class="api">
     <h3><code>getStates()</code></h3>
-    <p>Class-based API: <code>State</code> → <code>District</code> → <code>Township</code> instances with <code>getName()</code> honoring the language set via <code>initialize</code>.</p>
+    <p>Deprecated class-based API: <code>State</code> → <code>District</code> → <code>Township</code> instances with <code>getName()</code> honoring the language set via <code>initialize</code>.</p>
     <pre>() => State[]</pre>
   </div>
 
   <div class="api">
     <h3>Types</h3>
     <p>Every returned place shares one shape; <code>name</code> follows the requested language.</p>
-    <pre>Place         { slug, name, en, mm }
-StatePlace    Place &amp; { lat, lng, capital }
-PlaceWithPath Place &amp; { stateSlug, districtSlug }</pre>
+    <pre>Place          { code, slug, name, en, mm }
+StatePlace     Place &amp; { level: 'state', type, lat, lng, capital }
+DistrictPlace  Place &amp; { level: 'district', type, stateCode, stateSlug }
+TownshipPlace  Place &amp; { level: 'township', type, official,
+                         stateCode, stateSlug, districtCode, districtSlug }</pre>
   </div>
 </section>
 
 <footer>
-  <span>ISC License</span>
+  <span>Code: ISC · Data: <a href="https://themimu.info/place-codes">MIMU P-codes</a> 9.7, used with attribution (see DATA_LICENSE)</span>
   <span>Built by <a href="https://github.com/tunmin11">tunmin</a></span>
   <a href="https://github.com/tunmin11/mmgeo">Source on GitHub</a>
 </footer>
