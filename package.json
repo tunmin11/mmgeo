@@ -1,7 +1,7 @@
 {
   "name": "@tm11/mmgeo",
-  "version": "2.0.0",
-  "description": "Myanmar states, districts and townships with MIMU P-codes, bilingual English/Burmese names, ranked Zawgyi-safe search and validation.",
+  "version": "2.1.0",
+  "description": "Myanmar states, districts, townships, towns, wards and village tracts with MIMU P-codes, bilingual names, Zawgyi-safe search, React hook and zod schemas.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -16,13 +16,63 @@
         "default": "./dist/index.js"
       }
     },
+    "./towns": {
+      "import": {
+        "types": "./dist/towns.d.mts",
+        "default": "./dist/towns.mjs"
+      },
+      "require": {
+        "types": "./dist/towns.d.ts",
+        "default": "./dist/towns.js"
+      }
+    },
+    "./wards": {
+      "import": {
+        "types": "./dist/wards.d.mts",
+        "default": "./dist/wards.mjs"
+      },
+      "require": {
+        "types": "./dist/wards.d.ts",
+        "default": "./dist/wards.js"
+      }
+    },
+    "./village-tracts": {
+      "import": {
+        "types": "./dist/village-tracts.d.mts",
+        "default": "./dist/village-tracts.mjs"
+      },
+      "require": {
+        "types": "./dist/village-tracts.d.ts",
+        "default": "./dist/village-tracts.js"
+      }
+    },
+    "./react": {
+      "import": {
+        "types": "./dist/react.d.mts",
+        "default": "./dist/react.mjs"
+      },
+      "require": {
+        "types": "./dist/react.d.ts",
+        "default": "./dist/react.js"
+      }
+    },
+    "./zod": {
+      "import": {
+        "types": "./dist/zod.d.mts",
+        "default": "./dist/zod.mjs"
+      },
+      "require": {
+        "types": "./dist/zod.d.ts",
+        "default": "./dist/zod.js"
+      }
+    },
     "./data/db.json": "./data/db.json",
     "./package.json": "./package.json"
   },
   "sideEffects": false,
   "files": [
     "dist",
-    "data",
+    "data/db.json",
     "DATA_LICENSE"
   ],
   "scripts": {
@@ -51,7 +101,12 @@
     "mmgeo",
     "pcode",
     "mimu",
-    "zawgyi"
+    "zawgyi",
+    "wards",
+    "village-tracts",
+    "towns",
+    "react",
+    "zod"
   ],
   "author": "tunmin tunmin2000@gmail.com",
   "license": "ISC",
@@ -64,15 +119,53 @@
   },
   "homepage": "https://tunmin11.github.io/mmgeo",
   "devDependencies": {
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/react": "^16.3.3",
     "@types/jest": "^29.5.12",
+    "@types/react": "^19.3.3",
     "exceljs": "^4.4.0",
     "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "tsup": "^9.0.0",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "zod": "^4.6.7"
   },
   "engines": {
     "node": ">=14"
+  },
+  "typesVersions": {
+    "*": {
+      "towns": [
+        "./dist/towns.d.ts"
+      ],
+      "wards": [
+        "./dist/wards.d.ts"
+      ],
+      "village-tracts": [
+        "./dist/village-tracts.d.ts"
+      ],
+      "react": [
+        "./dist/react.d.ts"
+      ],
+      "zod": [
+        "./dist/zod.d.ts"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "react": ">=16.8",
+    "zod": "^3.23.0 || ^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "zod": {
+      "optional": true
+    }
   }
 }

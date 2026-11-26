@@ -15,4 +15,5 @@ export const {
   findTownships,
   isValidTownship,
   getByCode,
+  nearestTownships,
 } = geo;

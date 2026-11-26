@@ -35,6 +35,7 @@ export const createGeo = (data: GeoData) => {
   const toTownship = (e: Omit<TownshipEntry, 'keys'>, l: Lang): TownshipPlace => ({
     level: 'township', code: e.raw.code, slug: e.raw.slug, name: pick(e.raw, l),
     en: e.raw.en, mm: e.raw.mm, type: e.raw.type, official: e.raw.official !== false,
+    ...(e.raw.lat !== undefined ? { lat: e.raw.lat, lng: e.raw.lng } : {}),
     stateCode: e.state.code, stateSlug: e.state.slug,
     districtCode: e.district.code, districtSlug: e.district.slug,
   });
@@ -136,10 +137,35 @@ export const createGeo = (data: GeoData) => {
     return place;
   };
 
+  /**
+   * Townships nearest to a point, by distance to their seat town (great-circle, km).
+   * Good for "which township am I in?" defaults; it is not a boundary lookup, so a
+   * point near a border can match the neighbouring township. Default `limit` is 1.
+   */
+  const nearestTownships = (
+    lat: number,
+    lng: number,
+    opts: LangOpts & { limit?: number } = {}
+  ): (TownshipPlace & { distanceKm: number })[] => {
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) return [];
+    const rad = Math.PI / 180;
+    const dist = (la: number, ln: number) => {
+      const a = Math.sin(((la - lat) * rad) / 2) ** 2 +
+        Math.cos(lat * rad) * Math.cos(la * rad) * Math.sin(((ln - lng) * rad) / 2) ** 2;
+      return 12742 * Math.asin(Math.min(1, Math.sqrt(a)));
+    };
+    return entries()
+      .filter(e => e.raw.lat !== undefined && e.raw.lng !== undefined)
+      .map(e => [e, dist(e.raw.lat!, e.raw.lng!)] as const)
+      .sort((a, b) => a[1] - b[1])
+      .slice(0, Math.max(0, opts.limit ?? 1))
+      .map(([e, d]) => ({ ...toTownship(e, lang(opts)), distanceKm: Math.round(d * 10) / 10 }));
+  };
+
   return {
     meta: data.meta,
     listStates, listDistricts, listTownships,
-    searchTownships, findTownships, isValidTownship, getByCode,
+    searchTownships, findTownships, isValidTownship, getByCode, nearestTownships,
   };
 };
 

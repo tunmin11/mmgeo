@@ -14,7 +14,9 @@ import ExcelJS from 'exceljs';
 import * as fs from 'fs';
 import * as path from 'path';
 import { slugify, nameKey } from '../src/normalize';
-import type { GeoData, RawDistrict, RawState, RawTownship } from '../src/types';
+import type {
+  GeoData, RawDistrict, RawState, TownRow, TownsFile, VillageTractRow, VillageTractsFile, WardsFile,
+} from '../src/types';
 
 type Row = Record<string, string>;
 
@@ -235,20 +237,74 @@ async function main() {
     }
   }
 
-  const data: GeoData = {
-    meta: {
-      source: `MIMU Place Codes (P-codes) Release ${version}, Myanmar Information Management Unit (MIMU)`,
-      version,
-      generatedAt: new Date().toISOString().slice(0, 10),
-    },
-    states,
+  // ---- Towns, wards, village tracts (separate files, loaded via subpath imports) ----
+  const tspByCode = new Map(states.flatMap(s => s.districts.flatMap(d => d.townships.map(t => [t.code, t] as const))));
+  const inMyanmar = (lat: number, lng: number) => lat > 9 && lat < 29 && lng > 92 && lng < 102;
+  const round = (n: number) => Math.round(n * 1e4) / 1e4;
+
+  const towns: TownsFile['towns'] = {};
+  const townCodes = new Set<string>();
+  for (const r of townRows) {
+    if (!active(r, 'Town') || !tspByCode.has(r.Tsp_Pcode)) continue;
+    // City-wide entries (Yangon City, Mandalay City, Nay Pyi Taw: MMRxxx000777) span several townships.
+    if (!r.Town_Pcode.startsWith(r.Tsp_Pcode)) continue;
+    const lat = Number(r.Latitude), lng = Number(r.Longitude);
+    const row: TownRow = [r.Town_Pcode, cleanEn(r.Town_Name_Eng), cleanMm(r.Town_Name_MMR)];
+    if (inMyanmar(lat, lng)) row.push(round(lat), round(lng));
+    (towns[r.Tsp_Pcode] ??= []).push(row);
+    townCodes.add(r.Town_Pcode);
+  }
+  // A township's coordinates are those of its seat town (MIMU code ending in 701),
+  // falling back to its first town with coordinates.
+  for (const [tsp, list] of Object.entries(towns)) {
+    list.sort((a, b) => a[0].localeCompare(b[0]));
+    const seat = list.find(t => t[0].endsWith('701') && t.length === 5) ?? list.find(t => t.length === 5);
+    if (seat) Object.assign(tspByCode.get(tsp)!, { lat: seat[3], lng: seat[4] });
+  }
+
+  const wards: WardsFile['wards'] = {};
+  for (const r of readSheet(wb, '_05_Ward', 'SR_Pcode')) {
+    if (r.MIMU_War_Mapping_Status !== 'Active' && r.MIMU_Ward_Mapping_Status !== 'Active') continue;
+    if (!townCodes.has(r.Town_Pcode)) continue;
+    (wards[r.Town_Pcode] ??= []).push([r.Ward_Pcode, cleanEn(r.Ward_Name_Eng), cleanMm(r.Ward_Name_MMR)]);
+  }
+
+  const villageTracts: VillageTractsFile['villageTracts'] = {};
+  for (const r of readSheet(wb, '_06-VillageTract', 'SR_Pcode')) {
+    if (!active(r, 'VillageTract') || !tspByCode.has(r.Tsp_Pcode)) continue;
+    const row: VillageTractRow = [r.VT_Pcode, cleanEn(r.Village_Tract_Name_Eng), cleanMm(r.Village_Tract_Name_MMR)];
+    const prev = cleanEn(r.Previous_Village_Tract_Name_Eng ?? '');
+    if (prev && prev !== row[1]) row.push(prev);
+    (villageTracts[r.Tsp_Pcode] ??= []).push(row);
+  }
+  for (const list of [...Object.values(wards), ...Object.values(villageTracts)]) list.sort((a, b) => a[0].localeCompare(b[0]));
+
+  const meta: GeoData['meta'] = {
+    source: `MIMU Place Codes (P-codes) Release ${version}, Myanmar Information Management Unit (MIMU)`,
+    version,
+    generatedAt: new Date().toISOString().slice(0, 10),
   };
-  const out = path.join(__dirname, '..', 'data', 'db.json');
-  fs.writeFileSync(out, JSON.stringify(data, null, 1) + '\n');
+  const data: GeoData = { meta, states };
+  const dir = path.join(__dirname, '..', 'data');
+  const write = (file: string, value: unknown, indent?: number) =>
+    fs.writeFileSync(path.join(dir, file), JSON.stringify(value, null, indent) + '\n');
+  write('db.json', data, 1);
+  // One row per line keeps diffs between MIMU releases readable.
+  const writeRows = (file: string, key: string, groups: Record<string, unknown[]>) => {
+    const body = Object.keys(groups).sort().map(k =>
+      `  ${JSON.stringify(k)}: [\n${groups[k].map(r => `   ${JSON.stringify(r)}`).join(',\n')}\n  ]`).join(',\n');
+    fs.writeFileSync(path.join(dir, file), `{\n "meta": ${JSON.stringify(meta)},\n "${key}": {\n${body}\n }\n}\n`);
+  };
+  writeRows('towns.json', 'towns', towns);
+  writeRows('wards.json', 'wards', wards);
+  writeRows('village-tracts.json', 'villageTracts', villageTracts);
 
   const nd = states.reduce((n, s) => n + s.districts.length, 0);
   const nt = states.reduce((n, s) => n + s.districts.reduce((m, d) => m + d.townships.length, 0), 0);
-  console.log(`MIMU ${version}: ${states.length} states, ${nd} districts/zones, ${nt} townships → ${path.relative(process.cwd(), out)}`);
+  const count = (g: Record<string, unknown[]>) => Object.values(g).reduce((n, l) => n + l.length, 0);
+  const withCoords = [...tspByCode.values()].filter(t => t.lat !== undefined).length;
+  console.log(`MIMU ${version}: ${states.length} states, ${nd} districts/zones, ${nt} townships (${withCoords} with coordinates)`);
+  console.log(`  ${count(towns)} towns, ${count(wards)} wards, ${count(villageTracts)} village tracts → data/`);
   if (unmatched.length) console.log(`1.x townships with no match (no alias): ${unmatched.length}\n  ${unmatched.join('\n  ')}`);
 }
 

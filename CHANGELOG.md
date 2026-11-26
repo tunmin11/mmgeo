@@ -1,5 +1,24 @@
 # Changelog
 
+## 2.1.0
+
+### Added
+- **Wards, village tracts and towns** from the same MIMU 9.7 release, as separate imports so
+  the core stays small: `@tm11/mmgeo/wards` (3,481 urban wards), `@tm11/mmgeo/village-tracts`
+  (13,771 village tracts, with previous names searchable) and `@tm11/mmgeo/towns` (532 towns
+  with coordinates). Each has `list…`, `get…` and ranked `search…` functions.
+- **Township coordinates** (`lat`, `lng`) from each township's seat town, for 351 of 356 townships.
+- `nearestTownships(lat, lng, { limit })` — nearest townships by distance to their seat town.
+- `@tm11/mmgeo/react` — `useAddressCascade`, a headless hook for state → district → township
+  pickers (React 16.8+, optional peer dependency).
+- `@tm11/mmgeo/zod` — `stateCode`, `districtCode`, `townshipCode`, `townshipName`,
+  `mmAddressCodes` and `mmAddress` schemas that check codes exist and belong together
+  (zod 3.23+ or 4, optional peer dependency).
+
+### Changed
+- The package no longer ships raw copies of data files other than `data/db.json`.
+- CI now runs typecheck, tests, build and a smoke test on Node 18–24 for every push and PR.
+
 ## 2.0.0 — 2026-11-26
 
 ### Data

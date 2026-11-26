@@ -21,7 +21,22 @@ export interface RawTownship extends RawNode {
   type: TownshipType;
   /** `false` when only field sources (not the GAD) recognize it, e.g. parts of the Wa area. */
   official?: false;
+  /** Coordinates of the township's seat town (MIMU). Absent for a few field-only townships. */
+  lat?: number;
+  lng?: number;
 }
+
+// Sub-township levels are stored as compact rows, grouped by parent code.
+/** `[code, en, mm, lat?, lng?]` */
+export type TownRow = [string, string, string, number?, number?];
+/** `[code, en, mm]` */
+export type WardRow = [string, string, string];
+/** `[code, en, mm, previousEn?]` */
+export type VillageTractRow = [string, string, string, string?];
+
+export interface TownsFile { meta: GeoData['meta']; towns: Record<string, TownRow[]> }
+export interface WardsFile { meta: GeoData['meta']; wards: Record<string, WardRow[]> }
+export interface VillageTractsFile { meta: GeoData['meta']; villageTracts: Record<string, VillageTractRow[]> }
 
 export interface RawDistrict extends RawNode {
   type: DistrictType;
@@ -78,6 +93,9 @@ export interface TownshipPlace extends Place {
   type: TownshipType;
   /** `false` when only field sources (not the GAD) recognize it. */
   official: boolean;
+  /** Seat-town coordinates, when MIMU has them. */
+  lat?: number;
+  lng?: number;
   stateCode: string;
   stateSlug: string;
   districtCode: string;

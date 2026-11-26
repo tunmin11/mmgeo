@@ -1,9 +1,10 @@
-# @tm11/mmgeo — Myanmar States, Districts & Townships
+# @tm11/mmgeo — Myanmar States, Districts, Townships, Wards & Village Tracts
 
 Bilingual (English + Burmese) Myanmar administrative data with **MIMU P-codes**, as a
 zero-dependency npm package: 15 states/regions, 84 districts and self-administered zones,
-356 townships. Ranked search that accepts **Unicode or Zawgyi**, exact validation,
-and lookup by code. Built for address forms, delivery apps and localization.
+356 townships — plus 532 towns, 3,481 urban wards and 13,771 village tracts as opt-in imports.
+Ranked search that accepts **Unicode or Zawgyi**, validation, lookup by code or by
+coordinates, a React hook and zod schemas. Built for address forms, delivery apps and localization.
 
 [![NPM Version](https://img.shields.io/npm/v/@tm11/mmgeo.svg)](https://www.npmjs.com/package/@tm11/mmgeo) [![NPM Downloads](https://img.shields.io/npm/dt/@tm11/mmgeo.svg)](https://www.npmjs.com/package/@tm11/mmgeo)
 
@@ -11,6 +12,9 @@ and lookup by code. Built for address forms, delivery apps and localization.
 - Data from MIMU P-codes Release 9.7 (Jan 2026) — see [Data source](#data-source--license)
 - Search ranks exact → prefix → substring and ignores "Township"/"မြို့နယ်" suffixes
 - Burmese input works in Unicode **and Zawgyi**
+- Down to ward / village tract level, loaded only when you import it
+- Township coordinates and a nearest-township lookup
+- Headless React hook (`@tm11/mmgeo/react`) and zod schemas (`@tm11/mmgeo/zod`)
 - Slugs from 1.x still resolve
 - ESM + CommonJS, TypeScript types, zero runtime dependencies
 
@@ -51,7 +55,75 @@ isValidTownship('Yankin Township');       // true — English, Burmese, slug, 1.
 findTownships('Minhla');                  // 2 results (Magway, Bago): ask the user which one
 getByCode('MMR013009');                   // { level: 'township', en: 'Thingangyun', districtCode: 'MMR013D002', ... }
 getByCode('MMR015');                      // MIMU's "Shan (North)" part code → Shan State
+
+nearestTownships(16.84, 96.16);           // [{ en: 'Yankin', distanceKm: 0.5, ... }] — e.g. from the browser's geolocation
 ```
+
+`nearestTownships` measures distance to each township's seat town, so it's a good default
+for a form, not a boundary lookup: near a border it can pick the neighbouring township.
+
+## Wards, village tracts and towns
+
+Each level is a separate import, so apps that only need townships don't download it.
+Urban addresses use **wards** (ရပ်ကွက်); rural addresses use **village tracts** (ကျေးရွာအုပ်စု).
+
+```ts
+import { listWards, searchWards } from '@tm11/mmgeo/wards';               // ~48 KB gzipped
+import { listVillageTracts, searchVillageTracts } from '@tm11/mmgeo/village-tracts'; // ~210 KB gzipped
+import { listTowns } from '@tm11/mmgeo/towns';                            // ~15 KB gzipped
+
+listWards('MMR013010');                    // all wards of Yankin (township code, or a unique township name)
+listWards('MMR013010701');                 // wards of one town
+searchWards('No 1', { township: 'Yankin', limit: 5 });  // 'No (1) Ward', 'No (11) Ward', …
+listVillageTracts('MMR017024');            // village tracts of Bogale
+listTowns('Yankin');                       // [{ code: 'MMR013010701', en: 'Yankin', seat: true, lat, lng, ... }]
+```
+
+Every result carries `townshipCode`, `districtCode` and `stateCode`, so one stored
+ward or village tract code is enough to rebuild the whole address.
+
+## React
+
+```tsx
+import { useAddressCascade } from '@tm11/mmgeo/react';
+
+function AddressPicker({ value, onChange }) {
+  const a = useAddressCascade({ initial: value, onChange: v => onChange(v.townshipCode), lang: 'mm' });
+  return (
+    <>
+      <select value={a.value.stateCode ?? ''} onChange={e => a.setState(e.target.value || null)}>
+        <option value="">ပြည်နယ်/တိုင်း</option>
+        {a.states.map(s => <option key={s.code} value={s.code}>{s.name}</option>)}
+      </select>
+      <select value={a.value.districtCode ?? ''} onChange={e => a.setDistrict(e.target.value || null)} disabled={!a.districts.length}>
+        <option value="">ခရိုင်</option>
+        {a.districts.map(d => <option key={d.code} value={d.code}>{d.name}</option>)}
+      </select>
+      <select value={a.value.townshipCode ?? ''} onChange={e => a.setTownship(e.target.value || null)} disabled={!a.townships.length}>
+        <option value="">မြို့နယ်</option>
+        {a.townships.map(t => <option key={t.code} value={t.code}>{t.name}</option>)}
+      </select>
+    </>
+  );
+}
+```
+
+The hook is headless — use it with any UI kit. Choosing a parent clears its children;
+choosing a township fills in its parents. Pass `skipDistrict: true` for a two-level
+form (state → township). `initial` takes a stored township code. Needs `react` 16.8+.
+
+## zod
+
+```ts
+import { mmAddress, mmAddressCodes, townshipCode, townshipName } from '@tm11/mmgeo/zod';
+
+mmAddressCodes.parse({ stateCode: 'MMR013', townshipCode: 'MMR013010' });
+mmAddress.safeParse({ line1: 'No. 12, Kabar Aye Pagoda Rd', stateCode: 'MMR001', townshipCode: 'MMR013010' });
+// → error on townshipCode: "Township is not in this state/region"
+```
+
+Codes must exist and belong together (state ⊃ district ⊃ township ⊃ ward/village tract),
+and errors point at the field that doesn't fit. Works with zod 3.23+ and 4.
 
 ## API
 
@@ -68,8 +140,15 @@ Unknown references return `[]` / `undefined`; nothing throws.
 | `findTownships(input, opts?)` | `TownshipPlace[]` exactly matching a name, slug, 1.x slug or code |
 | `isValidTownship(input)` | `boolean` — `findTownships(input).length > 0` |
 | `getByCode(code, opts?)` | `StatePlace \| DistrictPlace \| TownshipPlace \| undefined` |
+| `nearestTownships(lat, lng, opts?)` | `(TownshipPlace & { distanceKm })[]`, nearest first. Option: `limit` (default 1) |
 | `dataInfo` | `{ source, version, generatedAt }` of the bundled data |
 | `createGeo(data)` | the same API over your own `GeoData` (e.g. a newer MIMU build) |
+
+**`@tm11/mmgeo/wards`** — `listWards(townOrTownship)`, `getWard(code)`, `searchWards(query, { township?, limit? })` → `WardPlace`
+**`@tm11/mmgeo/village-tracts`** — `listVillageTracts(township)`, `getVillageTract(code)`, `searchVillageTracts(query, opts?)` → `VillageTractPlace`
+**`@tm11/mmgeo/towns`** — `listTowns(township)`, `getTown(code)`, `searchTowns(query, opts?)` → `TownPlace`
+**`@tm11/mmgeo/react`** — `useAddressCascade({ lang?, skipDistrict?, initial?, onChange? })`
+**`@tm11/mmgeo/zod`** — `stateCode`, `districtCode`, `townshipCode`, `townshipName`, `mmAddressCodes`, `mmAddress`
 
 ### Types
 
@@ -87,8 +166,15 @@ interface DistrictPlace extends Place {
 interface TownshipPlace extends Place {
   level: 'township'; type: 'township' | 'sub-township';
   official: boolean; // false = recognized by field sources only, not the GAD (e.g. parts of the Wa area)
+  lat?: number; lng?: number; // seat town
   stateCode: string; stateSlug: string; districtCode: string; districtSlug: string;
 }
+
+// Wards, village tracts and towns share this base:
+interface SubPlace { code: string; name: string; en: string; mm: string; townshipCode: string; districtCode: string; stateCode: string }
+interface WardPlace extends SubPlace { level: 'ward'; townCode: string }
+interface VillageTractPlace extends SubPlace { level: 'village-tract'; previousEn?: string }
+interface TownPlace extends SubPlace { level: 'town'; seat: boolean; lat?: number; lng?: number }
 ```
 
 ## Notes on the data
@@ -101,6 +187,10 @@ interface TownshipPlace extends Place {
   into parts (Bago East/West, Shan South/North/East); `getByCode` accepts those part codes.
 - **Wa and Kokang areas** appear as MIMU publishes them, including townships that only
   field sources recognize (`official: false`).
+- **Coordinates** are those of each township's seat town. 5 townships have none in MIMU
+  9.7: Hlaingtharya East and West (recently split) and the field-source Kokang entries.
+- **Only places MIMU marks as active** are included. City-wide entries that span several
+  townships (Yangon City, Mandalay City, Nay Pyi Taw) are left out of the town list.
 
 ## Migrating from 1.x
 
