@@ -3,3 +3,4 @@ dist
 docs/superpowers/
 *.tgz
 CLAUDE.md
+demo/out

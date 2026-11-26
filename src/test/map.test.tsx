@@ -71,3 +71,14 @@ deeper('drills into a state and back out with the breadcrumb', () => {
   fireEvent.click(screen.getByRole('button', { name: 'Myanmar' }));
   expect(shape('Kachin State')).toBeTruthy();
 });
+
+test('a value deeper than the outlines still highlights its ancestor on screen', () => {
+  // With state outlines only, a township value keeps the country view and highlights its state.
+  render(<MyanmarMap value="MMR013010" />);
+  if (availableLevels.includes('township')) {
+    expect(shape('Yankin').getAttribute('aria-pressed')).toBe('true');
+  } else {
+    expect(shape('Yangon Region').getAttribute('aria-pressed')).toBe('true');
+    expect(shape('Kachin State').getAttribute('aria-pressed')).toBe('false');
+  }
+});

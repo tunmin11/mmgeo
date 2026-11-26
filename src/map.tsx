@@ -54,12 +54,19 @@ type Box = [number, number, number, number];
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' && !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
-/** Parent code to focus on so that `code` is visible as a selectable shape. */
-const focusFor = (code: string | null | undefined): string | null => {
+/**
+ * Parent code to zoom into so that `code` shows as a pickable shape, given the
+ * levels this map can show. With state outlines only, that is always the country.
+ */
+const focusFor = (code: string | null | undefined, levels: MapLevel[]): string | null => {
   const p = code ? getByCode(code) : undefined;
-  if (!p || p.level === 'state') return null;
-  if (p.level === 'district') return p.stateCode;
-  return availableLevels.includes('district') ? p.districtCode : p.stateCode;
+  if (!p) return null;
+  // The level `code` is drawn at: the deepest available level not deeper than it.
+  const shown = [...levels].reverse().find(l => ORDER.indexOf(l) <= ORDER.indexOf(p.level as MapLevel));
+  const above = shown ? levels[levels.indexOf(shown) - 1] : undefined;
+  if (!above) return null;
+  if (above === 'state') return p.level === 'state' ? null : p.stateCode;
+  return p.level === 'township' ? p.districtCode : null;
 };
 
 export function MyanmarMap(props: MyanmarMapProps) {
@@ -75,14 +82,14 @@ export function MyanmarMap(props: MyanmarMapProps) {
   const controlled = props.value !== undefined;
   const [inner, setInner] = useState<string | null>(props.defaultValue ?? null);
   const value = controlled ? props.value ?? null : inner;
-  const [focus, setFocus] = useState<string | null>(() => focusFor(value));
+  const [focus, setFocus] = useState<string | null>(() => focusFor(value, levels));
   const [hover, setHover] = useState<string | null>(null);
   const [uid] = useState(() => String(++nextId));
 
   // Keep the view on the selection when it changes from outside (e.g. a dropdown).
   const lastValue = useRef(value);
   useEffect(() => {
-    if (value !== lastValue.current) { lastValue.current = value; setFocus(focusFor(value)); }
+    if (value !== lastValue.current) { lastValue.current = value; setFocus(focusFor(value, levels)); }
   }, [value]);
 
   const focusPlace = focus ? getByCode(focus, { lang }) : undefined;
