@@ -66,8 +66,10 @@ export {
   findTownships,
   isValidTownship,
   getByCode,
+  nearestTownships,
 } from './api';
 export { createGeo } from './geo';
+export type { SubPlace, SubSearchOpts } from './levels';
 export type { Geo } from './geo';
 export type {
   Lang, LangOpts, SearchOpts, Place, StatePlace, DistrictPlace, TownshipPlace, PlaceWithPath, AnyPlace,

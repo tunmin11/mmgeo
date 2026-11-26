@@ -30,7 +30,9 @@
        "type": "township",
        "aliases": [
         "hsinbo"
-       ]
+       ],
+       "lat": 25.3875,
+       "lng": 97.3904
       },
       {
        "code": "MMR001002",
@@ -41,14 +43,18 @@
        "aliases": [
         "hsadone",
         "kanpaikti"
-       ]
+       ],
+       "lat": 25.351,
+       "lng": 97.4428
       },
       {
        "code": "MMR001003",
        "slug": "injangyang",
        "en": "Injangyang",
        "mm": "အင်ဂျန်းယန်",
-       "type": "township"
+       "type": "township",
+       "lat": 25.8299,
+       "lng": 97.7267
       },
       {
        "code": "MMR001004",
@@ -58,7 +64,9 @@
        "type": "township",
        "aliases": [
         "shinbwayyan"
-       ]
+       ],
+       "lat": 26.358,
+       "lng": 96.7166
       },
       {
        "code": "MMR001005",
@@ -68,7 +76,9 @@
        "type": "township",
        "aliases": [
         "panwa"
-       ]
+       ],
+       "lat": 25.8864,
+       "lng": 98.1298
       },
       {
        "code": "MMR001006",
@@ -78,7 +88,9 @@
        "type": "township",
        "aliases": [
         "hsawlaw"
-       ]
+       ],
+       "lat": 26.1542,
+       "lng": 98.2705
       }
      ]
     },
@@ -97,14 +109,18 @@
        "type": "township",
        "aliases": [
         "hopin"
-       ]
+       ],
+       "lat": 24.7771,
+       "lng": 96.3649
       },
       {
        "code": "MMR001008",
        "slug": "mogaung",
        "en": "Mogaung",
        "mm": "မိုးကောင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 25.3027,
+       "lng": 96.9404
       },
       {
        "code": "MMR001009",
@@ -114,7 +130,9 @@
        "type": "township",
        "aliases": [
         "kamine"
-       ]
+       ],
+       "lat": 25.6128,
+       "lng": 96.3121
       }
      ]
     },
@@ -130,7 +148,9 @@
        "slug": "bhamo",
        "en": "Bhamo",
        "mm": "ဗန်းမော်",
-       "type": "township"
+       "type": "township",
+       "lat": 24.2549,
+       "lng": 97.2344
       },
       {
        "code": "MMR001011",
@@ -140,7 +160,9 @@
        "type": "township",
        "aliases": [
         "myohla"
-       ]
+       ],
+       "lat": 24.207,
+       "lng": 96.8061
       },
       {
        "code": "MMR001012",
@@ -151,14 +173,18 @@
        "aliases": [
         "lwegel",
         "dotphoneyan"
-       ]
+       ],
+       "lat": 24.2509,
+       "lng": 97.3465
       },
       {
        "code": "MMR001013",
        "slug": "mansi",
        "en": "Mansi",
        "mm": "မံစီ",
-       "type": "township"
+       "type": "township",
+       "lat": 24.1196,
+       "lng": 97.2931
       }
      ]
     },
@@ -177,21 +203,27 @@
        "type": "township",
        "aliases": [
         "putao"
-       ]
+       ],
+       "lat": 27.2993,
+       "lng": 97.4159
       },
       {
        "code": "MMR001015",
        "slug": "sumprabum",
        "en": "Sumprabum",
        "mm": "ဆွမ်ပရာဘွမ်",
-       "type": "township"
+       "type": "township",
+       "lat": 26.5437,
+       "lng": 97.5677
       },
       {
        "code": "MMR001016",
        "slug": "machanbaw",
        "en": "Machanbaw",
        "mm": "မချမ်းဘော",
-       "type": "township"
+       "type": "township",
+       "lat": 27.284,
+       "lng": 97.5894
       },
       {
        "code": "MMR001017",
@@ -202,7 +234,9 @@
        "aliases": [
         "nogmung",
         "pannandin"
-       ]
+       ],
+       "lat": 27.5053,
+       "lng": 97.8179
       },
       {
        "code": "MMR001018",
@@ -212,7 +246,9 @@
        "type": "township",
        "aliases": [
         "kawnglanghpu"
-       ]
+       ],
+       "lat": 27.0604,
+       "lng": 98.3603
       }
      ],
      "aliases": [
@@ -243,28 +279,36 @@
        "slug": "loikaw",
        "en": "Loikaw",
        "mm": "လွိုင်ကော်",
-       "type": "township"
+       "type": "township",
+       "lat": 19.6742,
+       "lng": 97.2099
       },
       {
        "code": "MMR002002",
        "slug": "demoso",
        "en": "Demoso",
        "mm": "ဒီးမော့ဆို",
-       "type": "township"
+       "type": "township",
+       "lat": 19.5383,
+       "lng": 97.1588
       },
       {
        "code": "MMR002003",
        "slug": "hpruso",
        "en": "Hpruso",
        "mm": "ဖရူဆို",
-       "type": "township"
+       "type": "township",
+       "lat": 19.4139,
+       "lng": 97.128
       },
       {
        "code": "MMR002004",
        "slug": "shadaw",
        "en": "Shadaw",
        "mm": "ရှားတော",
-       "type": "township"
+       "type": "township",
+       "lat": 19.6317,
+       "lng": 97.5207
       }
      ]
     },
@@ -284,21 +328,27 @@
        "aliases": [
         "bawlakhe",
         "ywathit"
-       ]
+       ],
+       "lat": 19.1726,
+       "lng": 97.3428
       },
       {
        "code": "MMR002006",
        "slug": "hpasawng",
        "en": "Hpasawng",
        "mm": "ဖားဆောင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 18.8706,
+       "lng": 97.3159
       },
       {
        "code": "MMR002007",
        "slug": "mese",
        "en": "Mese",
        "mm": "မယ်စဲ့",
-       "type": "township"
+       "type": "township",
+       "lat": 18.6725,
+       "lng": 97.6628
       }
      ],
      "aliases": [
@@ -329,7 +379,9 @@
        "slug": "hpa-an",
        "en": "Hpa-An",
        "mm": "ဘားအံ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.8808,
+       "lng": 97.6369
       },
       {
        "code": "MMR003002",
@@ -341,7 +393,9 @@
         "hlaignbwe",
         "paingkyon",
         "shan-ywathit"
-       ]
+       ],
+       "lat": 17.1257,
+       "lng": 97.8187
       },
       {
        "code": "MMR003004",
@@ -353,7 +407,9 @@
         "thandaung",
         "leiktho",
         "bawgali"
-       ]
+       ],
+       "lat": 19.0734,
+       "lng": 96.6755
       }
      ]
     },
@@ -373,7 +429,9 @@
        "aliases": [
         "sugali",
         "wawlaymyaing"
-       ]
+       ],
+       "lat": 16.6887,
+       "lng": 98.513
       }
      ]
     },
@@ -392,7 +450,9 @@
        "type": "township",
        "aliases": [
         "kyaidon"
-       ]
+       ],
+       "lat": 16.5555,
+       "lng": 98.24
       },
       {
        "code": "MMR003007",
@@ -404,7 +464,9 @@
         "kyain-seikgyi",
         "payarthonezu",
         "kyeik-don"
-       ]
+       ],
+       "lat": 16.0408,
+       "lng": 98.1232
       }
      ]
     },
@@ -423,7 +485,9 @@
        "type": "township",
        "aliases": [
         "kamamaung"
-       ]
+       ],
+       "lat": 18.0631,
+       "lng": 97.4432
       }
      ]
     }
@@ -454,7 +518,9 @@
        "type": "township",
        "aliases": [
         "rikhuadal"
-       ]
+       ],
+       "lat": 22.9111,
+       "lng": 93.6803
       },
       {
        "code": "MMR004004",
@@ -464,7 +530,9 @@
        "type": "township",
        "aliases": [
         "tiddim"
-       ]
+       ],
+       "lat": 23.3706,
+       "lng": 93.6562
       },
       {
        "code": "MMR004005",
@@ -474,7 +542,9 @@
        "type": "township",
        "aliases": [
         "cikha"
-       ]
+       ],
+       "lat": 23.6031,
+       "lng": 93.6918
       }
      ]
     },
@@ -490,14 +560,18 @@
        "slug": "mindat",
        "en": "Mindat",
        "mm": "မင်းတပ်",
-       "type": "township"
+       "type": "township",
+       "lat": 21.3718,
+       "lng": 93.9737
       },
       {
        "code": "MMR004008",
        "slug": "kanpetlet",
        "en": "Kanpetlet",
        "mm": "ကန်ပက်လက်",
-       "type": "township"
+       "type": "township",
+       "lat": 21.1934,
+       "lng": 94.0567
       }
      ]
     },
@@ -513,7 +587,9 @@
        "slug": "hakha",
        "en": "Hakha",
        "mm": "ဟားခါး",
-       "type": "township"
+       "type": "township",
+       "lat": 22.6401,
+       "lng": 93.6048
       },
       {
        "code": "MMR004003",
@@ -524,7 +600,9 @@
        "aliases": [
         "htantlang",
         "hnahayain"
-       ]
+       ],
+       "lat": 22.6984,
+       "lng": 93.4278
       }
      ]
     },
@@ -543,7 +621,9 @@
        "type": "township",
        "aliases": [
         "reazu"
-       ]
+       ],
+       "lat": 21.6048,
+       "lng": 93.4409
       },
       {
        "code": "MMR004009",
@@ -553,7 +633,9 @@
        "type": "township",
        "aliases": [
         "sami"
-       ]
+       ],
+       "lat": 21.3044,
+       "lng": 92.8546
       }
      ]
     }
@@ -581,21 +663,27 @@
        "slug": "sagaing",
        "en": "Sagaing",
        "mm": "စစ်ကိုင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 21.8801,
+       "lng": 95.9623
       },
       {
        "code": "MMR005002",
        "slug": "myinmu",
        "en": "Myinmu",
        "mm": "မြင်းမူ",
-       "type": "township"
+       "type": "township",
+       "lat": 21.9268,
+       "lng": 95.5716
       },
       {
        "code": "MMR005003",
        "slug": "myaung",
        "en": "Myaung",
        "mm": "မြောင်",
-       "type": "township"
+       "type": "township",
+       "lat": 21.8316,
+       "lng": 95.4242
       }
      ]
     },
@@ -611,21 +699,27 @@
        "slug": "shwebo",
        "en": "Shwebo",
        "mm": "ရွှေဘို",
-       "type": "township"
+       "type": "township",
+       "lat": 22.57,
+       "lng": 95.6985
       },
       {
        "code": "MMR005005",
        "slug": "khin-u",
        "en": "Khin-U",
        "mm": "ခင်ဦး",
-       "type": "township"
+       "type": "township",
+       "lat": 22.7702,
+       "lng": 95.6215
       },
       {
        "code": "MMR005006",
        "slug": "wetlet",
        "en": "Wetlet",
        "mm": "ဝက်လက်",
-       "type": "township"
+       "type": "township",
+       "lat": 22.3672,
+       "lng": 95.7881
       },
       {
        "code": "MMR005009",
@@ -635,14 +729,18 @@
        "type": "township",
        "aliases": [
         "yay-u"
-       ]
+       ],
+       "lat": 22.7691,
+       "lng": 95.4305
       },
       {
        "code": "MMR005010",
        "slug": "tabayin",
        "en": "Tabayin",
        "mm": "ဒီပဲယင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 22.6853,
+       "lng": 95.3212
       },
       {
        "code": "MMR005011",
@@ -652,7 +750,9 @@
        "type": "township",
        "aliases": [
         "tantsel"
-       ]
+       ],
+       "lat": 22.9441,
+       "lng": 95.3736
       }
      ]
     },
@@ -668,28 +768,36 @@
        "slug": "monywa",
        "en": "Monywa",
        "mm": "မုံရွာ",
-       "type": "township"
+       "type": "township",
+       "lat": 22.1217,
+       "lng": 95.1396
       },
       {
        "code": "MMR005013",
        "slug": "budalin",
        "en": "Budalin",
        "mm": "ဘုတလင်",
-       "type": "township"
+       "type": "township",
+       "lat": 22.3892,
+       "lng": 95.1486
       },
       {
        "code": "MMR005014",
        "slug": "ayadaw",
        "en": "Ayadaw",
        "mm": "အရာတော်",
-       "type": "township"
+       "type": "township",
+       "lat": 22.2853,
+       "lng": 95.4507
       },
       {
        "code": "MMR005015",
        "slug": "chaung-u",
        "en": "Chaung-U",
        "mm": "ချောင်းဦး",
-       "type": "township"
+       "type": "township",
+       "lat": 21.9569,
+       "lng": 95.2736
       }
      ]
     },
@@ -705,14 +813,18 @@
        "slug": "katha",
        "en": "Katha",
        "mm": "ကသာ",
-       "type": "township"
+       "type": "township",
+       "lat": 24.1816,
+       "lng": 96.3317
       },
       {
        "code": "MMR005021",
        "slug": "indaw",
        "en": "Indaw",
        "mm": "အင်းတော်",
-       "type": "township"
+       "type": "township",
+       "lat": 24.2225,
+       "lng": 96.1417
       },
       {
        "code": "MMR005022",
@@ -722,14 +834,18 @@
        "type": "township",
        "aliases": [
         "htigyaing"
-       ]
+       ],
+       "lat": 23.7545,
+       "lng": 96.1483
       },
       {
        "code": "MMR005023",
        "slug": "banmauk",
        "en": "Banmauk",
        "mm": "ဗန်းမောက်",
-       "type": "township"
+       "type": "township",
+       "lat": 24.3999,
+       "lng": 95.8577
       }
      ]
     },
@@ -745,21 +861,27 @@
        "slug": "kale",
        "en": "Kale",
        "mm": "ကလေး",
-       "type": "township"
+       "type": "township",
+       "lat": 23.1933,
+       "lng": 94.0298
       },
       {
        "code": "MMR005028",
        "slug": "kalewa",
        "en": "Kalewa",
        "mm": "ကလေးဝ",
-       "type": "township"
+       "type": "township",
+       "lat": 23.1998,
+       "lng": 94.3004
       },
       {
        "code": "MMR005029",
        "slug": "mingin",
        "en": "Mingin",
        "mm": "မင်းကင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 22.8778,
+       "lng": 94.4942
       }
      ]
     },
@@ -779,7 +901,9 @@
        "aliases": [
         "khampat",
         "myothit"
-       ]
+       ],
+       "lat": 24.2115,
+       "lng": 94.3153
       }
      ]
     },
@@ -798,7 +922,9 @@
        "type": "township",
        "aliases": [
         "mawlike"
-       ]
+       ],
+       "lat": 23.6351,
+       "lng": 94.412
       },
       {
        "code": "MMR005032",
@@ -808,7 +934,9 @@
        "type": "township",
        "aliases": [
         "phaung-pyin"
-       ]
+       ],
+       "lat": 24.2677,
+       "lng": 94.8169
       }
      ],
      "aliases": [
@@ -827,14 +955,18 @@
        "slug": "hkamti",
        "en": "Hkamti",
        "mm": "ခန္တီး",
-       "type": "township"
+       "type": "township",
+       "lat": 25.9924,
+       "lng": 95.6955
       },
       {
        "code": "MMR005034",
        "slug": "homalin",
        "en": "Homalin",
        "mm": "ဟုမ္မလင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 24.8644,
+       "lng": 94.9109
       }
      ]
     },
@@ -853,28 +985,36 @@
        "type": "township",
        "aliases": [
         "yinmabin"
-       ]
+       ],
+       "lat": 22.0778,
+       "lng": 94.9001
       },
       {
        "code": "MMR005017",
        "slug": "kani",
        "en": "Kani",
        "mm": "ကနီ",
-       "type": "township"
+       "type": "township",
+       "lat": 22.4329,
+       "lng": 94.8485
       },
       {
        "code": "MMR005018",
        "slug": "salingyi",
        "en": "Salingyi",
        "mm": "ဆားလင်းကြီး",
-       "type": "township"
+       "type": "township",
+       "lat": 21.9736,
+       "lng": 95.0827
       },
       {
        "code": "MMR005019",
        "slug": "pale",
        "en": "Pale",
        "mm": "ပုလဲ",
-       "type": "township"
+       "type": "township",
+       "lat": 21.9342,
+       "lng": 94.8749
       }
      ],
      "aliases": [
@@ -893,14 +1033,18 @@
        "slug": "kanbalu",
        "en": "Kanbalu",
        "mm": "ကန့်ဘလူ",
-       "type": "township"
+       "type": "township",
+       "lat": 23.2031,
+       "lng": 95.5189
       },
       {
        "code": "MMR005008",
        "slug": "kyunhla",
        "en": "Kyunhla",
        "mm": "ကျွန်းလှ",
-       "type": "township"
+       "type": "township",
+       "lat": 23.3196,
+       "lng": 95.5321
       }
      ]
     },
@@ -916,21 +1060,27 @@
        "slug": "kawlin",
        "en": "Kawlin",
        "mm": "ကောလင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 23.7903,
+       "lng": 95.6834
       },
       {
        "code": "MMR005025",
        "slug": "wuntho",
        "en": "Wuntho",
        "mm": "ဝန်းသို",
-       "type": "township"
+       "type": "township",
+       "lat": 23.8992,
+       "lng": 95.6819
       },
       {
        "code": "MMR005026",
        "slug": "pinlebu",
        "en": "Pinlebu",
        "mm": "ပင်လည်ဘူး",
-       "type": "township"
+       "type": "township",
+       "lat": 24.0809,
+       "lng": 95.3703
       }
      ]
     },
@@ -946,21 +1096,27 @@
        "slug": "layshi",
        "en": "Layshi",
        "mm": "လေရှီး",
-       "type": "township"
+       "type": "township",
+       "lat": 25.4471,
+       "lng": 94.9566
       },
       {
        "code": "MMR005036",
        "slug": "lahe",
        "en": "Lahe",
        "mm": "လဟယ်",
-       "type": "township"
+       "type": "township",
+       "lat": 26.3259,
+       "lng": 95.4411
       },
       {
        "code": "MMR005037",
        "slug": "nanyun",
        "en": "Nanyun",
        "mm": "နန်းယွန်း",
-       "type": "township"
+       "type": "township",
+       "lat": 26.9798,
+       "lng": 96.1671
       }
      ]
     }
@@ -991,21 +1147,27 @@
        "slug": "dawei",
        "en": "Dawei",
        "mm": "ထားဝယ်",
-       "type": "township"
+       "type": "township",
+       "lat": 14.0775,
+       "lng": 98.1964
       },
       {
        "code": "MMR006002",
        "slug": "launglon",
        "en": "Launglon",
        "mm": "လောင်းလုံး",
-       "type": "township"
+       "type": "township",
+       "lat": 13.9752,
+       "lng": 98.1196
       },
       {
        "code": "MMR006003",
        "slug": "thayetchaung",
        "en": "Thayetchaung",
        "mm": "သရက်ချောင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 13.8687,
+       "lng": 98.2625
       },
       {
        "code": "MMR006004",
@@ -1015,7 +1177,9 @@
        "type": "township",
        "aliases": [
         "kaleinaung"
-       ]
+       ],
+       "lat": 14.2459,
+       "lng": 98.2029
       }
      ]
     },
@@ -1031,14 +1195,18 @@
        "slug": "myeik",
        "en": "Myeik",
        "mm": "မြိတ်",
-       "type": "township"
+       "type": "township",
+       "lat": 12.4411,
+       "lng": 98.6098
       },
       {
        "code": "MMR006006",
        "slug": "kyunsu",
        "en": "Kyunsu",
        "mm": "ကျွန်းစု",
-       "type": "township"
+       "type": "township",
+       "lat": 12.4739,
+       "lng": 98.4544
       },
       {
        "code": "MMR006007",
@@ -1048,14 +1216,18 @@
        "type": "township",
        "aliases": [
         "palauk"
-       ]
+       ],
+       "lat": 12.9753,
+       "lng": 98.6458
       },
       {
        "code": "MMR006008",
        "slug": "tanintharyi",
        "en": "Tanintharyi",
        "mm": "တနင်္သာရီ",
-       "type": "township"
+       "type": "township",
+       "lat": 12.0894,
+       "lng": 99.0128
       }
      ]
     },
@@ -1074,7 +1246,9 @@
        "type": "township",
        "aliases": [
         "khamaukgyi"
-       ]
+       ],
+       "lat": 9.9826,
+       "lng": 98.55
       },
       {
        "code": "MMR006010",
@@ -1085,7 +1259,9 @@
        "aliases": [
         "karathuri",
         "pyigyimandaing"
-       ]
+       ],
+       "lat": 11.265,
+       "lng": 98.7591
       }
      ]
     }
@@ -1117,28 +1293,36 @@
        "slug": "bago",
        "en": "Bago",
        "mm": "ပဲခူး",
-       "type": "township"
+       "type": "township",
+       "lat": 17.3358,
+       "lng": 96.4839
       },
       {
        "code": "MMR007002",
        "slug": "thanatpin",
        "en": "Thanatpin",
        "mm": "သနပ်ပင်",
-       "type": "township"
+       "type": "township",
+       "lat": 17.289,
+       "lng": 96.5766
       },
       {
        "code": "MMR007003",
        "slug": "kawa",
        "en": "Kawa",
        "mm": "ကဝ",
-       "type": "township"
+       "type": "township",
+       "lat": 17.0897,
+       "lng": 96.4663
       },
       {
        "code": "MMR007004",
        "slug": "waw",
        "en": "Waw",
        "mm": "ဝေါ",
-       "type": "township"
+       "type": "township",
+       "lat": 17.4836,
+       "lng": 96.6823
       },
       {
        "code": "MMR007005",
@@ -1149,7 +1333,9 @@
        "aliases": [
         "madauk",
         "pyuntaza"
-       ]
+       ],
+       "lat": 17.9532,
+       "lng": 96.7215
       },
       {
        "code": "MMR007006",
@@ -1159,21 +1345,27 @@
        "type": "township",
        "aliases": [
         "penwegon"
-       ]
+       ],
+       "lat": 18.1587,
+       "lng": 96.6139
       },
       {
        "code": "MMR007007",
        "slug": "daik-u",
        "en": "Daik-U",
        "mm": "ဒိုက်ဦး",
-       "type": "township"
+       "type": "township",
+       "lat": 17.7897,
+       "lng": 96.6697
       },
       {
        "code": "MMR007008",
        "slug": "shwegyin",
        "en": "Shwegyin",
        "mm": "ရွှေကျင်",
-       "type": "township"
+       "type": "township",
+       "lat": 17.923,
+       "lng": 96.8777
       }
      ]
     },
@@ -1189,21 +1381,27 @@
        "slug": "taungoo",
        "en": "Taungoo",
        "mm": "တောင်ငူ",
-       "type": "township"
+       "type": "township",
+       "lat": 18.9395,
+       "lng": 96.4331
       },
       {
        "code": "MMR007010",
        "slug": "yedashe",
        "en": "Yedashe",
        "mm": "ရေတာရှည်",
-       "type": "township"
+       "type": "township",
+       "lat": 19.1569,
+       "lng": 96.3423
       },
       {
        "code": "MMR007011",
        "slug": "kyaukkyi",
        "en": "Kyaukkyi",
        "mm": "ကျောက်ကြီး",
-       "type": "township"
+       "type": "township",
+       "lat": 18.3276,
+       "lng": 96.7686
       },
       {
        "code": "MMR007012",
@@ -1213,21 +1411,27 @@
        "type": "township",
        "aliases": [
         "pyu"
-       ]
+       ],
+       "lat": 18.4844,
+       "lng": 96.4357
       },
       {
        "code": "MMR007013",
        "slug": "oktwin",
        "en": "Oktwin",
        "mm": "အုတ်တွင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 18.8329,
+       "lng": 96.4136
       },
       {
        "code": "MMR007014",
        "slug": "htantabin",
        "en": "Htantabin",
        "mm": "ထန်းတပင်",
-       "type": "township"
+       "type": "township",
+       "lat": 18.8433,
+       "lng": 96.4838
       }
      ]
     },
@@ -1243,7 +1447,9 @@
        "slug": "pyay",
        "en": "Pyay",
        "mm": "ပြည်",
-       "type": "township"
+       "type": "township",
+       "lat": 18.8215,
+       "lng": 95.221
       },
       {
        "code": "MMR008002",
@@ -1253,14 +1459,18 @@
        "type": "township",
        "aliases": [
         "paukkaung"
-       ]
+       ],
+       "lat": 18.9028,
+       "lng": 95.5482
       },
       {
        "code": "MMR008003",
        "slug": "padaung",
        "en": "Padaung",
        "mm": "ပန်းတောင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 18.718,
+       "lng": 95.1535
       },
       {
        "code": "MMR008004",
@@ -1270,21 +1480,27 @@
        "type": "township",
        "aliases": [
         "paungdale"
-       ]
+       ],
+       "lat": 18.4895,
+       "lng": 95.5072
       },
       {
        "code": "MMR008005",
        "slug": "thegon",
        "en": "Thegon",
        "mm": "သဲကုန်း",
-       "type": "township"
+       "type": "township",
+       "lat": 18.647,
+       "lng": 95.4172
       },
       {
        "code": "MMR008006",
        "slug": "shwedaung",
        "en": "Shwedaung",
        "mm": "ရွှေတောင်",
-       "type": "township"
+       "type": "township",
+       "lat": 18.7051,
+       "lng": 95.214
       }
      ]
     },
@@ -1304,42 +1520,54 @@
        "aliases": [
         "tharrawaddy",
         "thonze"
-       ]
+       ],
+       "lat": 17.6544,
+       "lng": 95.7863
       },
       {
        "code": "MMR008008",
        "slug": "letpadan",
        "en": "Letpadan",
        "mm": "လက်ပံတန်း",
-       "type": "township"
+       "type": "township",
+       "lat": 17.779,
+       "lng": 95.7453
       },
       {
        "code": "MMR008009",
        "slug": "minhla",
        "en": "Minhla",
        "mm": "မင်းလှ",
-       "type": "township"
+       "type": "township",
+       "lat": 17.9739,
+       "lng": 95.7091
       },
       {
        "code": "MMR008010",
        "slug": "okpho",
        "en": "Okpho",
        "mm": "အုတ်ဖို",
-       "type": "township"
+       "type": "township",
+       "lat": 18.1302,
+       "lng": 95.6718
       },
       {
        "code": "MMR008011",
        "slug": "zigon",
        "en": "Zigon",
        "mm": "ဇီးကုန်း",
-       "type": "township"
+       "type": "township",
+       "lat": 18.3385,
+       "lng": 95.623
       },
       {
        "code": "MMR008012",
        "slug": "nattalin",
        "en": "Nattalin",
        "mm": "နတ်တလင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 18.4275,
+       "lng": 95.5473
       },
       {
        "code": "MMR008013",
@@ -1349,14 +1577,18 @@
        "type": "township",
        "aliases": [
         "monyin"
-       ]
+       ],
+       "lat": 18.0272,
+       "lng": 95.5119
       },
       {
        "code": "MMR008014",
        "slug": "gyobingauk",
        "en": "Gyobingauk",
        "mm": "ကြို့ပင်ကောက်",
-       "type": "township"
+       "type": "township",
+       "lat": 18.2299,
+       "lng": 95.6526
       }
      ]
     }
@@ -1384,14 +1616,18 @@
        "slug": "magway",
        "en": "Magway",
        "mm": "မကွေး",
-       "type": "township"
+       "type": "township",
+       "lat": 20.1403,
+       "lng": 94.927
       },
       {
        "code": "MMR009002",
        "slug": "yenangyaung",
        "en": "Yenangyaung",
        "mm": "ရေနံချောင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 20.4584,
+       "lng": 94.8731
       },
       {
        "code": "MMR009003",
@@ -1401,28 +1637,36 @@
        "type": "township",
        "aliases": [
         "chauck"
-       ]
+       ],
+       "lat": 20.891,
+       "lng": 94.8183
       },
       {
        "code": "MMR009004",
        "slug": "taungdwingyi",
        "en": "Taungdwingyi",
        "mm": "တောင်တွင်းကြီး",
-       "type": "township"
+       "type": "township",
+       "lat": 20.0019,
+       "lng": 95.5461
       },
       {
        "code": "MMR009005",
        "slug": "myothit",
        "en": "Myothit",
        "mm": "မြို့သစ်",
-       "type": "township"
+       "type": "township",
+       "lat": 20.1992,
+       "lng": 95.4469
       },
       {
        "code": "MMR009006",
        "slug": "natmauk",
        "en": "Natmauk",
        "mm": "နတ်မောက်",
-       "type": "township"
+       "type": "township",
+       "lat": 20.3534,
+       "lng": 95.3997
       }
      ]
     },
@@ -1438,35 +1682,45 @@
        "slug": "minbu",
        "en": "Minbu",
        "mm": "မင်းဘူး",
-       "type": "township"
+       "type": "township",
+       "lat": 20.1716,
+       "lng": 94.8752
       },
       {
        "code": "MMR009008",
        "slug": "pwintbyu",
        "en": "Pwintbyu",
        "mm": "ပွင့်ဖြူ",
-       "type": "township"
+       "type": "township",
+       "lat": 20.3633,
+       "lng": 94.6693
       },
       {
        "code": "MMR009009",
        "slug": "ngape",
        "en": "Ngape",
        "mm": "ငဖဲ",
-       "type": "township"
+       "type": "township",
+       "lat": 20.0754,
+       "lng": 94.4677
       },
       {
        "code": "MMR009010",
        "slug": "salin",
        "en": "Salin",
        "mm": "စလင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 20.5772,
+       "lng": 94.6594
       },
       {
        "code": "MMR009011",
        "slug": "sidoktaya",
        "en": "Sidoktaya",
        "mm": "စေတုတ္ထရာ",
-       "type": "township"
+       "type": "township",
+       "lat": 20.4466,
+       "lng": 94.2456
       }
      ]
     },
@@ -1482,42 +1736,54 @@
        "slug": "thayet",
        "en": "Thayet",
        "mm": "သရက်",
-       "type": "township"
+       "type": "township",
+       "lat": 19.3215,
+       "lng": 95.1772
       },
       {
        "code": "MMR009013",
        "slug": "minhla",
        "en": "Minhla",
        "mm": "မင်းလှ",
-       "type": "township"
+       "type": "township",
+       "lat": 19.9656,
+       "lng": 95.0367
       },
       {
        "code": "MMR009014",
        "slug": "mindon",
        "en": "Mindon",
        "mm": "မင်းတုန်း",
-       "type": "township"
+       "type": "township",
+       "lat": 19.3513,
+       "lng": 94.7323
       },
       {
        "code": "MMR009015",
        "slug": "kamma",
        "en": "Kamma",
        "mm": "ကံမ",
-       "type": "township"
+       "type": "township",
+       "lat": 19.029,
+       "lng": 95.0959
       },
       {
        "code": "MMR009016",
        "slug": "aunglan",
        "en": "Aunglan",
        "mm": "အောင်လံ",
-       "type": "township"
+       "type": "township",
+       "lat": 19.3586,
+       "lng": 95.2168
       },
       {
        "code": "MMR009017",
        "slug": "sinbaungwe",
        "en": "Sinbaungwe",
        "mm": "ဆင်ပေါင်ဝဲ",
-       "type": "township"
+       "type": "township",
+       "lat": 19.7229,
+       "lng": 95.1619
       }
      ]
     },
@@ -1533,35 +1799,45 @@
        "slug": "pakokku",
        "en": "Pakokku",
        "mm": "ပခုက္ကူ",
-       "type": "township"
+       "type": "township",
+       "lat": 21.335,
+       "lng": 95.0823
       },
       {
        "code": "MMR009019",
        "slug": "yesagyo",
        "en": "Yesagyo",
        "mm": "ရေစကြို",
-       "type": "township"
+       "type": "township",
+       "lat": 21.6339,
+       "lng": 95.2453
       },
       {
        "code": "MMR009020",
        "slug": "myaing",
        "en": "Myaing",
        "mm": "မြိုင်",
-       "type": "township"
+       "type": "township",
+       "lat": 21.6126,
+       "lng": 94.8543
       },
       {
        "code": "MMR009021",
        "slug": "pauk",
        "en": "Pauk",
        "mm": "ပေါက်",
-       "type": "township"
+       "type": "township",
+       "lat": 21.4522,
+       "lng": 94.4737
       },
       {
        "code": "MMR009022",
        "slug": "seikphyu",
        "en": "Seikphyu",
        "mm": "ဆိပ်ဖြူ",
-       "type": "township"
+       "type": "township",
+       "lat": 20.9065,
+       "lng": 94.7924
       }
      ]
     },
@@ -1577,21 +1853,27 @@
        "slug": "gangaw",
        "en": "Gangaw",
        "mm": "ဂန့်ဂေါ",
-       "type": "township"
+       "type": "township",
+       "lat": 22.1742,
+       "lng": 94.1358
       },
       {
        "code": "MMR009024",
        "slug": "tilin",
        "en": "Tilin",
        "mm": "ထီးလင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 21.6964,
+       "lng": 94.0928
       },
       {
        "code": "MMR009025",
        "slug": "saw",
        "en": "Saw",
        "mm": "ဆော",
-       "type": "township"
+       "type": "township",
+       "lat": 21.1522,
+       "lng": 94.1547
       }
      ]
     }
@@ -1622,14 +1904,18 @@
        "type": "township",
        "aliases": [
         "aungmyethazan"
-       ]
+       ],
+       "lat": 21.9932,
+       "lng": 96.0969
       },
       {
        "code": "MMR010002",
        "slug": "chanayethazan",
        "en": "Chanayethazan",
        "mm": "ချမ်းအေးသာစံ",
-       "type": "township"
+       "type": "township",
+       "lat": 21.9754,
+       "lng": 96.0946
       },
       {
        "code": "MMR010003",
@@ -1639,14 +1925,18 @@
        "type": "township",
        "aliases": [
         "mahaaungmye"
-       ]
+       ],
+       "lat": 21.9754,
+       "lng": 96.0946
       },
       {
        "code": "MMR010004",
        "slug": "chanmyathazi",
        "en": "Chanmyathazi",
        "mm": "ချမ်းမြသာစည်",
-       "type": "township"
+       "type": "township",
+       "lat": 21.9394,
+       "lng": 96.0958
       },
       {
        "code": "MMR010005",
@@ -1656,21 +1946,27 @@
        "type": "township",
        "aliases": [
         "pyigyidagun"
-       ]
+       ],
+       "lat": 21.902,
+       "lng": 96.1042
       },
       {
        "code": "MMR010006",
        "slug": "amarapura",
        "en": "Amarapura",
        "mm": "အမရပူရ",
-       "type": "township"
+       "type": "township",
+       "lat": 21.9031,
+       "lng": 96.0495
       },
       {
        "code": "MMR010007",
        "slug": "patheingyi",
        "en": "Patheingyi",
        "mm": "ပုသိမ်ကြီး",
-       "type": "township"
+       "type": "township",
+       "lat": 22.004,
+       "lng": 96.1647
       }
      ]
     },
@@ -1686,21 +1982,27 @@
        "slug": "pyinoolwin",
        "en": "Pyinoolwin",
        "mm": "ပြင်ဦးလွင်",
-       "type": "township"
+       "type": "township",
+       "lat": 22.014,
+       "lng": 96.4563
       },
       {
        "code": "MMR010009",
        "slug": "madaya",
        "en": "Madaya",
        "mm": "မတ္တရာ",
-       "type": "township"
+       "type": "township",
+       "lat": 22.2104,
+       "lng": 96.1064
       },
       {
        "code": "MMR010010",
        "slug": "singu",
        "en": "Singu",
        "mm": "စဉ့်ကူး",
-       "type": "township"
+       "type": "township",
+       "lat": 22.5484,
+       "lng": 95.9966
       },
       {
        "code": "MMR010011",
@@ -1710,7 +2012,9 @@
        "type": "township",
        "aliases": [
         "mogok"
-       ]
+       ],
+       "lat": 22.9214,
+       "lng": 96.5054
       },
       {
        "code": "MMR010012",
@@ -1720,7 +2024,9 @@
        "type": "township",
        "aliases": [
         "tagaung"
-       ]
+       ],
+       "lat": 22.8859,
+       "lng": 95.9753
       }
      ]
     },
@@ -1736,28 +2042,36 @@
        "slug": "kyaukse",
        "en": "Kyaukse",
        "mm": "ကျောက်ဆည်",
-       "type": "township"
+       "type": "township",
+       "lat": 21.6133,
+       "lng": 96.1303
       },
       {
        "code": "MMR010014",
        "slug": "sintgaing",
        "en": "Sintgaing",
        "mm": "စဉ့်ကိုင်",
-       "type": "township"
+       "type": "township",
+       "lat": 21.7311,
+       "lng": 96.1061
       },
       {
        "code": "MMR010015",
        "slug": "myittha",
        "en": "Myittha",
        "mm": "မြစ်သား",
-       "type": "township"
+       "type": "township",
+       "lat": 21.4243,
+       "lng": 96.1309
       },
       {
        "code": "MMR010016",
        "slug": "tada-u",
        "en": "Tada-U",
        "mm": "တံတားဦး",
-       "type": "township"
+       "type": "township",
+       "lat": 21.8151,
+       "lng": 95.9707
       }
      ]
     },
@@ -1773,7 +2087,9 @@
        "slug": "myingyan",
        "en": "Myingyan",
        "mm": "မြင်းခြံ",
-       "type": "township"
+       "type": "township",
+       "lat": 21.4575,
+       "lng": 95.3918
       },
       {
        "code": "MMR010018",
@@ -1783,14 +2099,18 @@
        "type": "township",
        "aliases": [
         "thaungtha"
-       ]
+       ],
+       "lat": 21.276,
+       "lng": 95.4454
       },
       {
        "code": "MMR010019",
        "slug": "natogyi",
        "en": "Natogyi",
        "mm": "နွားထိုးကြီး",
-       "type": "township"
+       "type": "township",
+       "lat": 21.4237,
+       "lng": 95.6545
       },
       {
        "code": "MMR010021",
@@ -1800,7 +2120,9 @@
        "type": "township",
        "aliases": [
         "nganzun"
-       ]
+       ],
+       "lat": 21.8985,
+       "lng": 95.6872
       }
      ]
     },
@@ -1816,7 +2138,9 @@
        "slug": "kyaukpadaung",
        "en": "Kyaukpadaung",
        "mm": "ကျောက်ပန်းတောင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 20.8425,
+       "lng": 95.1322
       },
       {
        "code": "MMR010022",
@@ -1826,7 +2150,9 @@
        "type": "township",
        "aliases": [
         "ngathayauk"
-       ]
+       ],
+       "lat": 21.1954,
+       "lng": 94.9101
       }
      ]
     },
@@ -1842,14 +2168,18 @@
        "slug": "yamethin",
        "en": "Yamethin",
        "mm": "ရမည်းသင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 20.4305,
+       "lng": 96.1375
       },
       {
        "code": "MMR010024",
        "slug": "pyawbwe",
        "en": "Pyawbwe",
        "mm": "ပျော်ဘွယ်",
-       "type": "township"
+       "type": "township",
+       "lat": 20.5947,
+       "lng": 96.0509
       }
      ]
     },
@@ -1865,28 +2195,36 @@
        "slug": "meiktila",
        "en": "Meiktila",
        "mm": "မိတ္ထီလာ",
-       "type": "township"
+       "type": "township",
+       "lat": 20.8819,
+       "lng": 95.8631
       },
       {
        "code": "MMR010029",
        "slug": "mahlaing",
        "en": "Mahlaing",
        "mm": "မလှိုင်",
-       "type": "township"
+       "type": "township",
+       "lat": 21.0987,
+       "lng": 95.647
       },
       {
        "code": "MMR010030",
        "slug": "thazi",
        "en": "Thazi",
        "mm": "သာစည်",
-       "type": "township"
+       "type": "township",
+       "lat": 20.8502,
+       "lng": 96.0584
       },
       {
        "code": "MMR010031",
        "slug": "wundwin",
        "en": "Wundwin",
        "mm": "ဝမ်းတွင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 21.0969,
+       "lng": 96.03
       }
      ]
     }
@@ -1914,21 +2252,27 @@
        "slug": "mawlamyine",
        "en": "Mawlamyine",
        "mm": "မော်လမြိုင်",
-       "type": "township"
+       "type": "township",
+       "lat": 16.4846,
+       "lng": 97.6259
       },
       {
        "code": "MMR011002",
        "slug": "kyaikmaraw",
        "en": "Kyaikmaraw",
        "mm": "ကျိုက်မရော",
-       "type": "township"
+       "type": "township",
+       "lat": 16.3705,
+       "lng": 97.7241
       },
       {
        "code": "MMR011003",
        "slug": "chaungzon",
        "en": "Chaungzon",
        "mm": "ချောင်းဆုံ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.3513,
+       "lng": 97.5505
       },
       {
        "code": "MMR011004",
@@ -1938,14 +2282,18 @@
        "type": "township",
        "aliases": [
         "kyaikkhami"
-       ]
+       ],
+       "lat": 15.9667,
+       "lng": 97.7333
       },
       {
        "code": "MMR011005",
        "slug": "mudon",
        "en": "Mudon",
        "mm": "မုဒုံ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.2581,
+       "lng": 97.7248
       },
       {
        "code": "MMR011006",
@@ -1956,7 +2304,9 @@
        "aliases": [
         "khawzar",
         "lamine"
-       ]
+       ],
+       "lat": 15.2454,
+       "lng": 97.8494
       }
      ]
     },
@@ -1972,7 +2322,9 @@
        "slug": "thaton",
        "en": "Thaton",
        "mm": "သထုံ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.9197,
+       "lng": 97.3678
       },
       {
        "code": "MMR011008",
@@ -1982,21 +2334,27 @@
        "type": "township",
        "aliases": [
         "zingyeik"
-       ]
+       ],
+       "lat": 16.6168,
+       "lng": 97.4567
       },
       {
        "code": "MMR011009",
        "slug": "kyaikto",
        "en": "Kyaikto",
        "mm": "ကျိုက်ထို",
-       "type": "township"
+       "type": "township",
+       "lat": 17.3116,
+       "lng": 97.0199
       },
       {
        "code": "MMR011010",
        "slug": "bilin",
        "en": "Bilin",
        "mm": "ဘီးလင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 17.2199,
+       "lng": 97.2393
       }
      ]
     }
@@ -2024,28 +2382,36 @@
        "slug": "sittwe",
        "en": "Sittwe",
        "mm": "စစ်တွေ",
-       "type": "township"
+       "type": "township",
+       "lat": 20.1373,
+       "lng": 92.8855
       },
       {
        "code": "MMR012002",
        "slug": "ponnagyun",
        "en": "Ponnagyun",
        "mm": "ပုဏ္ဏားကျွန်း",
-       "type": "township"
+       "type": "township",
+       "lat": 20.332,
+       "lng": 93.0043
       },
       {
        "code": "MMR012007",
        "slug": "pauktaw",
        "en": "Pauktaw",
        "mm": "ပေါက်တော",
-       "type": "township"
+       "type": "township",
+       "lat": 20.181,
+       "lng": 93.0682
       },
       {
        "code": "MMR012008",
        "slug": "rathedaung",
        "en": "Rathedaung",
        "mm": "ရသေ့တောင်",
-       "type": "township"
+       "type": "township",
+       "lat": 20.4822,
+       "lng": 92.7561
       }
      ]
     },
@@ -2064,14 +2430,18 @@
        "type": "township",
        "aliases": [
         "taungpyoletwe"
-       ]
+       ],
+       "lat": 20.819,
+       "lng": 92.3678
       },
       {
        "code": "MMR012010",
        "slug": "buthidaung",
        "en": "Buthidaung",
        "mm": "ဘူးသီးတောင်",
-       "type": "township"
+       "type": "township",
+       "lat": 20.875,
+       "lng": 92.525
       }
      ]
     },
@@ -2087,7 +2457,9 @@
        "slug": "kyaukpyu",
        "en": "Kyaukpyu",
        "mm": "ကျောက်ဖြူ",
-       "type": "township"
+       "type": "township",
+       "lat": 19.4239,
+       "lng": 93.5544
       },
       {
        "code": "MMR012012",
@@ -2097,21 +2469,27 @@
        "type": "township",
        "aliases": [
         "manaung"
-       ]
+       ],
+       "lat": 18.8551,
+       "lng": 93.7215
       },
       {
        "code": "MMR012013",
        "slug": "ramree",
        "en": "Ramree",
        "mm": "ရမ်းဗြဲ",
-       "type": "township"
+       "type": "township",
+       "lat": 19.0877,
+       "lng": 93.8589
       },
       {
        "code": "MMR012014",
        "slug": "ann",
        "en": "Ann",
        "mm": "အမ်း",
-       "type": "township"
+       "type": "township",
+       "lat": 19.7954,
+       "lng": 94.0479
       }
      ]
     },
@@ -2127,7 +2505,9 @@
        "slug": "thandwe",
        "en": "Thandwe",
        "mm": "သံတွဲ",
-       "type": "township"
+       "type": "township",
+       "lat": 18.4662,
+       "lng": 94.3677
       },
       {
        "code": "MMR012016",
@@ -2137,7 +2517,9 @@
        "type": "township",
        "aliases": [
         "maei"
-       ]
+       ],
+       "lat": 18.8535,
+       "lng": 94.2397
       },
       {
        "code": "MMR012017",
@@ -2148,7 +2530,9 @@
        "aliases": [
         "gaw",
         "kyeintali"
-       ]
+       ],
+       "lat": 17.5937,
+       "lng": 94.58
       }
      ]
     },
@@ -2167,28 +2551,36 @@
        "type": "township",
        "aliases": [
         "mrauku"
-       ]
+       ],
+       "lat": 20.5919,
+       "lng": 93.1884
       },
       {
        "code": "MMR012004",
        "slug": "kyauktaw",
        "en": "Kyauktaw",
        "mm": "ကျောက်တော်",
-       "type": "township"
+       "type": "township",
+       "lat": 20.844,
+       "lng": 92.9728
       },
       {
        "code": "MMR012005",
        "slug": "minbya",
        "en": "Minbya",
        "mm": "မင်းပြား",
-       "type": "township"
+       "type": "township",
+       "lat": 20.3645,
+       "lng": 93.2727
       },
       {
        "code": "MMR012006",
        "slug": "myebon",
        "en": "Myebon",
        "mm": "မြေပုံ",
-       "type": "township"
+       "type": "township",
+       "lat": 20.0468,
+       "lng": 93.3738
       }
      ]
     }
@@ -2216,42 +2608,54 @@
        "slug": "insein",
        "en": "Insein",
        "mm": "အင်းစိန်",
-       "type": "township"
+       "type": "township",
+       "lat": 16.9018,
+       "lng": 96.096
       },
       {
        "code": "MMR013002",
        "slug": "mingaladon",
        "en": "Mingaladon",
        "mm": "မင်္ဂလာဒုံ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.9491,
+       "lng": 96.128
       },
       {
        "code": "MMR013003",
        "slug": "hmawbi",
        "en": "Hmawbi",
        "mm": "မှော်ဘီ",
-       "type": "township"
+       "type": "township",
+       "lat": 17.0999,
+       "lng": 96.0418
       },
       {
        "code": "MMR013004",
        "slug": "hlegu",
        "en": "Hlegu",
        "mm": "လှည်းကူး",
-       "type": "township"
+       "type": "township",
+       "lat": 17.0988,
+       "lng": 96.2275
       },
       {
        "code": "MMR013005",
        "slug": "taikkyi",
        "en": "Taikkyi",
        "mm": "တိုက်ကြီး",
-       "type": "township"
+       "type": "township",
+       "lat": 17.3126,
+       "lng": 95.9634
       },
       {
        "code": "MMR013006",
        "slug": "htantabin",
        "en": "Htantabin",
        "mm": "ထန်းတပင်",
-       "type": "township"
+       "type": "township",
+       "lat": 17.0174,
+       "lng": 95.9827
       },
       {
        "code": "MMR013007",
@@ -2261,7 +2665,9 @@
        "type": "township",
        "aliases": [
         "shwepyitha"
-       ]
+       ],
+       "lat": 16.955,
+       "lng": 96.0833
       },
       {
        "code": "MMR013046",
@@ -2294,56 +2700,72 @@
        "slug": "thingangyun",
        "en": "Thingangyun",
        "mm": "သင်္ဃန်းကျွန်း",
-       "type": "township"
+       "type": "township",
+       "lat": 16.831,
+       "lng": 96.1932
       },
       {
        "code": "MMR013010",
        "slug": "yankin",
        "en": "Yankin",
        "mm": "ရန်ကင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 16.836,
+       "lng": 96.1624
       },
       {
        "code": "MMR013011",
        "slug": "south-okkalapa",
        "en": "South Okkalapa",
        "mm": "တောင်ဥက္ကလာပ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.8462,
+       "lng": 96.1799
       },
       {
        "code": "MMR013012",
        "slug": "north-okkalapa",
        "en": "North Okkalapa",
        "mm": "မြောက်ဥက္ကလာပ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.9188,
+       "lng": 96.163
       },
       {
        "code": "MMR013013",
        "slug": "thaketa",
        "en": "Thaketa",
        "mm": "သာကေတ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.793,
+       "lng": 96.203
       },
       {
        "code": "MMR013014",
        "slug": "dawbon",
        "en": "Dawbon",
        "mm": "ဒေါပုံ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.7819,
+       "lng": 96.1844
       },
       {
        "code": "MMR013015",
        "slug": "tamwe",
        "en": "Tamwe",
        "mm": "တာမွေ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.8102,
+       "lng": 96.1765
       },
       {
        "code": "MMR013016",
        "slug": "pazundaung",
        "en": "Pazundaung",
        "mm": "ပုဇွန်တောင်",
-       "type": "township"
+       "type": "township",
+       "lat": 16.7796,
+       "lng": 96.1744
       },
       {
        "code": "MMR013017",
@@ -2353,7 +2775,9 @@
        "type": "township",
        "aliases": [
         "botataung"
-       ]
+       ],
+       "lat": 16.772,
+       "lng": 96.1697
       },
       {
        "code": "MMR013018",
@@ -2363,7 +2787,9 @@
        "type": "township",
        "aliases": [
         "south-dagon"
-       ]
+       ],
+       "lat": 16.8402,
+       "lng": 96.2258
       },
       {
        "code": "MMR013019",
@@ -2373,7 +2799,9 @@
        "type": "township",
        "aliases": [
         "north-dagon"
-       ]
+       ],
+       "lat": 16.8777,
+       "lng": 96.1908
       },
       {
        "code": "MMR013020",
@@ -2383,7 +2811,9 @@
        "type": "township",
        "aliases": [
         "east-dagon"
-       ]
+       ],
+       "lat": 16.9128,
+       "lng": 96.2132
       },
       {
        "code": "MMR013021",
@@ -2393,7 +2823,9 @@
        "type": "township",
        "aliases": [
         "dagon-seikkan"
-       ]
+       ],
+       "lat": 16.8405,
+       "lng": 96.2726
       },
       {
        "code": "MMR013022",
@@ -2403,7 +2835,9 @@
        "type": "township",
        "aliases": [
         "mingala-taungnyunt"
-       ]
+       ],
+       "lat": 16.7889,
+       "lng": 96.1679
       }
      ],
      "aliases": [
@@ -2422,28 +2856,36 @@
        "slug": "thanlyin",
        "en": "Thanlyin",
        "mm": "သန်လျင်",
-       "type": "township"
+       "type": "township",
+       "lat": 16.7638,
+       "lng": 96.2518
       },
       {
        "code": "MMR013024",
        "slug": "kyauktan",
        "en": "Kyauktan",
        "mm": "ကျောက်တန်း",
-       "type": "township"
+       "type": "township",
+       "lat": 16.6339,
+       "lng": 96.3235
       },
       {
        "code": "MMR013025",
        "slug": "thongwa",
        "en": "Thongwa",
        "mm": "သုံးခွ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.7586,
+       "lng": 96.5231
       },
       {
        "code": "MMR013026",
        "slug": "kayan",
        "en": "Kayan",
        "mm": "ခရမ်း",
-       "type": "township"
+       "type": "township",
+       "lat": 16.9054,
+       "lng": 96.5605
       },
       {
        "code": "MMR013027",
@@ -2453,28 +2895,36 @@
        "type": "township",
        "aliases": [
         "twante"
-       ]
+       ],
+       "lat": 16.7073,
+       "lng": 95.9305
       },
       {
        "code": "MMR013028",
        "slug": "kawhmu",
        "en": "Kawhmu",
        "mm": "ကော့မှူး",
-       "type": "township"
+       "type": "township",
+       "lat": 16.5462,
+       "lng": 96.062
       },
       {
        "code": "MMR013029",
        "slug": "kungyangon",
        "en": "Kungyangon",
        "mm": "ကွမ်းခြံကုန်း",
-       "type": "township"
+       "type": "township",
+       "lat": 16.4394,
+       "lng": 96.0119
       },
       {
        "code": "MMR013030",
        "slug": "dala",
        "en": "Dala",
        "mm": "ဒလ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.7586,
+       "lng": 96.143
       },
       {
        "code": "MMR013031",
@@ -2484,14 +2934,18 @@
        "type": "township",
        "aliases": [
         "seikkyikanaungto"
-       ]
+       ],
+       "lat": 16.7578,
+       "lng": 96.1164
       },
       {
        "code": "MMR013032",
        "slug": "cocokyun",
        "en": "Cocokyun",
        "mm": "ကိုကိုးကျွန်း",
-       "type": "township"
+       "type": "township",
+       "lat": 14.1344,
+       "lng": 93.3682
       }
      ],
      "aliases": [
@@ -2510,28 +2964,36 @@
        "slug": "kyauktada",
        "en": "Kyauktada",
        "mm": "ကျောက်တံတား",
-       "type": "township"
+       "type": "township",
+       "lat": 16.7743,
+       "lng": 96.1616
       },
       {
        "code": "MMR013034",
        "slug": "pabedan",
        "en": "Pabedan",
        "mm": "ပန်းဘဲတန်း",
-       "type": "township"
+       "type": "township",
+       "lat": 16.777,
+       "lng": 96.156
       },
       {
        "code": "MMR013035",
        "slug": "lanmadaw",
        "en": "Lanmadaw",
        "mm": "လမ်းမတော်",
-       "type": "township"
+       "type": "township",
+       "lat": 16.7799,
+       "lng": 96.1423
       },
       {
        "code": "MMR013036",
        "slug": "latha",
        "en": "Latha",
        "mm": "လသာ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.7771,
+       "lng": 96.1505
       },
       {
        "code": "MMR013037",
@@ -2541,7 +3003,9 @@
        "type": "township",
        "aliases": [
         "ahlon"
-       ]
+       ],
+       "lat": 16.7824,
+       "lng": 96.1279
       },
       {
        "code": "MMR013038",
@@ -2551,21 +3015,27 @@
        "type": "township",
        "aliases": [
         "kyimyindaing"
-       ]
+       ],
+       "lat": 16.8146,
+       "lng": 96.1219
       },
       {
        "code": "MMR013039",
        "slug": "sanchaung",
        "en": "Sanchaung",
        "mm": "စမ်းချောင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 16.8038,
+       "lng": 96.1373
       },
       {
        "code": "MMR013040",
        "slug": "hlaing",
        "en": "Hlaing",
        "mm": "လှိုင်",
-       "type": "township"
+       "type": "township",
+       "lat": 16.8479,
+       "lng": 96.1252
       },
       {
        "code": "MMR013041",
@@ -2575,7 +3045,9 @@
        "type": "township",
        "aliases": [
         "kamayut"
-       ]
+       ],
+       "lat": 16.8277,
+       "lng": 96.1324
       },
       {
        "code": "MMR013042",
@@ -2585,21 +3057,27 @@
        "type": "township",
        "aliases": [
         "mayangon"
-       ]
+       ],
+       "lat": 16.8662,
+       "lng": 96.1426
       },
       {
        "code": "MMR013043",
        "slug": "dagon",
        "en": "Dagon",
        "mm": "ဒဂုံ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.795,
+       "lng": 96.1469
       },
       {
        "code": "MMR013044",
        "slug": "bahan",
        "en": "Bahan",
        "mm": "ဗဟန်း",
-       "type": "township"
+       "type": "township",
+       "lat": 16.8154,
+       "lng": 96.1561
       }
      ],
      "aliases": [
@@ -2640,7 +3118,9 @@
         "aye-thar-yar",
         "kyauktalongyi",
         "shwe-nyaung"
-       ]
+       ],
+       "lat": 20.7748,
+       "lng": 97.036
       },
       {
        "code": "MMR014002",
@@ -2651,7 +3131,9 @@
        "aliases": [
         "nyaung-shwe",
         "nangpan"
-       ]
+       ],
+       "lat": 20.6596,
+       "lng": 96.9321
       },
       {
        "code": "MMR014005",
@@ -2661,7 +3143,9 @@
        "type": "township",
        "aliases": [
         "aungpan"
-       ]
+       ],
+       "lat": 20.6242,
+       "lng": 96.5586
       },
       {
        "code": "MMR014008",
@@ -2672,14 +3156,18 @@
        "aliases": [
         "yetsouk",
         "indaw"
-       ]
+       ],
+       "lat": 21.2466,
+       "lng": 96.8652
       },
       {
        "code": "MMR014010",
        "slug": "pekon",
        "en": "Pekon",
        "mm": "ဖယ်ခုံ",
-       "type": "township"
+       "type": "township",
+       "lat": 19.8635,
+       "lng": 97.0083
       }
      ]
     },
@@ -2698,14 +3186,18 @@
        "type": "township",
        "aliases": [
         "panglong"
-       ]
+       ],
+       "lat": 20.9254,
+       "lng": 97.5658
       },
       {
        "code": "MMR014012",
        "slug": "laihka",
        "en": "Laihka",
        "mm": "လဲချား",
-       "type": "township"
+       "type": "township",
+       "lat": 21.2702,
+       "lng": 97.6651
       },
       {
        "code": "MMR014013",
@@ -2715,7 +3207,9 @@
        "type": "township",
        "aliases": [
         "kholan"
-       ]
+       ],
+       "lat": 20.8891,
+       "lng": 97.7202
       },
       {
        "code": "MMR014014",
@@ -2725,7 +3219,9 @@
        "type": "township",
        "aliases": [
         "karli"
-       ]
+       ],
+       "lat": 21.301,
+       "lng": 98.424
       },
       {
        "code": "MMR014015",
@@ -2735,7 +3231,9 @@
        "type": "township",
        "aliases": [
         "minenaung"
-       ]
+       ],
+       "lat": 21.9252,
+       "lng": 97.8193
       },
       {
        "code": "MMR014016",
@@ -2745,7 +3243,9 @@
        "type": "township",
        "aliases": [
         "mongkung"
-       ]
+       ],
+       "lat": 21.6115,
+       "lng": 97.527
       },
       {
        "code": "MMR014017",
@@ -2755,7 +3255,9 @@
        "type": "township",
        "aliases": [
         "minesan"
-       ]
+       ],
+       "lat": 21.9051,
+       "lng": 98.3604
       }
      ]
     },
@@ -2774,7 +3276,9 @@
        "type": "township",
        "aliases": [
         "homane"
-       ]
+       ],
+       "lat": 20.3422,
+       "lng": 98.0037
       },
       {
        "code": "MMR014019",
@@ -2784,21 +3288,27 @@
        "type": "township",
        "aliases": [
         "kengtaung"
-       ]
+       ],
+       "lat": 20.5136,
+       "lng": 97.8712
       },
       {
        "code": "MMR014020",
        "slug": "mawkmai",
        "en": "Mawkmai",
        "mm": "မောက်မယ်",
-       "type": "township"
+       "type": "township",
+       "lat": 20.2305,
+       "lng": 97.7237
       },
       {
        "code": "MMR014021",
        "slug": "mongpan",
        "en": "Mongpan",
        "mm": "မိုင်းပန်",
-       "type": "township"
+       "type": "township",
+       "lat": 20.3188,
+       "lng": 98.3541
       }
      ]
     },
@@ -2817,14 +3327,18 @@
        "type": "township",
        "aliases": [
         "pingdaya"
-       ]
+       ],
+       "lat": 20.9416,
+       "lng": 96.6628
       },
       {
        "code": "MMR014007",
        "slug": "ywangan",
        "en": "Ywangan",
        "mm": "ရွာငံ",
-       "type": "township"
+       "type": "township",
+       "lat": 21.1628,
+       "lng": 96.4423
       }
      ]
     },
@@ -2840,7 +3354,9 @@
        "slug": "hopong",
        "en": "Hopong",
        "mm": "ဟိုပုံး",
-       "type": "township"
+       "type": "township",
+       "lat": 20.7974,
+       "lng": 97.1702
       },
       {
        "code": "MMR014004",
@@ -2850,7 +3366,9 @@
        "type": "township",
        "aliases": [
         "hsi-hseng"
-       ]
+       ],
+       "lat": 20.1623,
+       "lng": 97.2519
       },
       {
        "code": "MMR014009",
@@ -2860,7 +3378,9 @@
        "type": "township",
        "aliases": [
         "naungtayar"
-       ]
+       ],
+       "lat": 20.1244,
+       "lng": 96.7822
       }
      ]
     },
@@ -2876,7 +3396,9 @@
        "slug": "lashio",
        "en": "Lashio",
        "mm": "လားရှိုး",
-       "type": "township"
+       "type": "township",
+       "lat": 22.9528,
+       "lng": 97.7475
       },
       {
        "code": "MMR015002",
@@ -2886,7 +3408,9 @@
        "type": "township",
        "aliases": [
         "thani"
-       ]
+       ],
+       "lat": 23.3072,
+       "lng": 97.9736
       },
       {
        "code": "MMR015003",
@@ -2896,14 +3420,18 @@
        "type": "township",
        "aliases": [
         "mineyai"
-       ]
+       ],
+       "lat": 22.4276,
+       "lng": 98.039
       },
       {
        "code": "MMR015004",
        "slug": "tangyan",
        "en": "Tangyan",
        "mm": "တန့်ယန်း",
-       "type": "township"
+       "type": "township",
+       "lat": 22.4981,
+       "lng": 98.3968
       },
       {
        "code": "MMR015020",
@@ -2913,7 +3441,9 @@
        "type": "township",
        "aliases": [
         "kwanlon"
-       ]
+       ],
+       "lat": 23.4165,
+       "lng": 98.6505
       }
      ]
     },
@@ -2935,7 +3465,9 @@
         "manhero",
         "monekoe",
         "pansai"
-       ]
+       ],
+       "lat": 23.9899,
+       "lng": 97.9017
       },
       {
        "code": "MMR015010",
@@ -2945,7 +3477,9 @@
        "type": "township",
        "aliases": [
         "namhkam"
-       ]
+       ],
+       "lat": 23.837,
+       "lng": 97.6818
       },
       {
        "code": "MMR015011",
@@ -2955,7 +3489,9 @@
        "type": "township",
        "aliases": [
         "tamoenye"
-       ]
+       ],
+       "lat": 23.4592,
+       "lng": 97.9434
       }
      ],
      "aliases": [
@@ -2978,7 +3514,9 @@
        "aliases": [
         "minelon",
         "minengaw"
-       ]
+       ],
+       "lat": 22.5417,
+       "lng": 97.0367
       },
       {
        "code": "MMR015013",
@@ -2988,21 +3526,27 @@
        "type": "township",
        "aliases": [
         "naungcho"
-       ]
+       ],
+       "lat": 22.33,
+       "lng": 96.799
       },
       {
        "code": "MMR015014",
        "slug": "hsipaw",
        "en": "Hsipaw",
        "mm": "သီပေါ",
-       "type": "township"
+       "type": "township",
+       "lat": 22.6189,
+       "lng": 97.2981
       },
       {
        "code": "MMR015015",
        "slug": "namtu",
        "en": "Namtu",
        "mm": "နမ္မတူ",
-       "type": "township"
+       "type": "township",
+       "lat": 23.0936,
+       "lng": 97.4005
       }
      ]
     },
@@ -3018,14 +3562,18 @@
        "slug": "pangwaun",
        "en": "Pangwaun",
        "mm": "ပန်ဝိုင်",
-       "type": "township"
+       "type": "township",
+       "lat": 23.0563,
+       "lng": 99.3091
       },
       {
        "code": "MMR015008",
        "slug": "mongmao",
        "en": "Mongmao",
        "mm": "မိုင်းမော",
-       "type": "township"
+       "type": "township",
+       "lat": 22.9672,
+       "lng": 98.9674
       },
       {
        "code": "MMR015021",
@@ -3035,7 +3583,9 @@
        "type": "township",
        "aliases": [
         "panlong"
-       ]
+       ],
+       "lat": 23.4254,
+       "lng": 98.7503
       }
      ]
     },
@@ -3056,7 +3606,9 @@
         "pansang",
         "mankan",
         "pangsang"
-       ]
+       ],
+       "lat": 22.1759,
+       "lng": 99.1704
       },
       {
        "code": "MMR015006",
@@ -3067,14 +3619,18 @@
        "aliases": [
         "nahpahn",
         "namphan"
-       ]
+       ],
+       "lat": 22.6079,
+       "lng": 99.0926
       },
       {
        "code": "MMR015024",
        "slug": "matman",
        "en": "Matman",
        "mm": "မက်မန်း",
-       "type": "township"
+       "type": "township",
+       "lat": 21.9542,
+       "lng": 98.8709
       }
      ]
     },
@@ -3090,14 +3646,18 @@
        "slug": "mongmit",
        "en": "Mongmit",
        "mm": "မိုးမိတ်",
-       "type": "township"
+       "type": "township",
+       "lat": 23.1142,
+       "lng": 96.67
       },
       {
        "code": "MMR015018",
        "slug": "mabein",
        "en": "Mabein",
        "mm": "မဘိမ်း",
-       "type": "township"
+       "type": "township",
+       "lat": 23.4729,
+       "lng": 96.6292
       }
      ]
     },
@@ -3150,7 +3710,9 @@
        "official": false,
        "aliases": [
         "namtit"
-       ]
+       ],
+       "lat": 23.4758,
+       "lng": 98.8672
       },
       {
        "code": "MMR015302",
@@ -3158,7 +3720,9 @@
        "en": "Nar Wee (Na Wi)",
        "mm": "နာဝီး",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 23.1112,
+       "lng": 98.6635
       },
       {
        "code": "MMR015303",
@@ -3166,7 +3730,9 @@
        "en": "Man Tun",
        "mm": "မန်တွန်း",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 22.9479,
+       "lng": 98.612
       },
       {
        "code": "MMR015304",
@@ -3174,7 +3740,9 @@
        "en": "Kawng Min Hsang",
        "mm": "ကောင်မင်ဆန်း",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 22.9691,
+       "lng": 98.9636
       },
       {
        "code": "MMR015305",
@@ -3182,7 +3750,9 @@
        "en": "Hsawng Hpa (Saun Pha)",
        "mm": "ဆောင်ဖ",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 23.0846,
+       "lng": 99.2236
       },
       {
        "code": "MMR015306",
@@ -3190,7 +3760,9 @@
        "en": "Hkun Mar (Hkwin Ma)",
        "mm": "ခွန်းမား",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 22.9794,
+       "lng": 99.4602
       },
       {
        "code": "MMR015307",
@@ -3198,7 +3770,9 @@
        "en": "Long Htan",
        "mm": "လုံထန်",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 22.9057,
+       "lng": 99.3687
       },
       {
        "code": "MMR015308",
@@ -3206,7 +3780,9 @@
        "en": "Yawng Lin",
        "mm": "ယောင်လင်း",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 22.9594,
+       "lng": 99.312
       },
       {
        "code": "MMR015309",
@@ -3214,7 +3790,9 @@
        "en": "Lin Haw",
        "mm": "လင်ဟော်",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 22.7765,
+       "lng": 98.837
       },
       {
        "code": "MMR015310",
@@ -3222,7 +3800,9 @@
        "en": "Ka Lawng Hpar",
        "mm": "ကလောင်ဖါ",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 22.7181,
+       "lng": 98.7255
       },
       {
        "code": "MMR015311",
@@ -3230,7 +3810,9 @@
        "en": "Aik Chan (Ai' Chun)",
        "mm": "အိုက်ချန်",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 22.764,
+       "lng": 99.2236
       },
       {
        "code": "MMR015312",
@@ -3238,7 +3820,9 @@
        "en": "Yin Pang",
        "mm": "ရင်ဖန့်",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 22.6282,
+       "lng": 99.2831
       }
      ]
     },
@@ -3255,7 +3839,9 @@
        "en": "Man Man Hseng",
        "mm": "မန်မန်ဆိုင်",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 22.503,
+       "lng": 98.7669
       },
       {
        "code": "MMR015314",
@@ -3263,7 +3849,9 @@
        "en": "Nawng Hkit",
        "mm": "နောင်ခစ်",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 22.4384,
+       "lng": 98.9248
       },
       {
        "code": "MMR015315",
@@ -3271,7 +3859,9 @@
        "en": "Nam Hkam Wu",
        "mm": "နမ်ခမ်းဝူး",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 22.477,
+       "lng": 99.1866
       },
       {
        "code": "MMR015316",
@@ -3279,7 +3869,9 @@
        "en": "Nar Kawng",
        "mm": "နားကောင်",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 22.3737,
+       "lng": 98.7103
       },
       {
        "code": "MMR015317",
@@ -3287,7 +3879,9 @@
        "en": "Pang Hkam",
        "mm": "ပန်ခမ့်",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 22.1759,
+       "lng": 99.1704
       },
       {
        "code": "MMR015318",
@@ -3295,7 +3889,9 @@
        "en": "Pang Yang",
        "mm": "ပန်ယန်း",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 22.1291,
+       "lng": 98.7968
       }
      ]
     },
@@ -3311,7 +3907,9 @@
        "slug": "namhsan",
        "en": "Namhsan",
        "mm": "နမ့်ဆန်",
-       "type": "township"
+       "type": "township",
+       "lat": 22.9641,
+       "lng": 97.1613
       },
       {
        "code": "MMR015019",
@@ -3321,7 +3919,9 @@
        "type": "township",
        "aliases": [
         "mantong"
-       ]
+       ],
+       "lat": 23.2465,
+       "lng": 97.1222
       }
      ]
     },
@@ -3340,7 +3940,9 @@
        "type": "township",
        "aliases": [
         "chinshwehaw"
-       ]
+       ],
+       "lat": 23.6916,
+       "lng": 98.7641
       },
       {
        "code": "MMR015023",
@@ -3350,7 +3952,9 @@
        "type": "township",
        "aliases": [
         "mawhtike"
-       ]
+       ],
+       "lat": 23.8295,
+       "lng": 98.5393
       }
      ],
      "aliases": [
@@ -3369,7 +3973,9 @@
        "slug": "kengtung",
        "en": "Kengtung",
        "mm": "ကျိုင်းတုံ",
-       "type": "township"
+       "type": "township",
+       "lat": 21.2919,
+       "lng": 99.6036
       },
       {
        "code": "MMR016002",
@@ -3379,7 +3985,9 @@
        "type": "township",
        "aliases": [
         "mine-khet"
-       ]
+       ],
+       "lat": 21.7499,
+       "lng": 99.4638
       },
       {
        "code": "MMR016003",
@@ -3389,7 +3997,9 @@
        "type": "township",
        "aliases": [
         "mine-yang"
-       ]
+       ],
+       "lat": 21.8424,
+       "lng": 99.6871
       },
       {
        "code": "MMR016005",
@@ -3399,7 +4009,9 @@
        "type": "township",
        "aliases": [
         "mine-lar"
-       ]
+       ],
+       "lat": 21.6729,
+       "lng": 100.0187
       },
       {
        "code": "MMR016007",
@@ -3410,7 +4022,9 @@
        "aliases": [
         "mine-ping",
         "tontar"
-       ]
+       ],
+       "lat": 21.3502,
+       "lng": 99.026
       }
      ]
     },
@@ -3430,7 +4044,9 @@
        "aliases": [
         "minekoke",
         "mine-hsat"
-       ]
+       ],
+       "lat": 20.5054,
+       "lng": 99.2472
       },
       {
        "code": "MMR016008",
@@ -3442,7 +4058,9 @@
         "monehta",
         "mine-tong",
         "ponparkyin"
-       ]
+       ],
+       "lat": 20.3035,
+       "lng": 98.9001
       }
      ],
      "aliases": [
@@ -3466,7 +4084,9 @@
         "tachi-leik",
         "kyainglap",
         "talay"
-       ]
+       ],
+       "lat": 20.453,
+       "lng": 99.884
       },
       {
        "code": "MMR016010",
@@ -3476,7 +4096,9 @@
        "type": "township",
        "aliases": [
         "mine-phyat"
-       ]
+       ],
+       "lat": 20.878,
+       "lng": 99.9233
       },
       {
        "code": "MMR016011",
@@ -3487,7 +4109,9 @@
        "aliases": [
         "mine-yawng",
         "mine-yong"
-       ]
+       ],
+       "lat": 21.1807,
+       "lng": 100.3579
       }
      ]
     },
@@ -3507,7 +4131,9 @@
        "official": false,
        "aliases": [
         "mine-hpayak"
-       ]
+       ],
+       "lat": 21.9854,
+       "lng": 99.5989
       },
       {
        "code": "MMR016320",
@@ -3515,7 +4141,9 @@
        "en": "Ho Tawng (Ho Tao)",
        "mm": "ဟိုတောင်း",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 22.0414,
+       "lng": 99.5507
       },
       {
        "code": "MMR016321",
@@ -3523,7 +4151,9 @@
        "en": "Mong Pawk",
        "mm": "မိုင်းပေါက်",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 22.0082,
+       "lng": 99.3101
       },
       {
        "code": "MMR016322",
@@ -3531,7 +4161,9 @@
        "en": "Mong Kar",
        "mm": "မိုင်းကာ",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 21.8434,
+       "lng": 99.4194
       },
       {
        "code": "MMR016323",
@@ -3539,7 +4171,9 @@
        "en": "Nam Hpai",
        "mm": "နမ့်ဖိုင်",
        "type": "township",
-       "official": false
+       "official": false,
+       "lat": 21.9291,
+       "lng": 99.2003
       }
      ],
      "aliases": [
@@ -3573,7 +4207,9 @@
        "slug": "pathein",
        "en": "Pathein",
        "mm": "ပုသိမ်",
-       "type": "township"
+       "type": "township",
+       "lat": 16.7792,
+       "lng": 94.733
       },
       {
        "code": "MMR017002",
@@ -3583,28 +4219,36 @@
        "type": "township",
        "aliases": [
         "kangyidaunk"
-       ]
+       ],
+       "lat": 16.9329,
+       "lng": 94.8948
       },
       {
        "code": "MMR017003",
        "slug": "thabaung",
        "en": "Thabaung",
        "mm": "သာပေါင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 17.0473,
+       "lng": 94.8059
       },
       {
        "code": "MMR017004",
        "slug": "ngapudaw",
        "en": "Ngapudaw",
        "mm": "ငပုတော",
-       "type": "township"
+       "type": "township",
+       "lat": 16.5431,
+       "lng": 94.6922
       },
       {
        "code": "MMR017005",
        "slug": "kyonpyaw",
        "en": "Kyonpyaw",
        "mm": "ကျုံပျော်",
-       "type": "township"
+       "type": "township",
+       "lat": 17.3,
+       "lng": 95.2
       },
       {
        "code": "MMR017006",
@@ -3614,14 +4258,18 @@
        "type": "township",
        "aliases": [
         "yekyi"
-       ]
+       ],
+       "lat": 17.3446,
+       "lng": 95.1207
       },
       {
        "code": "MMR017007",
        "slug": "kyaunggon",
        "en": "Kyaunggon",
        "mm": "ကျောင်းကုန်း",
-       "type": "township"
+       "type": "township",
+       "lat": 17.1077,
+       "lng": 95.1904
       }
      ]
     },
@@ -3637,42 +4285,54 @@
        "slug": "hinthada",
        "en": "Hinthada",
        "mm": "ဟင်္သာတ",
-       "type": "township"
+       "type": "township",
+       "lat": 17.6496,
+       "lng": 95.4582
       },
       {
        "code": "MMR017009",
        "slug": "zalun",
        "en": "Zalun",
        "mm": "ဇလွန်",
-       "type": "township"
+       "type": "township",
+       "lat": 17.4781,
+       "lng": 95.5567
       },
       {
        "code": "MMR017010",
        "slug": "lemyethna",
        "en": "Lemyethna",
        "mm": "လေးမျက်နှာ",
-       "type": "township"
+       "type": "township",
+       "lat": 17.6004,
+       "lng": 95.1745
       },
       {
        "code": "MMR017011",
        "slug": "myanaung",
        "en": "Myanaung",
        "mm": "မြန်အောင်",
-       "type": "township"
+       "type": "township",
+       "lat": 18.287,
+       "lng": 95.3178
       },
       {
        "code": "MMR017012",
        "slug": "kyangin",
        "en": "Kyangin",
        "mm": "ကြံခင်း",
-       "type": "township"
+       "type": "township",
+       "lat": 18.3404,
+       "lng": 95.2391
       },
       {
        "code": "MMR017013",
        "slug": "ingapu",
        "en": "Ingapu",
        "mm": "အင်္ဂပူ",
-       "type": "township"
+       "type": "township",
+       "lat": 17.8098,
+       "lng": 95.2693
       }
      ]
     },
@@ -3688,21 +4348,27 @@
        "slug": "myaungmya",
        "en": "Myaungmya",
        "mm": "မြောင်းမြ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.5993,
+       "lng": 94.9298
       },
       {
        "code": "MMR017015",
        "slug": "einme",
        "en": "Einme",
        "mm": "အိမ်မဲ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.8962,
+       "lng": 95.1805
       },
       {
        "code": "MMR017017",
        "slug": "wakema",
        "en": "Wakema",
        "mm": "ဝါးခယ်မ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.6038,
+       "lng": 95.1804
       }
      ]
     },
@@ -3718,14 +4384,18 @@
        "slug": "labutta",
        "en": "Labutta",
        "mm": "လပွတ္တာ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.1456,
+       "lng": 94.7589
       },
       {
        "code": "MMR017018",
        "slug": "mawlamyinegyun",
        "en": "Mawlamyinegyun",
        "mm": "မော်လမြိုင်ကျွန်း",
-       "type": "township"
+       "type": "township",
+       "lat": 16.3789,
+       "lng": 95.263
       }
      ]
     },
@@ -3744,21 +4414,27 @@
        "type": "township",
        "aliases": [
         "ma-ubin"
-       ]
+       ],
+       "lat": 16.7302,
+       "lng": 95.6494
       },
       {
        "code": "MMR017020",
        "slug": "pantanaw",
        "en": "Pantanaw",
        "mm": "ပန်းတနော်",
-       "type": "township"
+       "type": "township",
+       "lat": 16.9821,
+       "lng": 95.466
       },
       {
        "code": "MMR017021",
        "slug": "nyaungdon",
        "en": "Nyaungdon",
        "mm": "ညောင်တုန်း",
-       "type": "township"
+       "type": "township",
+       "lat": 17.049,
+       "lng": 95.6336
       },
       {
        "code": "MMR017022",
@@ -3768,7 +4444,9 @@
        "type": "township",
        "aliases": [
         "danuphyu"
-       ]
+       ],
+       "lat": 17.2547,
+       "lng": 95.5958
       }
      ],
      "aliases": [
@@ -3787,28 +4465,36 @@
        "slug": "pyapon",
        "en": "Pyapon",
        "mm": "ဖျာပုံ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.2916,
+       "lng": 95.6802
       },
       {
        "code": "MMR017024",
        "slug": "bogale",
        "en": "Bogale",
        "mm": "ဘိုကလေး",
-       "type": "township"
+       "type": "township",
+       "lat": 16.295,
+       "lng": 95.3968
       },
       {
        "code": "MMR017025",
        "slug": "kyaiklat",
        "en": "Kyaiklat",
        "mm": "ကျိုက်လတ်",
-       "type": "township"
+       "type": "township",
+       "lat": 16.4443,
+       "lng": 95.7261
       },
       {
        "code": "MMR017026",
        "slug": "dedaye",
        "en": "Dedaye",
        "mm": "ဒေးဒရဲ",
-       "type": "township"
+       "type": "township",
+       "lat": 16.4081,
+       "lng": 95.8851
       }
      ]
     }
@@ -3839,14 +4525,18 @@
        "type": "township",
        "aliases": [
         "zeyarthiri"
-       ]
+       ],
+       "lat": 19.862,
+       "lng": 96.309
       },
       {
        "code": "MMR018003",
        "slug": "tatkon",
        "en": "Tatkon",
        "mm": "တပ်ကုန်း",
-       "type": "township"
+       "type": "township",
+       "lat": 20.1304,
+       "lng": 96.203
       },
       {
        "code": "MMR018005",
@@ -3856,7 +4546,9 @@
        "type": "township",
        "aliases": [
         "pobbathiri"
-       ]
+       ],
+       "lat": 19.8438,
+       "lng": 96.1825
       },
       {
        "code": "MMR018008",
@@ -3866,7 +4558,9 @@
        "type": "township",
        "aliases": [
         "ottarathiri"
-       ]
+       ],
+       "lat": 19.891,
+       "lng": 96.043
       }
      ],
      "aliases": [
@@ -3888,7 +4582,9 @@
        "type": "township",
        "aliases": [
         "zabuthiri"
-       ]
+       ],
+       "lat": 19.7687,
+       "lng": 96.0726
       },
       {
        "code": "MMR018004",
@@ -3898,21 +4594,27 @@
        "type": "township",
        "aliases": [
         "dekkhinathiri"
-       ]
+       ],
+       "lat": 19.7003,
+       "lng": 96.0905
       },
       {
        "code": "MMR018006",
        "slug": "pyinmana",
        "en": "Pyinmana",
        "mm": "ပျဉ်းမနား",
-       "type": "township"
+       "type": "township",
+       "lat": 19.7361,
+       "lng": 96.209
       },
       {
        "code": "MMR018007",
        "slug": "lewe",
        "en": "Lewe",
        "mm": "လယ်ဝေး",
-       "type": "township"
+       "type": "township",
+       "lat": 19.6347,
+       "lng": 96.1101
       }
      ],
      "aliases": [

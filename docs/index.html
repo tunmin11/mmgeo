@@ -105,6 +105,28 @@ pre.block .s { color: var(--code-mm); }
 .api pre { font-size: 0.82rem; color: var(--muted); overflow-x: auto; }
 .api pre b { color: var(--gold); font-weight: 500; }
 
+/* live demo */
+.demo { border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+.demo .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+.demo label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px; }
+.demo .field { flex: 1 1 150px; min-width: 0; }
+.demo select, .demo input {
+  width: 100%; font: inherit; font-size: 0.95rem; color: var(--ink); background: var(--paper);
+  border: 1px solid var(--line); border-radius: 8px; padding: 9px 10px;
+}
+.demo select:disabled { opacity: 0.5; }
+.demo select:focus-visible, .demo input:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+.demo button {
+  font: inherit; font-size: 0.85rem; cursor: pointer; background: none;
+  border: 1px solid var(--line); border-radius: 8px; color: var(--ink); padding: 8px 14px;
+}
+.demo button:hover, .demo button[aria-pressed="true"] { border-color: var(--gold); color: var(--gold); }
+.demo .hits { list-style: none; margin: -4px 0 12px; }
+.demo .hits button { border: none; padding: 4px 0; text-align: left; width: 100%; }
+.demo .hits small { color: var(--muted); }
+.demo output { display: block; background: var(--code-bg); color: var(--code-ink); border-radius: 8px; padding: 12px 14px; font-size: 0.8rem; white-space: pre-wrap; margin-top: 6px; min-height: 3.4em; }
+.demo .note { color: var(--muted); font-size: 0.85rem; margin-top: 10px; }
+
 footer { margin-top: 96px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; display: flex; gap: 20px; flex-wrap: wrap; }
 </style>
 </head>
@@ -150,6 +172,34 @@ footer { margin-top: 96px; padding-top: 24px; border-top: 1px solid var(--line);
     <div><strong>15</strong><span>states &amp; regions</span></div>
     <div><strong>84</strong><span>districts &amp; zones</span></div>
     <div><strong>356</strong><span>townships</span></div>
+    <div><strong>3,481</strong><span>wards</span></div>
+    <div><strong>13,771</strong><span>village tracts</span></div>
+  </div>
+</section>
+
+<section aria-labelledby="try">
+  <h2 id="try">Try it</h2>
+  <div class="demo" id="demo">
+    <div class="row">
+      <div class="field" style="flex: 3 1 240px">
+        <label for="q">Search a township</label>
+        <input id="q" type="search" placeholder="Hlaing, ရန်ကင်း, or Zawgyi" autocomplete="off">
+      </div>
+      <button type="button" id="locate">Use my location</button>
+      <button type="button" id="lang" aria-pressed="false">မြန်မာ</button>
+    </div>
+    <ul class="hits" id="hits"></ul>
+    <div class="row">
+      <div class="field"><label for="s">State / region</label><select id="s"></select></div>
+      <div class="field"><label for="d">District</label><select id="d" disabled></select></div>
+    </div>
+    <div class="row">
+      <div class="field"><label for="t">Township</label><select id="t" disabled></select></div>
+      <div class="field"><label for="w">Ward / village tract</label><select id="w" disabled></select></div>
+    </div>
+    <label for="out">What you'd store</label>
+    <output id="out" for="s d t w">Pick a place…</output>
+    <p class="note" id="note">Loading the package from esm.sh…</p>
   </div>
 </section>
 
@@ -240,6 +290,94 @@ TownshipPlace  Place &amp; { level: 'township', type, official,
 </footer>
 
 </main>
+<script type="module">
+const $ = id => document.getElementById(id);
+const note = $('note');
+let core, wardsMod, vtMod, lang = 'en';
+try {
+  core = await import('https://esm.sh/@tm11/mmgeo@2');
+} catch {
+  note.textContent = 'Could not load the package from esm.sh. Install it and try it locally.';
+  throw new Error('mmgeo demo: CDN unavailable');
+}
+const sub = name => import(`https://esm.sh/@tm11/mmgeo@2/${name}`).catch(() => null);
+
+const fill = (el, items, placeholder, value) => {
+  el.replaceChildren(new Option(placeholder, ''));
+  for (const it of items) el.add(new Option(it.name, it.code));
+  el.disabled = !items.length;
+  el.value = value ?? '';
+};
+const fillSub = (el, wards, vts) => {
+  el.replaceChildren(new Option(lang === 'mm' ? 'ရပ်ကွက် / ကျေးရွာအုပ်စု' : 'Ward / village tract', ''));
+  for (const [label, items] of [[lang === 'mm' ? 'ရပ်ကွက်' : 'Wards', wards], [lang === 'mm' ? 'ကျေးရွာအုပ်စု' : 'Village tracts', vts]]) {
+    if (!items.length) continue;
+    const g = document.createElement('optgroup'); g.label = label;
+    for (const it of items) g.append(new Option(it.name, it.code));
+    el.append(g);
+  }
+  el.disabled = !(wards.length || vts.length);
+};
+
+const state = { s: '', d: '', t: '', w: '' };
+const render = async () => {
+  const opts = { lang };
+  fill($('s'), core.listStates(opts), lang === 'mm' ? 'ပြည်နယ် / တိုင်း' : 'Choose…', state.s);
+  fill($('d'), state.s ? core.listDistricts(state.s, opts) : [], lang === 'mm' ? 'ခရိုင်' : 'Choose…', state.d);
+  fill($('t'), state.d ? core.listTownships(state.s, state.d, opts) : [], lang === 'mm' ? 'မြို့နယ်' : 'Choose…', state.t);
+  if (state.t) {
+    [wardsMod, vtMod] = await Promise.all([wardsMod ?? sub('wards'), vtMod ?? sub('village-tracts')]);
+    fillSub($('w'), wardsMod?.listWards(state.t, opts) ?? [], vtMod?.listVillageTracts(state.t, opts) ?? []);
+    $('w').value = state.w;
+  } else fillSub($('w'), [], []);
+  const code = state.w || state.t || state.d || state.s;
+  const place = state.w ? (wardsMod?.getWard(state.w, opts) ?? vtMod?.getVillageTract(state.w, opts)) : code && core.getByCode(code, opts);
+  $('out').textContent = place
+    ? JSON.stringify({ code: place.code, name: place.name, ...(place.townshipCode ? { townshipCode: place.townshipCode } : {}),
+        ...(place.districtCode ? { districtCode: place.districtCode } : {}), ...(place.stateCode ? { stateCode: place.stateCode } : {}) }, null, 2)
+    : (lang === 'mm' ? 'နေရာရွေးပါ…' : 'Pick a place…');
+};
+const pickTownship = code => {
+  const t = core.getByCode(code);
+  Object.assign(state, { s: t.stateCode, d: t.districtCode, t: t.code, w: '' });
+  $('q').value = ''; $('hits').replaceChildren();
+  render();
+};
+
+$('s').onchange = e => { Object.assign(state, { s: e.target.value, d: '', t: '', w: '' }); render(); };
+$('d').onchange = e => { Object.assign(state, { d: e.target.value, t: '', w: '' }); render(); };
+$('t').onchange = e => { Object.assign(state, { t: e.target.value, w: '' }); render(); };
+$('w').onchange = e => { state.w = e.target.value; render(); };
+$('lang').onclick = e => {
+  lang = lang === 'en' ? 'mm' : 'en';
+  e.target.setAttribute('aria-pressed', String(lang === 'mm'));
+  e.target.textContent = lang === 'mm' ? 'English' : 'မြန်မာ';
+  render();
+};
+$('q').oninput = e => {
+  const hits = core.searchTownships(e.target.value, { lang, limit: 6 });
+  $('hits').replaceChildren(...hits.map(h => {
+    const li = document.createElement('li'), b = document.createElement('button');
+    b.type = 'button';
+    b.append(`${h.name} `, Object.assign(document.createElement('small'), { textContent: `${h.code} · ${core.getByCode(h.stateCode, { lang }).name}` }));
+    b.onclick = () => pickTownship(h.code);
+    li.append(b); return li;
+  }));
+};
+if (core.nearestTownships && 'geolocation' in navigator) {
+  $('locate').onclick = () => {
+    note.textContent = 'Finding the nearest township…';
+    navigator.geolocation.getCurrentPosition(
+      p => { const [n] = core.nearestTownships(p.coords.latitude, p.coords.longitude);
+             note.textContent = `Nearest township: ${n.en} (${n.distanceKm} km from its seat town). Your position stays in your browser.`;
+             pickTownship(n.code); },
+      () => { note.textContent = 'Location not available.'; });
+  };
+} else $('locate').hidden = true;
+
+await render();
+note.textContent = 'Running @tm11/mmgeo in your browser. Nothing is sent anywhere.';
+</script>
 <script>
 document.getElementById('copy-btn').addEventListener('click', async function () {
   await navigator.clipboard.writeText('npm install @tm11/mmgeo');
