@@ -1,5 +1,8 @@
 import geoData from '../data/db.json';
 import { getName } from './utils';
+import type { GeoData } from './types';
+
+// ---- Legacy 1.0.x class API (kept for backward compatibility) ----
 
 class Township {
   constructor(public en: string, public mm: string) {}
@@ -14,7 +17,7 @@ class District {
     return getName(this);
   }
   getTownships(): Township[] {
-    return this.townships.map(township => new Township(township.en, township.mm));
+    return this.townships;
   }
 }
 
@@ -31,34 +34,42 @@ class State {
     return getName(this);
   }
   getDistricts(): District[] {
-    return this.districts.map(district => new District(district.en, district.mm, district.townships.map(
-      township => new Township(township.en, township.mm)
-    )));
+    return this.districts;
   }
 }
 
-export const getStates = (): State[] => {
-  return geoData.states.map(state => new State(
-    state.eng,
-    state.mm,
-    state.lat,
-    state.lng,
-    state.capital,
-    state.districts.map(district => new District(
-      district.eng,
-      district.mm,
-      district.townships.map(township => new Township(township.eng, township.mm))
-    ))
-  ));
-};
+let legacyStates: State[] | undefined;
 
+/**
+ * @deprecated Use `listStates()` / `listDistricts()` / `listTownships()`, which
+ * take a per-call `lang` and return plain objects with codes and slugs.
+ */
+export const getStates = (): State[] =>
+  (legacyStates ??= (geoData as GeoData).states.map(
+    s =>
+      new State(s.en, s.mm, s.lat, s.lng, s.capital,
+        s.districts.map(d => new District(d.en, d.mm, d.townships.map(t => new Township(t.en, t.mm)))))
+  ));
+
+/** @deprecated Language is a per-call option (`{ lang: 'mm' }`) in the functional API. */
 export { initialize } from './hook';
+export { District, Township };
+
+// ---- Current API ----
+
 export {
+  dataInfo,
   listStates,
   listDistricts,
   listTownships,
   searchTownships,
+  findTownships,
   isValidTownship,
+  getByCode,
 } from './api';
-export type { Lang, Place, StatePlace, PlaceWithPath } from './api';
-export { District, Township };
+export { createGeo } from './geo';
+export type { Geo } from './geo';
+export type {
+  Lang, LangOpts, SearchOpts, Place, StatePlace, DistrictPlace, TownshipPlace, PlaceWithPath, AnyPlace,
+  StateType, DistrictType, TownshipType, GeoData,
+} from './types';

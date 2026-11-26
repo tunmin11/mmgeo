@@ -1,0 +1,35 @@
+DATA LICENSE — data/db.json
+
+The geographic data in this package (data/db.json, and the copy bundled
+into dist/) is derived from:
+
+  Myanmar Information Management Unit (MIMU)
+  Myanmar Place Codes (P-codes), Release 9.7, January 2026
+  https://themimu.info/place-codes
+
+Place names are from the General Administration Department (GAD) and field
+sources, transliterated by MIMU (except the Naga Self-Administered Zone).
+
+This data is NOT covered by the ISC license in LICENSE. It remains subject
+to MIMU's own terms, which state:
+
+  - Use constraints: acknowledgement of the Myanmar Information Management
+    Unit (MIMU) as the source.
+  - MIMU products are not for sale and not for commercial use. They can be
+    used free of charge with attribution.
+  - The names shown and the designations used do not imply official
+    endorsement or acceptance by the United Nations.
+
+If you use or redistribute this data, credit MIMU as the source, for
+example: "Place names and codes: MIMU P-codes 9.7 (themimu.info)".
+You are responsible for checking that your use fits MIMU's terms; contact
+info.mimu@undp.org with questions.
+
+Changes made by this package: Bago and Shan are presented as single states
+(MIMU's parts are kept as `partCodes`); only places MIMU marks as active
+are included; names are Unicode-normalized (NFC) with zero-width characters
+removed; slugs and 1.x slug aliases are added; state coordinates and
+capitals come from mmgeo 1.x, not MIMU.
+
+The code in this package (everything outside data/) is licensed under ISC,
+see LICENSE.
