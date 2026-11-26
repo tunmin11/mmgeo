@@ -9,6 +9,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         node-version: ['18', '20', '22', '24']
     steps:
@@ -20,8 +21,52 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
       - run: npm test
+
+  # The build tool (tsup) needs Node 22+; the package it builds targets older Node.
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
       - run: npm run build
-      - name: Smoke-test the built package (CJS + ESM)
+      - run: npm pack
+      - uses: actions/upload-artifact@v4
+        with:
+          name: package
+          path: tm11-mmgeo-*.tgz
+
+  smoke:
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: ['18', '20', '22', '24']
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: package
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install the packed package and import every entry point
         run: |
-          node -e "const g=require('./dist/index.js'); if(!g.getByCode('MMR013009')) process.exit(1)"
-          node --input-type=module -e "import {getByCode} from './dist/index.mjs'; if(!getByCode('MMR013009')) process.exit(1)"
+          mkdir app && cd app && npm init -y > /dev/null
+          npm install ../tm11-mmgeo-*.tgz
+          node -e "
+            const g = require('@tm11/mmgeo');
+            if (!g.getByCode('MMR013009')) throw new Error('core');
+            if (!require('@tm11/mmgeo/wards').listWards('MMR013010').length) throw new Error('wards');
+            if (!require('@tm11/mmgeo/towns').listTowns('MMR013010').length) throw new Error('towns');
+            if (!require('@tm11/mmgeo/village-tracts').listVillageTracts('MMR017024').length) throw new Error('village tracts');
+          "
+          node --input-type=module -e "
+            import { nearestTownships } from '@tm11/mmgeo';
+            import { searchWards } from '@tm11/mmgeo/wards';
+            if (nearestTownships(16.836, 96.1624)[0].code !== 'MMR013010') throw new Error('nearest');
+            if (!searchWards('No 1', { township: 'MMR013010' }).length) throw new Error('search');
+          "
