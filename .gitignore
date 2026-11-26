@@ -2,3 +2,4 @@ node_modules
 dist
 docs/superpowers/
 *.tgz
+CLAUDE.md
