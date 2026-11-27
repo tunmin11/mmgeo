@@ -6,7 +6,8 @@
     "baseUrl": ".",
     "paths": {
       "@tm11/mmgeo": ["../../src/index.ts"],
-      "@tm11/mmgeo/*": ["../../src/*"]
+      "@tm11/mmgeo/*": ["../../src/*"],
+      "@tm11/mmgeo-map": ["src/index.tsx"]
     }
   },
   "include": ["src", "test", "demo"]

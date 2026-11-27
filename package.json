@@ -92,7 +92,8 @@
     "test": "jest",
     "prepublishOnly": "npm run typecheck && npm test && npm run build",
     "build:map": "ts-node --transpile-only scripts/build-map.ts",
-    "demo": "node packages/mmgeo-map/demo/serve.mjs"
+    "demo": "node packages/mmgeo-map/demo/serve.mjs",
+    "build:docs": "node packages/mmgeo-map/demo/serve.mjs --build"
   },
   "keywords": [
     "myanmar",
