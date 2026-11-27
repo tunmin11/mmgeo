@@ -1,6 +1,6 @@
 {
   "name": "@tm11/mmgeo-map",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Clickable, keyboard-accessible SVG map of Myanmar for React: country → state → district → township → village tract / town → ward. Built on @tm11/mmgeo.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

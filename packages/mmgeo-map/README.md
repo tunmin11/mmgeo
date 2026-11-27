@@ -137,6 +137,23 @@ past it:
 
 Any colour you don't set keeps its default. `className` and `style` go on the wrapper.
 
+### Your data on the map
+
+Colour places by your own numbers (a choropleth) and show them on hover. You choose the colours;
+`fill` returning `undefined` keeps the default.
+
+```tsx
+const users: Record<string, number> = { MMR013: 1240, MMR010: 860 };
+const shade = (n?: number) => n === undefined ? undefined : n > 1000 ? '#1D4ED8' : n > 500 ? '#60A5FA' : '#BFDBFE';
+
+<MyanmarMap
+  fill={p => shade(users[p.code])}
+  tooltip={p => `${p.name}: ${users[p.code] ?? 0} users`}
+/>
+```
+
+Need smooth scales or a legend? Use `d3-scale` (or any) inside `fill` and draw the legend yourself.
+
 ### Burmese and labels
 
 ```tsx
@@ -169,6 +186,8 @@ mmAddressCodes.parse({ stateCode: 'MMR013', districtCode: 'MMR013D002', township
 | `height` | `480` | Map height (number in px, or any CSS length). |
 | `showLabels` | `false` | Also draw names on shapes big enough to hold them. |
 | `colors` | | `fill`, `hover`, `selected`, `stroke`, `context`, `text`, `selectedText`, `tooltip`, `focus`. |
+| `fill` | | `(place: MapPlace) => string \| undefined`. Colour shapes from your data; hover and selected still win. |
+| `tooltip` | | `(place: MapPlace) => ReactNode`. Popover content; default is the English and Burmese names. |
 | `className` / `style` | | Passed to the wrapper. |
 | `aria-label` | `'Map of Myanmar'` (Burmese with `lang="mm"`) | Accessible name of the map. |
 

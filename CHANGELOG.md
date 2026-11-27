@@ -1,5 +1,14 @@
 # Changelog
 
+## @tm11/mmgeo-map 0.2.0 — 2026-11-27
+
+### Added
+- `fill` prop: colour each shape from your own data (a choropleth). Return a colour, or `undefined`
+  for the default fill. Hover and selected colours still win.
+- `tooltip` prop: custom popover content on hover and focus.
+- Demo (`npm run demo`) is now a component docs site: sidebar, live examples with copyable code,
+  `onChange` readout and a props table.
+
 ## 2.2.0 — 2026-11-26
 
 ### Added

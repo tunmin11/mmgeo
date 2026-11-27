@@ -146,3 +146,19 @@ test('hover shows a coloured popover that follows the pointer', () => {
   fireEvent.mouseLeave(shape('Yangon Region'));
   expect(screen.queryByText('Yangon Region')).toBeNull();
 });
+
+test('fill colours shapes from data; hover and selected still win', () => {
+  render(<MyanmarMap depth="state" fill={p => (p.code === 'MMR013' ? '#ff0000' : undefined)} />);
+  expect(shape('Yangon Region').getAttribute('fill')).toBe('#ff0000');
+  expect(shape('Mon State').getAttribute('fill')).toBe('#E6E8EC');
+  fireEvent.mouseEnter(shape('Yangon Region'));
+  expect(shape('Yangon Region').getAttribute('fill')).toBe('#FFD666');
+  fireEvent.click(shape('Yangon Region'));
+  expect(shape('Yangon Region').getAttribute('fill')).toBe('#1F2937');
+});
+
+test('tooltip replaces the popover content', () => {
+  render(<MyanmarMap depth="state" tooltip={p => `${p.name}: 42 users`} />);
+  fireEvent.mouseEnter(shape('Yangon Region'));
+  expect(screen.getByText('Yangon Region: 42 users')).toBeTruthy();
+});

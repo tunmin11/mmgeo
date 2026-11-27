@@ -6,7 +6,7 @@
  * outlines load on demand (one small file per state or township) as the user zooms in.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import type { CSSProperties, KeyboardEvent, ReactElement } from 'react';
+import type { CSSProperties, KeyboardEvent, ReactElement, ReactNode } from 'react';
 import {
   availableLevels, getOutline, getPlace, hasFile, isLoaded, listOutlines, loadOutlines, parentOf,
   type MapPlace, type Outline,
@@ -58,6 +58,13 @@ export interface MyanmarMapProps {
   /** Also draw names on shapes big enough to hold them. Names always show in a popover on hover and focus. Default `false`. */
   showLabels?: boolean;
   colors?: Partial<MyanmarMapColors>;
+  /**
+   * Colour each shape from your own data (a choropleth): return a colour, or `undefined`
+   * for the default `colors.fill`. Hover and selected colours still win.
+   */
+  fill?: (place: MapPlace) => string | undefined;
+  /** Popover content on hover and focus. Default: the English and Burmese names. */
+  tooltip?: (place: MapPlace) => ReactNode;
   className?: string;
   style?: CSSProperties;
   /** Accessible name for the map. */
@@ -281,12 +288,17 @@ export function MyanmarMap(props: MyanmarMapProps): ReactElement {
   };
 
   const name = (code: string): string => getPlace(code, { lang })?.name ?? code;
+  /** Resting fill of a shape: the caller's data colour, else the default. */
+  const baseFill = (code: string): string => {
+    const p = props.fill && getPlace(code, { lang });
+    return (p && props.fill?.(p)) || colors.fill;
+  };
   // Breadcrumb: the country, then each shown area down to the one in view.
   const trail: (string | null)[] = [null];
   for (let c = focus; c; c = viewParent(c)) trail.splice(1, 0, c);
   if (root) trail.splice(0, trail.indexOf(root));
   const crumbs = trail.map(code => ({ code, label: code ? name(code) : lang === 'mm' ? 'မြန်မာ' : 'Myanmar' }));
-  const hovered = hover ? getPlace(hover) : undefined;
+  const hovered = hover ? getPlace(hover, { lang }) : undefined;
   // Popover position in px, relative to the wrapper: the pointer, or the centre of a keyboard-focused shape.
   const wrapRef = useRef<HTMLDivElement>(null);
   const [tip, setTip] = useState<[number, number] | null>(null);
@@ -348,7 +360,7 @@ export function MyanmarMap(props: MyanmarMapProps): ReactElement {
                 tabIndex={0}
                 aria-label={name(o.code)}
                 aria-pressed={sel}
-                fill={sel ? colors.selected : hot ? colors.hover : colors.fill}
+                fill={sel ? colors.selected : hot ? colors.hover : baseFill(o.code)}
                 onClick={() => pick(o)}
                 onKeyDown={e => onKey(e, o)}
                 onMouseEnter={e => { setHover(o.code); tipAt(e.clientX, e.clientY); }}
@@ -372,7 +384,7 @@ export function MyanmarMap(props: MyanmarMapProps): ReactElement {
                 <text key={o.code} x={o.label[0]} y={o.label[1]} dy="0.35em"
                   fill={isSelected(o.code) ? colors.selectedText : colors.text}
                   style={{ paintOrder: 'stroke' }}
-                  stroke={isSelected(o.code) ? colors.selected : colors.fill} strokeWidth={fontSize / 4}>
+                  stroke={isSelected(o.code) ? colors.selected : baseFill(o.code)} strokeWidth={fontSize / 4}>
                   {shortName(name(o.code))}
                 </text>
               ))}
@@ -390,7 +402,7 @@ export function MyanmarMap(props: MyanmarMapProps): ReactElement {
             boxShadow: '0 2px 8px rgba(0, 0, 0, 0.18)',
           }}
         >
-          <strong style={{ fontWeight: 600 }}>{hovered.en}</strong> · <span lang="my">{hovered.mm}</span>
+          {props.tooltip?.(hovered) ?? <><strong style={{ fontWeight: 600 }}>{hovered.en}</strong> · <span lang="my">{hovered.mm}</span></>}
         </div>
       )}
     </div>
